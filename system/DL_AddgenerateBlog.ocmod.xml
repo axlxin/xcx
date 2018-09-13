@@ -1,0 +1,162 @@
+<modification>
+	 <name>AddgenerateBlog</name>
+	 <version>1.0.0</version>
+	 <author>Damon Lin</author>
+	  <desc>在后台admin页面GCRdevsitemap下新增blog模块生成xml</desc>
+	  <link>http://www.opencart.com</link>
+
+	  <file path="admin/controller/feed/gcrdev_sitemap.php">
+	  	<operation>
+	  		<search><![CDATA[elseif($group=='information'){$this->model_feed_gcrdev_sitemap->generateInformation();}]]></search>
+	  		<add position="after">
+	  			<![CDATA[elseif ($group=='blog') {$this->model_feed_gcrdev_sitemap->generateBlog();} //新增调用方法]]>
+	  		</add>
+	  	</operation>
+	  </file>
+
+	  <file path="admin/model/feed/gcrdev_sitemap.php">
+	  	<operation>
+	  		<search><![CDATA[$this->db->query("UPDATE ".DB_PREFIX."gcrdev_sitemap SET last_update='$last_update', live=1 WHERE `groups`='pages'");$this->generateIndex();}//**pages]]></search>
+	  		<add position="after">
+                <![CDATA[ //新增generateBlog方法
+    public function generateBlog()
+    {
+     $stores=$this->getStoreId();
+	foreach($stores as $store)
+	{
+	$store_id=$store['store_id'];
+	$query=$this->db->query("SELECT value FROM ".DB_PREFIX."setting WHERE `store_id`='$store_id' AND `key`='config_url'");
+	$config_url=$query->rows;
+	$store_url='';
+	foreach($config_url as $config_url){
+	$store_url .=$config_url['value'];
+	}
+	$storeurl=($store_url == '')? HTTP_CATALOG : $store_url;
+	$src='../sitemap/'.$store_id.'/blog/';
+	$dst='../sitemap/'.$store_id.'/blog/backup/';
+	$xsl='../sitemap/'.$store_id.'/blog/xsl/';
+	$this->make_dir($src);
+	$this->make_dir($dst);
+	$this->removeFiles($dst.'xsl/*');
+	$this->removeFiles($dst.'*');
+	$this->recurse_copy($src,$dst);
+	$this->make_dir($xsl);
+
+	$this->removeDir($dst.'backup/xsl/');
+	$this->removeDir($dst.'backup/');
+
+	$this->removeFiles($src.'*');
+
+	$priority='';
+	$statusd='';
+	$prodstyle='';
+	$changefreq='';
+	$indlim='';
+	$query=$this->db->query("SELECT prio,indlim,changefreq,prodstyle,status FROM ".DB_PREFIX."gcrdev_sitemap WHERE `groups`='blog'");
+	$row=$query->rows;
+	foreach($row as $row){
+	$priority .=$row['prio'];
+	$indlim .=$row['indlim'];
+	$statusd .=$row['status'];
+	$prodstyle .=$row['prodstyle'];
+	$changefreq .=$row['changefreq'];
+	}
+	$sitemap_index_file=$src.'sitemap-index.xml';
+	$sitemap_index_handle=fopen($sitemap_index_file, 'w') or die('Cannot open file:  '.$sitemap_index_file);
+	$sitemap_index='<?xml version="1.0" encoding="UTF-8"?>';
+	if($prodstyle == '1'){
+	$sitemap_index .='<?xml-stylesheet type="text/xsl" href="'.$storeurl.'sitemap/'.$store_id.'/blog/xsl/sitemap-index.xsl"?>';
+	}
+	$sitemap_index .='<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+
+	$status=($statusd==0)? ' AND status=1' : '';
+
+
+	$query=$this->db->query("SELECT * FROM ".DB_PREFIX."journal2_blog_post_to_store WHERE store_id='$store_id'");
+	$productCount=$query->num_rows;
+	$prodpages=ceil($productCount/$indlim);
+	for($i=1;$i<=$prodpages;$i++){
+	$lastid='';
+	$query=$this->db->query("SELECT lastid FROM ".DB_PREFIX."gcrdev_sitemap WHERE groups='blog'");
+	$last_id=$query->rows;
+	foreach($last_id as $last_id){
+	$lastid .=$last_id['lastid'];
+	}
+	$status=($statusd==0)? ' status=1 AND ' : '';
+	//journal2_blog_post_to_store表主键ID名为post_id
+	$query=$this->db->query("SELECT * FROM ".DB_PREFIX."journal2_blog_post_to_store WHERE post_id > '$lastid' AND store_id='$store_id' LIMIT $indlim"); 
+	$prodrow=$query->rows;
+	$file='../sitemap/'.$store_id.'/blog/sitemap_'.$i.'.xml';
+	$handle=fopen($file, 'w') or die('Cannot open file:  '.$file);
+	$data='<?xml version="1.0" encoding="UTF-8"?>';
+	if($prodstyle == '1'){
+	$data .='<?xml-stylesheet type="text/xsl" href="'.$storeurl.'sitemap/'.$store_id.'/blog/xsl/sitemap.xsl"?>';
+	}
+	$data .='<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">';
+
+	foreach($prodrow as $prodrow){
+	$post_id=$prodrow['post_id'];
+	$query=$this->db->query("SELECT * FROM ".DB_PREFIX."journal2_blog_post WHERE status=1 AND post_id ='$post_id'");
+	$row=$query->rows;
+	foreach($row as $row){
+	$post_id=$row['post_id'];
+	$blogurl='post_id='.$post_id;
+	$query=$this->db->query("SELECT * FROM ".DB_PREFIX."url_alias WHERE query='$blogurl'");
+	$url_alias=$query->rows;
+
+	if ( !empty($url_alias) ) {
+		foreach($url_alias as $alias){
+			$data .='<url><loc>'.$storeurl.str_replace("&", "", $alias['keyword']).'</loc>';
+
+			if($row['image'] != ''){
+				$data .='<image:image><image:loc>'.$storeurl.'/image/'.$row['image'].'</image:loc>';
+				$query=$this->db->query("SELECT meta_title FROM ".DB_PREFIX."journal2_blog_post_description WHERE post_id='$post_id'");
+				$blog_title=$query->rows;
+			foreach($blog_title as $title){
+				$data .='<image:title>'.preg_replace('/[^A-Za-z0-9?! ]/', '',html_entity_decode($title['meta_title'])).'</image:title>';
+			}
+				$data .='</image:image>';
+			}
+
+			$query=$this->db->query("SELECT * FROM ".DB_PREFIX."journal2_blog_post WHERE post_id='$post_id'");
+			$blog_image=$query->rows;
+			foreach($blog_image as $image){
+				$data .='<image:image><image:loc>'.$storeurl.'image/'.$image['image'].'</image:loc>';
+				$query=$this->db->query("SELECT meta_title FROM ".DB_PREFIX."journal2_blog_post_description WHERE post_id='$post_id'");
+				$product_title=$query->rows;
+			foreach($blog_title as $title){
+				$data .='<image:title>'.preg_replace('/[^A-Za-z0-9?! ]/', '',html_entity_decode($title['meta_title'])).'</image:title>';
+			}
+				$data .='</image:image>';
+			}
+			$data .='<changefreq>'.$changefreq.'</changefreq><lastmod>'.date('Y-m-d', strtotime($row['date_updated'])).'</lastmod><priority>'.$priority.'</priority></url>';
+			$this->db->query("UPDATE ".DB_PREFIX."gcrdev_sitemap SET `lastid`='".$post_id."' WHERE `groups`='blog'");
+		}
+	}
+
+
+	}
+	}
+	$data .= '</urlset>';
+	fwrite($handle, $data);
+
+	$sitemap_index .='<sitemap><loc>'.$storeurl.'sitemap/'.$store_id.'/blog/sitemap_'.$i.'.xml</loc><lastmod>'.date('Y-m-d').'</lastmod></sitemap>';
+	}
+	$sitemap_index .='</sitemapindex>';
+	fwrite($sitemap_index_handle, $sitemap_index);
+
+	$this->createIndexStyle('blog index',$store_id,'blog');
+	$this->createStyle('blog sitemap',$store_id,'blog');
+
+	$last_update=date('Y-m-d H:i:s');
+
+	$this->db->query("UPDATE ".DB_PREFIX."gcrdev_sitemap SET `lastid`='0', last_update='$last_update', live=1 WHERE `groups`='blog'");
+	}
+	$this->generateIndex();
+	}]]>
+	  		</add>
+	  	</operation>
+	  </file>
+
+	  
+</modification>

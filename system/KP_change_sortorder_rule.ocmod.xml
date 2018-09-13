@@ -1,0 +1,24 @@
+<modification>
+     <name>Change_sortorder_rule</name>
+	 <version>1.0.0</version>
+	 <author>Damon Lin</author>
+	  <desc>在选择分类页面下产品的展示按热卖、最新、旧的排列规则</desc>
+	  <link>http://www.opencart.com</link>
+	  <file path="catalog/model/catalog/product.php">
+	  	<operation>
+	  		<search><![CDATA[elseif (isset($data['kp_sort']) && !empty($data['kp_sort'])) {if($data['kp_sort']=='best_seller'){$sql .= " ORDER BY sale_total";}else{$sql.= " ORDER BY p.date_added";}}]]></search>
+	  			<add position="replace">
+	  				<![CDATA[elseif (isset($data['kp_sort']) && !empty($data['kp_sort'])) {
+                        if($data['kp_sort']=='best_seller'){   //$kp_sort默认传进来的参数是best_seller
+                            // $sql .= " ORDER BY sale_total";
+                            // $sql .=",p.sort_order";
+                            $sql .= " ORDER BY p.sort_order";
+                        }else{
+                            // $sql .= " ORDER BY p.sort_order";
+                            $sql .=" ORDER BY p.product_id";
+                        }}]]>
+	  			</add>
+	  		
+	  	</operation>
+	  </file>
+</modification>

@@ -1,0 +1,54 @@
+<modification>
+    <name>Email Varification For Journal Blog</name>
+    <version>1.0.0</version>
+    <author>Kevin Pan</author>
+    <desc>1.顾客在博客中填写了评论后，邮件通知管理员进行审核; 2.评论时取消website字段的录入</desc>
+    <link>http://www.opencart.com</link>
+    
+    <file path="catalog/controller/journal2/blog.php">
+        <operation>
+            <search><![CDATA['message'   => $this->journal2->settings->get('blog_form_comment_awaiting_approval', 'Comment awaiting approval.')]]></search>
+            <add position="before" offset="2"><![CDATA[
+$this->emailVarify($name, $email, $comment);
+]]></add>
+        </operation>
+        
+        <operation>
+            <search><![CDATA[public function feed() {]]></search>
+            <add position="before" ><![CDATA[
+public function emailVarify($username, $useremail, $comment){
+    $message  = "You have received a blog comment:\n\n";
+    $message .= sprintf("Name: %s\n", $username);
+    $message .= sprintf("Email: %s\n", $useremail);
+    $message .= sprintf("Comment: %s\n", html_entity_decode($comment, ENT_QUOTES, 'UTF-8'));
+                
+    $mail = new Mail();
+    $mail->protocol = $this->config->get('config_mail_protocol');
+    $mail->parameter = $this->config->get('config_mail_parameter');
+    $mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
+    $mail->smtp_username = $this->config->get('config_mail_smtp_username');
+    $mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
+    $mail->smtp_port = $this->config->get('config_mail_smtp_port');
+    $mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
+
+    $mail->setTo($this->config->get('config_email'));
+    $mail->setFrom($this->config->get('config_email'));
+    $mail->setSender(html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8'));
+    $mail->setSubject(sprintf("%s - Receive A New Comment Of Blog Post", html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8')));
+    $mail->setText($message);
+    $mail->send();
+}
+]]></add>
+        </operation>
+    </file>
+
+    <file path="catalog/view/theme/journal2/template/journal2/blog/post.tpl">
+        <operation>
+            <search><![CDATA[<input type="text" name="website" placeholder="<?php echo $this->journal2->settings->get('blog_form_website', 'Website'); ?>"/>]]></search>
+            <add position="replace" ><![CDATA[
+<input type="hidden" name="website" placeholder="<?php echo $this->journal2->settings->get('blog_form_website', 'Website'); ?>"/>
+]]></add>
+        </operation>
+    </file>
+   
+</modification>

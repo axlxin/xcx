@@ -1,0 +1,49 @@
+<modification>
+    <name>Upload Enhancement</name>
+    <version>1.0.0</version>
+    <author>Kevin Pan</author>
+    <link>http://www.opencart.com</link>
+    
+    <file path="catalog/view/theme/journal2/template/product/product.tpl" info="优化上传相关的javascript代码，防止页面异常导致文件无限重复上传,防止setInterval制造多个定时器而无限循环的问题。">
+        <operation>
+            <search><![CDATA[$('button[id^=\'button-upload\']').on('click', function() {]]></search>
+            <add position="before"><![CDATA[
+function clearTimerBox(){
+    for(var i=0; i<window.uploadTimers.length; i++){
+        clearInterval(window.uploadTimers[i]);
+    }
+}
+window.uploadTimers = [];
+]]></add>
+        </operation>
+        
+        <operation>
+            <search><![CDATA[$('#form-upload input[name=\'file\']').trigger('click');]]></search>
+            <add position="after" ><![CDATA[clearTimerBox();]]></add>
+        </operation>
+        
+        <operation>
+            <search><![CDATA[if ($('#form-upload input[name=\'file\']').val() != '') {]]></search>
+            <add position="before" ><![CDATA[
+window.uploadTimers.push(timer);
+]]></add>
+        </operation>
+        
+        <operation>
+            <search><![CDATA[$(node).parent().find('input').attr('value', json['code']);]]></search>
+            <add position="before" ><![CDATA[$('#form-upload').remove();]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/tool/upload.php" info="修改上传文件的保存目录，">
+        <operation>
+            <search><![CDATA[move_uploaded_file($this->request->files['file']['tmp_name'], DIR_UPLOAD . $file);]]></search>
+            <add position="before" ><![CDATA[
+$sub_folder = date("Y/m");
+if(file_exists(DIR_UPLOAD.$sub_folder) || mkdir(DIR_UPLOAD.$sub_folder, 0755, true) ){
+    $file = $sub_folder . '/' . $file;
+}
+]]></add>
+        </operation>
+    </file>
+</modification>

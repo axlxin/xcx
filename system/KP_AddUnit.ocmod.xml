@@ -1,0 +1,138 @@
+<modification>
+    <name>Add Unit</name>
+    <version>2.1.160217</version>
+    <author>David</author>
+    <link>http://www.opencart.com</link>
+    
+    <file path="catalog/view/theme/journal2/template/product/kp_productPcb.tpl">
+        <operation info="添加单位换算">
+            <search><![CDATA[<div class="option option-<?php echo $option['type']; ?>" >]]></search>
+            <add position="replace"><![CDATA[ <div class="option option-<?php echo $option['type']; ?>"  style="height: 42px">]]></add>
+        </operation>
+        <operation info="添加单位换算">
+            <search><![CDATA[<input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['value']; ?>" placeholder="length" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control" /> &times;]]></search>
+            <add position="replace"><![CDATA[ <input style="display: none;" type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['value']; ?>" placeholder="length" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control" />]]></add>
+        </operation>
+        <operation info="添加单位换算">
+            <search><![CDATA[<input type="text" name="option[<?php echo $d_nextOption['product_option_id']; ?>]" value="<?php echo $d_nextOption['value']; ?>" placeholder="width" id="input-option<?php echo $d_nextOption['product_option_id']; ?>" class="form-control" /> mm]]></search>
+            <add position="replace"><![CDATA[<input style="display: none;"  type="text" name="option[<?php echo $d_nextOption['product_option_id']; ?>]" value="<?php echo $d_nextOption['value']; ?>" placeholder="width" id="input-option<?php echo $d_nextOption['product_option_id']; ?>" class="form-control" /> 
+                                                        <input type="text" name="slength" value="" placeholder="length" id="slength" class="form-control" /> &times;
+                                                        <input type="text" name="swidth" value="" placeholder="width" id="swidth" class="form-control" />  
+                                                        <select name="unitselect"   onchange="unitcalculation()"  style="padding: 3px;margin: 1px;">
+                                                            <option value ="mm">mm</option>
+                                                            <option value ="inch">inch</option>
+                                                            <option value="mil">mil</option>
+                                                       </select>
+                                                       <span  id="equal" >(equals <span id="llength"> </span>&times;<span   id="lwidth"></span>mm)</span>]]></add>
+        </operation>
+        <operation info="单位自动换算">
+            <search   index="0"   ><![CDATA[<script type="text/javascript">]]></search>
+            <add position="replace" offset= "9" ><![CDATA[<script type="text/javascript">
+                                                    $(function(){
+                                                        $("input[name='option[<?php echo $option['product_option_id']; ?>]'], input[name='option[<?php echo $d_nextOption['product_option_id']; ?>]']").blur(function(){
+                                                            
+                                                             var val = parseFloat($(this).val());
+                                                           
+                                                             val = val.toFixed(2);
+                                                            val = (val>500) ? 500 : val;
+                                                            val = (val<10) ? 10 : val;
+                                                            $(this).val(isNaN(val) ? 0 : val).trigger("keyup");
+                                                            unitcalculation();
+                                                        });
+                                                    });
+                                                    function unitcalculation(){
+                                                        var flength = $("input[name='option[<?php echo $option['product_option_id']; ?>]']").val();
+                                                        var fwidth = $("input[name='option[<?php echo $d_nextOption['product_option_id']; ?>]']").val();
+                                                        var unitselect = $("select[name='unitselect']").val();
+                                                        if (unitselect == 'mm') {
+                                                            var slength = (1 * flength).toFixed(2);
+                                                            var swidth = (1 * fwidth).toFixed(2);
+                                                            $("#slength").attr("value",slength);
+                                                            $("#swidth").attr("value",swidth);
+                                                            $("#equal").hide();
+                                                        }else if(unitselect == 'inch'){
+                                                           
+                                                            var slength = (flength/25.4).toFixed(2);
+                                                            var swidth = (fwidth/25.4).toFixed(2);
+                                                            $("#slength").attr("value",slength);
+                                                            $("#swidth").attr("value",swidth);
+                                                            $("#equal").show();
+                                                            $("#llength").html(flength);
+                                                            $("#lwidth").html(fwidth);
+                                                        }else{
+                                                             var slength = (flength/0.0254).toFixed(2);
+                                                            var swidth = (fwidth/0.0254).toFixed(2);
+                                                            $("#slength").attr("value",slength);
+                                                            $("#swidth").attr("value",swidth);
+                                                            $("#equal").show();
+                                                            $("#llength").html(flength);
+                                                            $("#lwidth").html(fwidth);
+                                                        }
+                                                    }
+                                                    function antiunitcalculation(){
+                                                        var flength = $("input[name='slength']").val();
+                                                        var fwidth = $("input[name='swidth']").val();
+                                                        var unitselect = $("select[name='unitselect']").val();
+                                                        if (unitselect == 'mm') {
+                                                            var slength =  (flength/1).toFixed(2);
+                                                            var swidth =  (fwidth/1).toFixed(2);
+                                                            $("input[name='option[<?php echo $option['product_option_id']; ?>]']").attr("value",slength);
+                                                            $("input[name='option[<?php echo $d_nextOption['product_option_id']; ?>]']").attr("value",swidth);
+                                                            $("input[name='option[<?php echo $option['product_option_id']; ?>]'], input[name='option[<?php echo $d_nextOption['product_option_id']; ?>]']").trigger("keyup");
+                                                            $("#llength").html(slength);
+                                                            $("#lwidth").html(swidth);
+                                                        }else if (unitselect == 'inch') {
+                                                            var slength =  (flength*25.4).toFixed(2);
+                                                            var swidth =  (fwidth*25.4).toFixed(2);
+                                                            $("input[name='option[<?php echo $option['product_option_id']; ?>]']").attr("value",slength);
+                                                            $("input[name='option[<?php echo $d_nextOption['product_option_id']; ?>]']").attr("value",swidth);
+                                                            $("input[name='option[<?php echo $option['product_option_id']; ?>]'], input[name='option[<?php echo $d_nextOption['product_option_id']; ?>]']").trigger("keyup");
+                                                            $("#llength").html(slength);
+                                                            $("#lwidth").html(swidth);
+
+                                                        }else{
+                                                            var slength =  (flength*0.0254).toFixed(2);
+                                                            var swidth =  (fwidth*0.0254).toFixed(2);
+                                                            $("input[name='option[<?php echo $option['product_option_id']; ?>]']").attr("value",slength);
+                                                            $("input[name='option[<?php echo $d_nextOption['product_option_id']; ?>]']").attr("value",swidth);
+                                                            $("input[name='option[<?php echo $option['product_option_id']; ?>]'], input[name='option[<?php echo $d_nextOption['product_option_id']; ?>]']").trigger("keyup");
+                                                            $("#llength").html(slength);
+                                                            $("#lwidth").html(swidth);
+
+                                                        }
+
+
+                                                    }
+                                                    $(function(){
+                                                        $("input[name='slength'], input[name='swidth']").blur(function(){
+                                                            
+                                                            var val =parseFloat($(this).val());
+                                                           val = val.toFixed(2);
+                                                            var unitselect = $("select[name='unitselect']").val();
+
+                                                         if (unitselect == 'mm') {
+                                                              val = (val>500) ? 500 : val;
+                                                            val = (val<10) ? 10 : val;
+                                                         }else if (unitselect == 'inch') {
+                                                            val = (val>19.7) ? 19.7 : val;
+                                                            val = (val<0.394) ? 0.39 : val;
+
+                                                        }else{
+                                                             val = (val>20000) ? 20000 : val;
+                                                            val = (val<400) ? 400 : val;
+
+                                                        }
+                                                            
+                                                            $(this).val(isNaN(val) ? 0 : val).trigger("keyup");
+                                                            antiunitcalculation();
+                                                        });
+                                                    });
+                                                    unitcalculation();
+                                                </script>]]></add>
+        </operation>
+        
+    </file>
+
+   
+ 
+</modification>

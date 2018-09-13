@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>Display Amount Saved for Special Prices - OPENCART 2.0.3.1</id>
+	<version>1.0</version>
+	<vqmver>2.5.1</vqmver>
+	<author>WebVet Services || support@webvetservices.com</author>
+
+<file name="catalog/language/english/english.php">
+<operation>
+	<search position="after"><![CDATA[
+	Text
+	]]></search>
+	
+	<add><![CDATA[
+	$_['text_saving'] = 'SAVE %s';
+	]]></add>
+</operation>
+</file>
+
+<file path="catalog/controller/" name="module/bestseller.php,module/featured.php,module/latest.php,module/special.php,product/category.php,product/manufacturer.php,product/search.php,product/special.php">
+<operation>
+	<ignoreif><![CDATA[
+	if ((float)$product_info['special']) {
+	]]></ignoreif>
+	
+	<search position="after"><![CDATA[
+	$data['products'][] = array(
+	]]></search>
+	
+	<add><![CDATA[
+	'saving'	=> sprintf($this->language->get('text_saving'), ($this->currency->format($this->tax->calculate(($result['price'] - $result['special']), $result['tax_class_id'], $this->config->get('config_tax'))))),
+	]]></add>
+</operation>
+
+<operation info="for Featured Module">
+	<ignoreif><![CDATA[
+	if ((float)$result['special']) {
+	]]></ignoreif>
+	
+	<search position="after"><![CDATA[
+	$data['products'][] = array(
+	]]></search>
+	
+	<add><![CDATA[
+	'saving'	=> sprintf($this->language->get('text_saving'), ($this->currency->format($this->tax->calculate(($product_info['price'] - $product_info['special']), $product_info['tax_class_id'], $this->config->get('config_tax'))))),
+	]]></add>
+</operation>
+</file>
+
+<file path="catalog/view/theme/*/template/" name="module/bestseller.tpl,module/featured.tpl,module/latest.tpl,module/special.tpl,product/category.tpl,product/manufacturer_info.tpl,product/search.tpl,product/special.tpl">
+<operation>
+	<search position="iafter"><![CDATA[
+	<span class="price-old"><?php echo $product['price']; ?></span>
+	]]></search>
+	
+	<add><![CDATA[
+	<span class="price-new" style="color: red; margin-left: 10px;"><?php echo $product['saving']; ?></span>
+	]]></add>
+</operation>
+</file>
+
+<!-- Pages Requiring Individual Coding -->
+<!-- PRODUCT PAGE -->
+<file name="catalog/controller/product/product.php">
+<operation info="Main Product Price">
+	<search position="after"><![CDATA[
+	if ((float)$product_info['special']) {
+	]]></search>
+	
+	<add><![CDATA[
+	$data['saving'] = sprintf($this->language->get('text_saving'), ($this->currency->format($this->tax->calculate(($product_info['price'] -  $product_info['special']), $product_info['tax_class_id'], $this->config->get('config_tax')))));
+	]]></add>
+</operation>
+
+<operation info="Savings on Specials for Related Products">
+	<search position="after"><![CDATA[
+	$data['products'][] = array(
+	]]></search>
+	
+	<add><![CDATA[
+	'saving'	=> sprintf($this->language->get('text_saving'), ($this->currency->format($this->tax->calculate(($result['price'] - $result['special']), $result['tax_class_id'], $this->config->get('config_tax'))))),
+	]]></add>
+</operation>
+</file>
+
+<file name="catalog/view/theme/*/template/product/product.tpl">
+<operation info="Main Product Description">
+	<search position="replace"><![CDATA[
+	<h2><?php echo $special; ?></h2>
+	]]></search>
+	
+	<add><![CDATA[
+	<h2><?php echo $special; ?> <span style="color: red; margin-left: 10px;"><?php echo $saving; ?></span></h2>
+	]]></add>
+</operation>
+
+<operation info="Related Products Tab">
+	<search position="iafter"><![CDATA[
+	<span class="price-old"><?php echo $product['price']; ?></span>
+	]]></search>
+	
+	<add><![CDATA[
+	<span class="price-new" style="color: red; margin-left: 10px;"><?php echo $product['saving']; ?></span>
+	]]></add>
+</operation>
+</file>
+
+<!-- PRODUCT COMPARE -->
+<file name="catalog/controller/product/compare.php">
+<operation>
+	<search position="after"><![CDATA[
+	$data['products'][$product_id] = array(
+	]]></search>
+	
+	<add><![CDATA[
+	'saving'	=> sprintf($this->language->get('text_saving'), ($this->currency->format($this->tax->calculate(($product_info['price'] - $product_info['special']), $product_info['tax_class_id'], $this->config->get('config_tax'))))),
+	]]></add>
+</operation>
+</file>
+
+<file name="catalog/view/theme/*/template/product/compare.tpl">
+<operation info="Correct missing formatting for old and new price styles">
+	<search position="replace"><![CDATA[
+	<strike><?php echo $products[$product['product_id']]['price']; ?></strike> <?php echo $products[$product['product_id']]['special']; ?>
+	]]></search>
+	
+	<add><![CDATA[
+	<strike><?php echo $products[$product['product_id']]['price']; ?></strike> <?php echo $products[$product['product_id']]['special']; ?> <span style="font-weight: 600; color: red; margin-left: 5px;"><?php echo $product['saving']; ?></span>
+	]]></add>
+</operation>
+</file>
+
+<!-- WISH LIST -->
+<file name="catalog/controller/account/wishlist.php">
+<operation>
+	<search position="after"><![CDATA[
+	$data['products'][] = array(
+	]]></search>
+	
+	<add><![CDATA[
+	'saving'	=> sprintf($this->language->get('text_saving'), ($this->currency->format($this->tax->calculate(($product_info['price'] - $product_info['special']), $product_info['tax_class_id'], $this->config->get('config_tax'))))),
+	]]></add>
+</operation>	
+</file>
+
+<file name="catalog/view/theme/*/template/account/wishlist.tpl">
+<operation>
+	<search position="after"><![CDATA[
+	<b><?php echo $product['special']; ?></b> <s><?php echo $product['price']; ?></s>
+	]]></search>
+	
+	<add><![CDATA[
+	<br /><span style="color: red; font-weight: 600;"><?php echo $product['saving']; ?></span>
+	]]></add>
+</operation>
+</file>
+
+</modification>

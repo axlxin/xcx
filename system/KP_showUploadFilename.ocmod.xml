@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+此插件用于修改product页面的上传文件功能：上传完文件后显示文件的名字，并增加删除功能。
+*仅适用于Journal theme的product页面
+更新时间：2016-10-10
+-->
+<modification>
+    <name>KP Show Upload File Name</name>
+    <code>kp_show_upload_file_name</code>
+    <version>2.4.1</version>
+    <author>Kevin Pan</author>
+
+    <file path="catalog/view/theme/journal2/template/product/product.tpl">
+        <operation info="显示上传文件的名字_p1">
+            <search >
+	        <![CDATA[if ($('#form-upload input[name=\'file\']').val() != '') {]]>
+            </search>
+            <add position="replace"><![CDATA[
+var filename = $('#form-upload input[name=\'file\']').val();
+if (filename != '') {
+]]></add>
+        </operation>
+        
+        <operation info="增加删除上传文件的功能">
+            <search >
+	        <![CDATA[$('button[id^=\'button-upload\']').on('click', function() {]]>
+            </search>
+            <add position="before"><![CDATA[
+function removeUploadFile(node){
+    $(node).parents('.option').find('input').val('');
+    $(node).parent().remove();
+}
+]]></add>
+        </operation>
+        
+        <operation info="显示上传文件的名字_p2">
+            <search >
+	        <![CDATA[$(node).parent().find('input').attr('value', json['code']);]]>
+            </search>
+            <add position="before"><![CDATA[
+$(node).parent().find('.show-upload-filename').remove();
+var closeBtn = '<span class="btn-remove-file" style="display: block; float: right; width: 20px; height: 20px; padding: 0px; margin: 0px; font-size: 20px;cursor:pointer" onclick="removeUploadFile(this);">×</span>';
+var fileNode = '<p class="show-upload-filename" style="color: #398AE4; padding: 8px; background-color: #f5f5f5; border: 1px dashed; margin: 8px 0px;">'+ filename + closeBtn + '</p>';
+$(node).before(fileNode);
+]]></add>
+        </operation>
+    </file>
+
+
+
+
+</modification>

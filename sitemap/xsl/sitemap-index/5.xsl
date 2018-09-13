@@ -1,0 +1,1 @@
+</div> <div class="rights"> All rights reserved </div> </body> </html> </xsl:template> </xsl:stylesheet>

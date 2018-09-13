@@ -1,0 +1,64 @@
+<modification>
+
+	<id>Rewards</id>
+	<version>1.0.0</version>
+	<vqmver>2.1.5</vqmver>
+	<author>ovife21</author>
+	
+	<file name="admin/view/template/common/menu.tpl">
+		<operation>
+			<search position="after"><![CDATA[<li><a href="<?php echo $product; ?>"><?php echo $text_product; ?></a></li>]]></search>
+			<add><![CDATA[<li><a href="<?php echo $rewards; ?>"><?php echo $text_rewards; ?></a></li>]]></add>
+		</operation>		
+	</file>	
+	
+	<file name="admin/controller/common/menu.php">
+		<operation>
+			<search position="before"><![CDATA[$data['text_product']]]></search>
+			<add><![CDATA[$data['text_rewards'] = $this->language->get('text_rewards');]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[$data['product']]]></search>
+			<add><![CDATA[$data['rewards'] = $this->url->link('catalog/rewards', 'token=' . $this->session->data['token'], 'SSL');]]></add>
+		</operation>		
+	</file>	
+	
+	<file name="admin/language/english/common/menu.php">
+		<operation>
+			<search position="before"><![CDATA[$_['text_product']]]></search>
+			<add><![CDATA[$_['text_rewards']                     = 'Rewards Generator';]]></add>
+		</operation>		
+	</file>	
+	<file name="admin/view/template/sale/order_form.tpl">
+		<operation>
+			<search position="replace"><![CDATA[sale/order/api&token=]]></search>
+			<add><![CDATA[sale/order/api&order_id=<?php echo $order_id; ?>&token=]]></add>
+		</operation>		
+	</file>	
+	
+	<file name="admin/controller/sale/order.php">
+			<operation>
+				<search position="after"><![CDATA[isset($this->request->get['api'])]]></search>
+				<add><![CDATA[
+				
+			$this->load->model('sale/order');
+			 $order_info = $this->model_sale_order->getOrder($this->request->get['order_id']);
+			
+			if ($order_info && $order_info['customer_id'] && ($order_info['reward'] > 0)) {
+				$this->load->model('sale/customer');
+				
+				$reward_total = $this->model_sale_customer->getTotalCustomerRewardsByOrderId($this->request->get['order_id']);
+				
+				$auto_order_id = $this->config->get('rewards_auto_order_id');
+								
+				if (!$reward_total) {
+					if(isset($this->request->post['order_status_id']) && ($this->request->post['order_status_id'] == $auto_order_id))
+						$this->model_sale_customer->addReward($order_info['customer_id'], $this->language->get('text_order_id') . ' #' . $this->request->get['order_id'], $order_info['reward'], $this->request->get['order_id']);
+					}
+			} 
+				]]></add>
+			</operation>			
+	</file>
+	
+</modification>
+

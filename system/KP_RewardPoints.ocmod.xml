@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>  
+    <name>KP Global Reward Points For Opencart2.x</name>
+    <version>1.2</version>
+    <vqmver required="true">2.4.1</vqmver>
+    <author>Kevin Pan</author>
+    
+    <file path="admin/view/template/total/reward.tpl">
+        <operation info="add new options to Reward Points">
+            <search >
+                <![CDATA[</form>]]>
+            </search>
+            <add position="before"><![CDATA[
+<?php $default_currency_code = $this->config->get('config_currency');?>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="input-exchange-1">Exchange Rate ( Points to <?php echo $default_currency_code; ?> )</label>
+    <div class="col-sm-2">
+        <div class="input-group">
+            <input type="text" name="reward_points2money" value="<?php echo $reward_points2money; ?>" placeholder="" id="input-exchange-1" class="form-control" />
+            <div class="input-group-addon">to 1<?php echo $default_currency_code; ?></div>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="input-exchange-2">Exchange Rate ( <?php echo $default_currency_code; ?> to Points )</label>
+    <div class="col-sm-2">
+        <div class="input-group">
+            <div class="input-group-addon">1<?php echo $default_currency_code; ?> to</div>
+            <input type="text" name="reward_money2points" value="<?php echo $reward_money2points; ?>" placeholder="" id="input-exchange-2" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="input-automatically"><span title="" data-toggle="tooltip" data-original-title="(It will add points when change the order status)">Automatically Allocate</span></label>
+    <div class="col-sm-2">
+        <select name="reward_order_status_id" class="form-control" id="input-automatically">
+            <option value="0">-- Disabled --</option>
+            <?php foreach ($order_statuses as $order_statuses) { ?>
+            <?php if ($order_statuses['order_status_id'] == $reward_order_status_id) { ?>
+            <option value="<?php echo $order_statuses['order_status_id']; ?>" selected="selected"><?php echo $order_statuses['name']; ?></option>
+            <?php } else { ?>
+            <option value="<?php echo $order_statuses['order_status_id']; ?>"><?php echo $order_statuses['name']; ?></option>
+            <?php } ?>
+            <?php } ?>
+        </select>
+    </div>
+</div>
+                
+
+
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="admin/controller/total/reward.php">
+        <operation info="add new variables to Reward Points">
+            <search >
+                <![CDATA[$data['reward_sort_order'] = $this->config->get('reward_sort_order');]]>
+            </search>
+            <add position="after" offset="1"><![CDATA[
+if (isset($this->request->post['reward_points2money'])) {
+			$data['reward_points2money'] = $this->request->post['reward_points2money'];
+		} else {
+			$data['reward_points2money'] = $this->config->get('reward_points2money');
+                        if( empty($data['reward_points2money']) ){
+                            $data['reward_points2money'] = 0;
+                        }
+		}
+                
+if (isset($this->request->post['reward_money2points'])) {
+			$data['reward_money2points'] = $this->request->post['reward_money2points'];
+		} else {
+			$data['reward_money2points'] = $this->config->get('reward_money2points');
+                        if( empty($data['reward_money2points']) ){
+                            $data['reward_money2points'] = 0;
+                        }
+		}
+
+if (isset($this->request->post['reward_order_status_id'])) {
+			$data['reward_order_status_id'] = $this->request->post['reward_order_status_id'];
+		} else {
+			$data['reward_order_status_id'] = $this->config->get('reward_order_status_id');
+                        if( empty($data['reward_order_status_id']) ){
+                            $data['reward_order_status_id'] = 0;
+                        }
+		}
+                
+$this->load->model('localisation/order_status');
+$data['order_statuses'] = $this->model_localisation_order_status->getOrderStatuses();    
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/checkout/reward.php">
+        <operation info="Replace the caculate method of reward points">
+            <search>
+                <![CDATA[$points_total = 0;]]>
+            </search>
+            <add position="replace" offset="6"><![CDATA[
+$points_total = 0;
+$rate_points2money = (int)$this->config->get('reward_points2money');
+$rate_money2points = (int)$this->config->get('reward_money2points');
+foreach ($this->cart->getProducts() as $product) {
+    $product_total = (float)$product['total'];
+    $points_total += $rate_points2money * $product_total;
+}
+$points_total = ceil($points_total);
+]]></add>
+        </operation>
+        <operation info="Replace the status of reward points">
+            <search >
+                <![CDATA[if ($points && $points_total && $this->config->get('reward_status')) {]]>
+            </search>
+            <add position="replace"><![CDATA[
+if( $rate_points2money && $rate_money2points && $this->config->get('reward_status') ){
+
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/checkout/cart.php">
+        <operation info="Replace the caculate method of reward points">
+            <search >
+                <![CDATA[$data['products'][] = array(]]>
+            </search>
+            <add position="before"><![CDATA[
+$rate_money2points = (int)$this->config->get('reward_money2points');
+$new_reward = $total ? ceil($rate_money2points * (float)$product['total']) : '';
+]]></add>
+        </operation>
+        <operation info="Replace the caculate method of reward points">
+            <search >
+                <![CDATA[=> ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),]]>
+            </search>
+            <add position="replace"><![CDATA[=> (''!=$new_reward ? sprintf($this->language->get('text_points'), $new_reward) : ''),]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/model/total/reward.php">
+        <operation info="Replace the caculate method of reward points">
+            <search >
+                <![CDATA[$points_total = 0;]]>
+            </search>
+            <add position="replace" offset="6"><![CDATA[
+$points_total = 0;
+$rate_points2money = (int)$this->config->get('reward_points2money');
+foreach ($this->cart->getProducts() as $product) {
+    $product_total = (float)$product['total'];
+    $points_total += $rate_points2money * $product_total;
+}
+$points_total = ceil($points_total);
+]]></add>
+        </operation>
+        <operation info="Replace the caculate method of reward points">
+            <search >
+                <![CDATA[if ($product['points']) {]]>
+            </search>
+            <add position="replace"><![CDATA[if (0!=$rate_points2money && 0!=$points_total ) {]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/view/theme/*/template/product/product.tpl">
+        <operation info="Remove the reward informations" error="skip">
+            <search>
+                <![CDATA[<?php if ($reward) { ?>]]>
+            </search>
+            <add position="replace" offset="2"><![CDATA[]]></add>
+        </operation>
+        <operation info="Remove the reward informations" error="skip">
+            <search >
+                <![CDATA[<?php if ($points) { ?>]]>
+            </search>
+            <add position="replace" offset="2"><![CDATA[]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/checkout/confirm.php">
+        <operation info="Replace the caculate method of reward points">
+            <search >
+                <![CDATA[$order_data['products'] = array();]]>
+            </search>
+            <add position="before"><![CDATA[
+$reward = 0;
+$rate_money2points = (int)$this->config->get('reward_money2points');
+$reward += $rate_money2points * (float)$product['total'];
+$reward = ceil($reward);
+]]></add>
+        </operation>
+        <operation info="Replace the caculate method of reward points">
+            <search >
+                <![CDATA['reward'     => $product['reward']]]>
+            </search>
+            <add position="replace"><![CDATA['reward'     => $reward]]></add>
+        </operation>
+    </file>
+    
+    <file path="admin/view/template/sale/order_info.tpl">
+        <operation info="">
+            <search >
+                <![CDATA[url: 'index.php?route=sale/order/api&token=<?php echo $token; ?>&api=api/order/history&order_id=<?php echo $order_id; ?>',]]>
+            </search>
+            <add position="before" offset='1'><![CDATA[
+            var reward_order_status = "<?php echo $this->config->get('reward_order_status_id'); ?>";
+            if($('#input-order-status').val()==reward_order_status){
+                $('#button-reward-add').trigger('click');
+            }
+            ]]></add>
+        </operation>
+    </file>
+    
+</modification>

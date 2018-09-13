@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>KP Custom Invoice For Opencart2.x</name>
+    <version>1.2</version>
+    <vqmver required="true">2.4.1</vqmver>
+    <author>Kevin Pan</author>
+    <file path="admin/view/template/sale/order_info.tpl">
+        <operation info="添加按钮">
+            <search>
+	        <![CDATA[<div class="pull-right"><a href="<?php echo $invoice; ?>" target="_blank" data-toggle="tooltip" title="<?php echo $button_invoice_print; ?>" class="btn btn-info"><i class="fa fa-print"></i></a> <a href="<?php echo $shipping; ?>" target="_blank" data-toggle="tooltip" title="<?php echo $button_shipping_print; ?>" class="btn btn-info"><i class="fa fa-truck"></i></a> <a href="<?php echo $edit; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a> <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a></div>]]>
+            </search>
+            <add position="replace" ><![CDATA[
+  <div class="pull-right">
+<a onclick="KPOpenDialog()" data-toggle="tooltip" title="Print Custom Invoice" class="btn btn-success"><i class="fa fa-print"></i></a>
+<a href="<?php echo $invoice; ?>" target="_blank" data-toggle="tooltip" title="<?php echo $button_invoice_print; ?>" class="btn btn-info"><i class="fa fa-print"></i></a> <a href="<?php echo $shipping; ?>" target="_blank" data-toggle="tooltip" title="<?php echo $button_shipping_print; ?>" class="btn btn-info"><i class="fa fa-truck"></i></a> <a href="<?php echo $edit; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a> <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+   
+]]></add>
+        </operation>
+        <operation info="添加dialog">
+            <search >
+	        <![CDATA[<?php echo $footer; ?>]]>
+            </search>
+            <add position="after"><![CDATA[
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Please confirm the infomation before printing!</h4>
+      </div>
+      <div class="modal-body">
+                
+          <form id='customInvoiceForm' action="<?php echo $customUrl; ?>" method="post" target='_blank'>
+<table  class='table table-bordered table-hover' style="background-color:#fff;margin-top:20px">
+    <tbody>
+        <tr>
+            <td style='text-align:center;width:40%'><b>Store Info</b></td>
+            <td>
+                <textarea rows="5" cols="80" name="custom_store_info"><?php 
+echo sprintf("%s\n%s\nTelephone:%s\n%s\n%s",$store_name, $config_address, $config_telephone, $config_email, $store_url); 
+?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style='text-align:center'><b>Sender</b></td>
+            <td><textarea rows="5" cols="80" name="custom_sender"><?php 
+echo "Smart-Prototyping
+907 Tower 2 Silvercord
+30 Canton Road
+Tsim Sha Tsui, Kowloon
+Hong Kong
+Tel: +86 15813734594";
+?></textarea></td>
+        </tr>
+        <tr>
+            <td style='text-align:center'><b>Consignee</b></td>
+            <td><textarea rows="5" cols="80" name="custom_consignee"><?php
+echo "Customer Name: {$shipping_firstname} {$shipping_lastname}\n";
+if ($shipping_company) { echo "Company Name: {$shipping_company}\n"; };
+echo "Address 1: {$shipping_address_1}\n";
+if ($shipping_address_2) { echo "Address 2: {$shipping_address_2}\n"; };
+echo "{$shipping_city}, {$shipping_zone}, {$shipping_zone_code}\n";
+echo "Post Code: {$shipping_postcode}\n";
+echo "Country: {$shipping_country}\n";
+echo "Phone Number: {$telephone}";
+?></textarea></td>
+        </tr>
+        <tr>
+            <td style='text-align:center' colspan='2'>
+                <table class='table  table-bordered table-condensed'>
+                    <thead>
+                        <tr><td>Product Name</td><td>Model</td><td>Quantity</td><td>Unit Price</td><td>Action</td></tr>
+                    </thead>
+                    <tbody>
+<?php 
+foreach ($products as $k => $product) {
+    $Pname = sprintf("<td class='left'><input type='text' value='%s' name='custom_product[%s][name]' class='form-control input-sm'></td>", $product['name'], $k);
+    $Pmodel = sprintf("<td class='left'><input type='text' value='%s' name='custom_product[%s][model]' class='form-control input-sm'></td>", $product['model'], $k);
+    $Pquantity = sprintf("<td class='left'><input type='text' value='%s' name='custom_product[%s][quantity]' class='form-control input-sm'></td>", $product['quantity'], $k);
+    $Pprice = sprintf("<td class='left'><input type='text' value='%s' name='custom_product[%s][price]' class='form-control input-sm'></td>", $product['price'], $k);
+    $Paction = "<td class='right'><a class='btn btn-danger btn-sm' onclick='delProduct(this);'>Delete</a></td>";
+    echo sprintf("<tr class='custom-product'>%s %s %s %s %s</tr>", $Pname, $Pmodel, $Pquantity, $Pprice, $Paction);           
+}
+?>
+<tr><td colspan='5' class='right'><a class='btn btn-success pull-right' onclick='KPAddProduct(this);'>Add</a></td></tr>
+                    </tbody>
+                </table>
+            </td>  
+        </tr>
+        <tr>
+            <td style='text-align:center' colspan='2'>
+                <table class='table table-bordered'>
+                    <thead>
+                        <tr><td>Shipping Name</td><td>Shipping Price</td></tr>
+                    </thead>
+                    <tbody>
+<tr>
+<td class='center'><input type='text' value='Int. Shipping Rate' name='custom_shipping_name' style='width:80%' class='form-control input-sm'></td>
+<td class='center'><input type='text' value='0' name='custom_shipping_price' style='width:80%' class='form-control input-sm'></td>
+</tr>
+                    </tbody>
+                </table>
+            </td>  
+        </tr>        
+   </tbody>
+</table>
+      </form>   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="KPsubmitForm();">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function KPsubmitForm(){
+    $('#customInvoiceForm').submit();
+}
+function KPOpenDialog(){
+    $('#myModal').modal({});
+}
+function KPAddProduct(ele){
+    var index = $('tr.custom-product').length,
+        product_name = '<td class="left"><input type="text" name="custom_product['+index+'][name]" value="" class="form-control input-sm"></td>',
+        product_model = '<td class="left"><input type="text" name="custom_product['+index+'][model]" value="" class="form-control input-sm"></td>',
+        product_quantity = '<td class="left"><input type="text" name="custom_product['+index+'][quantity]" value="1" class="form-control input-sm"></td>',
+        product_price = '<td class="left"><input type="text" name="custom_product['+index+'][price]" value="$0.00" class="form-control input-sm"></td>';
+    var tr = '<tr class="custom-product">' + product_name + product_model + product_quantity + product_price + '<td class="right"><a class="btn btn-danger btn-sm" onclick="delProduct(this);">Delete</a></td></tr>';
+    $(ele).parent().parent().before(tr);        
+}
+function delProduct(ele){
+    $(ele).parent().parent().remove();
+    $("tr.custom-product").each(function(index){
+        var tds = $("input",this);
+        tds.eq(0).attr("name", 'custom_product['+index+'][name]');
+        tds.eq(1).attr("name", 'custom_product['+index+'][model]');
+        tds.eq(2).attr("name", 'custom_product['+index+'][quantity]');
+        tds.eq(3).attr("name", 'custom_product['+index+'][price]');
+    });
+}
+</script>
+           ]]></add>
+        </operation>
+    </file>
+    
+    <file path='admin/controller/sale/order.php'>
+        <operation info="添加store相关信息">
+            <search >
+	        <![CDATA[$order_info = $this->model_sale_order->getOrder($order_id);]]>
+            </search>
+            <add position="after" index="1"><![CDATA[
+                if($order_info){
+                    $this->load->model('setting/setting');
+                    $store_info = $this->model_setting_setting->getSetting('config', $order_info['store_id']);
+                    $data["config_address"] = $store_info["config_address"];
+                    $data["config_telephone"] = $store_info["config_telephone"];
+                    $data["config_email"] = $store_info["config_email"];
+                    $data["customUrl"] = $this->url->link('sale/order/invoice_custom', 'token=' . $this->session->data['token'] . '&order_id=' . $order_id, 'SSL');
+                }
+]]></add>
+        </operation>
+        <operation info="添加invoice_custom函数">
+            <search >
+	        <![CDATA[public function invoice() {]]>
+            </search>
+            <add position="before"><![CDATA[
+            public function invoice_custom(){
+                $this->load->language('sale/order');
+
+		$data['title'] = $this->language->get('text_invoice');
+
+		if ($this->request->server['HTTPS']) {
+			$data['base'] = HTTPS_SERVER;
+		} else {
+			$data['base'] = HTTP_SERVER;
+		}
+
+		$data['direction'] = $this->language->get('direction');
+		$data['language'] = $this->language->get('code');
+
+		$data['text_invoice'] = $this->language->get('text_invoice');
+
+		$data['text_order_id'] = $this->language->get('text_order_id');
+		$data['text_invoice_no'] = $this->language->get('text_invoice_no');
+		$data['text_invoice_date'] = $this->language->get('text_invoice_date');
+		$data['text_date_added'] = $this->language->get('text_date_added');
+
+		$data['text_sender'] = "Sender(发件人):";
+		$data['text_consignee'] = "Consignee(收件人):";
+		$data['text_payment_method'] = $this->language->get('text_payment_method');
+		$data['text_shipping_method'] = $this->language->get('text_shipping_method');
+
+		$data['column_product'] = $this->language->get('column_product');
+		$data['column_model'] = $this->language->get('column_model');
+		$data['column_quantity'] = $this->language->get('column_quantity');
+		$data['column_price'] = $this->language->get('column_price');
+		$data['column_total'] = $this->language->get('column_total');
+		$data['column_comment'] = $this->language->get('column_comment');
+                
+                $data['direction'] = $this->language->get('direction');
+		$data['lang'] = $this->language->get('code');
+
+		$this->load->model('sale/order');
+                
+                $order['order_id'] = isset($this->request->get['order_id']) ? $this->request->get['order_id'] : 0;
+                
+                $order_info = $this->model_sale_order->getOrder($order['order_id']);
+                $order['date_added'] = date($this->language->get('date_format_short'), strtotime($order_info['date_added']));
+                $order['payment_method'] = $order_info['payment_method'];
+                $order['shipping_method'] = $order_info['shipping_method'];
+                
+		//$this->load->model('setting/setting');
+
+		$data['orders'] = array();
+
+		$orders = array();
+
+
+		$custom_store_info = isset($this->request->post['custom_store_info']) ? $this->request->post['custom_store_info'] : "";
+                $custom_sender     = isset($this->request->post['custom_sender']) ? $this->request->post['custom_sender'] : "";
+                $custom_consignee = isset($this->request->post['custom_consignee']) ? $this->request->post['custom_consignee'] : "";
+                $custom_products = isset($this->request->post['custom_product']) ? $this->request->post['custom_product'] : "";
+                $custom_shipping_name = isset($this->request->post['custom_shipping_name']) ? $this->request->post['custom_shipping_name'] : "";
+                $custom_shipping_price = isset($this->request->post['custom_shipping_price']) ? $this->request->post['custom_shipping_price'] : "";
+                
+                $order["store_info"] = str_replace(array("\r\n", "\r", "\n"), '<br />', $custom_store_info);
+                $order["sender"] = str_replace(array("\r\n", "\r", "\n"), '<br />', $custom_sender);
+                $order["consignee"] = str_replace(array("\r\n", "\r", "\n"), '<br />', $custom_consignee);
+                
+                $total_data = $this->model_sale_order->getOrderTotals($order['order_id']);
+                
+
+                $subTotal = 0;
+                foreach($custom_products as &$product){
+                    $price = preg_replace("/[^0-9.,]+/","",$product['price']);
+                    $product_total = floatval($price) * $product["quantity"];
+                    $subTotal += $product_total;
+                    $product['total'] = $this->currency->format($product_total, $order_info['currency_code'], 1); //把订单使用的货币作为默认货币处理
+                }
+                
+                $order["total"] = array();
+                foreach($total_data as $total){
+                    if($total['title'] == 'Sub-Total'){
+                        $total['text'] = $this->currency->format($subTotal, $order_info['currency_code'], 1);
+                        $order["total"][] = $total;
+                    }elseif($total['title'] == 'Total'){
+                        $shipping["title"] = $custom_shipping_name;
+                        $shipping["text"] = $this->currency->format($custom_shipping_price, $order_info['currency_code'], 1);
+                        $order["total"][] = $shipping;
+                        $total['text'] = $this->currency->format($subTotal+$custom_shipping_price, $order_info['currency_code'], 1);
+                        $order["total"][] = $total;
+                    }
+                }
+           
+                $order["product"] = $custom_products;
+                $order["comment"] = nl2br($order_info['comment']);
+                
+                $data["order"] = $order;
+		$template = 'sale/order_invoice_custom.tpl';
+
+                
+                $this->response->setOutput($this->load->view($template, $data));
+}
+]]></add>
+        </operation>
+    </file>
+</modification>

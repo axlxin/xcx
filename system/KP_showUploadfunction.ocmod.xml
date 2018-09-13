@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>KP Show Upload Function</name>
+    <code>kp_show_upload_function</code>
+    <update>2018-07-05</update>
+    <version>2.4.1</version>
+    <author>David</author>
+
+    <file path="catalog/controller/tool/upload.php">
+        <operation info="添加下载方法">
+            <search >
+	        <![CDATA[public function index() {]]>
+            </search>
+            <add position="before"><![CDATA[public function download() {
+		$this->load->model('tool/upload');
+
+		if (isset($this->request->get['code'])) {
+			$code = $this->request->get['code'];
+		} else {
+			$code = 0;
+		}
+
+		$upload_info = $this->model_tool_upload->getUploadByCode($code);
+
+		if ($upload_info) {
+			$file = DIR_UPLOAD . $upload_info['filename'];
+			$mask = basename($upload_info['name']);
+
+			if (!headers_sent()) {
+				if (is_file($file)) {
+					header('Content-Type: application/octet-stream');
+					header('Content-Description: File Transfer');
+					header('Content-Disposition: attachment; filename="' . ($mask ? $mask : basename($file)) . '"');
+					header('Content-Transfer-Encoding: binary');
+					header('Expires: 0');
+					header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+					header('Pragma: public');
+					header('Content-Length: ' . filesize($file));
+
+					readfile($file, 'rb');
+					exit;
+				} else {
+					exit('Error: Could not find file ' . $file . '!');
+				}
+			} else {
+				exit('Error: Headers already sent out!');
+			}
+		} else {
+			$this->load->language('error/not_found');
+
+			$this->document->setTitle($this->language->get('heading_title'));
+
+			$data['heading_title'] = $this->language->get('heading_title');
+
+			$data['text_not_found'] = $this->language->get('text_not_found');
+
+			$data['breadcrumbs'] = array();
+
+			$data['breadcrumbs'][] = array(
+				'text' => $this->language->get('text_home'),
+				'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+			);
+
+			$data['breadcrumbs'][] = array(
+				'text' => $this->language->get('heading_title'),
+				'href' => $this->url->link('error/not_found', 'token=' . $this->session->data['token'], 'SSL')
+			);
+
+			$data['header'] = $this->load->controller('common/header');
+			$data['column_left'] = $this->load->controller('common/column_left');
+			$data['footer'] = $this->load->controller('common/footer');
+
+			$this->response->setOutput($this->load->view('error/not_found.tpl', $data));
+		}
+	}
+
+]]></add>
+        </operation>
+    </file>
+
+
+    <!--<file path="catalog/view/theme/default/template/checkout/cart.tpl">-->
+        <!--<operation   info="显示下载链接">-->
+            <!--<search><![CDATA[<small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>]]></search>-->
+            <!--<add position="replace"><![CDATA[<?php if ($option['type'] != 'file') { ?>-->
+                    <!--&nbsp;<small> - <?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>-->
+                    <!--<?php } else { ?>-->
+                    <!--&nbsp;<small> - <?php echo $option['name']; ?>: <a href="<?php echo $option['href']; ?>"><?php echo $option['value']; ?></a></small>-->
+                    <!--<?php } ?>]]></add>-->
+        <!--</operation>-->
+    <!--</file>-->
+
+    <!--<file path="catalog/view/theme/journal2/template/checkout/cart.tpl">-->
+        <!--<operation   info="显示下载链接">-->
+            <!--<search><![CDATA[<small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>]]></search>-->
+            <!--<add position="replace"><![CDATA[<?php if ($option['type'] != 'file') { ?>-->
+                    <!--&nbsp;<small> - <?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>-->
+                    <!--<?php } else { ?>-->
+                    <!--&nbsp;<small> - <?php echo $option['name']; ?>: <a href="<?php echo $option['href']; ?>"><?php echo $option['value']; ?></a></small>-->
+                    <!--<?php } ?>]]></add>-->
+        <!--</operation>-->
+    <!--</file>-->
+
+    <file path="catalog/view/theme/default/template/account/order_info.tpl">
+        <operation   info="显示下载链接">
+            <search><![CDATA[<small> - <?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>]]></search>
+            <add position="replace"><![CDATA[<?php if ($option['type'] != 'file') { ?>
+                    &nbsp;<small> - <?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
+                    <?php } else { ?>
+                    &nbsp;<small> - <?php echo $option['name']; ?>: <a href="<?php echo $option['href']; ?>"><?php echo $option['value']; ?></a></small>
+                    <?php } ?>]]></add>
+        </operation>
+    </file>
+
+    <file path="catalog/view/theme/journal2/template/account/order_info.tpl">
+        <operation   info="显示下载链接">
+            <search><![CDATA[<small> - <?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>]]></search>
+            <add position="replace"><![CDATA[<?php if ($option['type'] != 'file') { ?>
+                    &nbsp;<small> - <?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
+                    <?php } else { ?>
+                    &nbsp;<small> - <?php echo $option['name']; ?>: <a href="<?php echo $option['href']; ?>"><?php echo $option['value']; ?></a></small>
+                    <?php } ?>]]></add>
+        </operation>
+    </file>
+
+    <!--<file path="catalog/controller/checkout/cart.php">-->
+        <!--<operation   info="取出下载链接">-->
+            <!--<search><![CDATA[if ($option['type'] != 'file') {-->
+						<!--$value = $option['value'];-->
+					<!--} else {-->
+						<!--$upload_info = $this->model_tool_upload->getUploadByCode($option['value']);-->
+
+						<!--if ($upload_info) {-->
+							<!--$value = $upload_info['name'];-->
+						<!--} else {-->
+							<!--$value = '';-->
+						<!--}-->
+					<!--}-->
+
+					<!--$option_data[] = array(-->
+						<!--'name'  => $option['name'],-->
+						 <!--'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)-->
+
+					<!--);]]></search>-->
+            <!--<add position="replace"><![CDATA[if ($option['type'] != 'file') {-->
+											<!--$option_data[] = array(-->
+												<!--'name'  => $option['name'],-->
+												<!--'value' => $option['value'],-->
+												<!--'type'  => $option['type']-->
+											<!--);-->
+					<!--} else {-->
+						<!--$upload_info = $this->model_tool_upload->getUploadByCode($option['value']);-->
+
+						<!--if ($upload_info) {-->
+							<!--$option_data[] = array(-->
+								<!--'name'  => $option['name'],-->
+								<!--'value' => $upload_info['name'],-->
+								<!--'type'  => $option['type'],-->
+								<!--'href'  => $this->url->link('tool/upload/download', 'token=' . $this->session->data['token'] . '&code=' . $upload_info['code'], 'SSL')-->
+							<!--);-->
+						<!--}-->
+					<!--}]]></add>-->
+        <!--</operation>-->
+    <!--</file>-->
+
+    
+
+    
+
+    <file path ="catalog/controller/account/order.php">
+        <operation info="显示上传文件的全名">
+            <search >
+	        <![CDATA[foreach ($options as $option) {]]>
+            </search>
+            <add position="replace"  offset="19"><![CDATA[
+foreach ($options as $option) {
+                    if ($option['type'] != 'file') {
+                        $option_data[] = array(
+												'name'  => $option['name'],
+												'value' => $option['value'],
+												'type'  => $option['type']
+											);
+                    } else {
+                        $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+
+                        if ($upload_info) {
+							$option_data[] = array(
+								'name'  => $option['name'],
+								'value' => $upload_info['name'],
+								'type'  => $option['type'],
+								'href'  => $this->url->link('tool/upload/download', 'token='  . '&code=' . $upload_info['code'], 'SSL')
+							);
+						}
+                    }
+                    
+                }
+]]></add>
+        </operation>
+    </file>
+
+    
+
+    
+
+
+    
+
+</modification>

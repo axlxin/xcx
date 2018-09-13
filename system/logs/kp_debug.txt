@@ -1,0 +1,226 @@
+2016-10-12 8:19:36 - Array
+(
+    [Enabled] => yes
+    [EmailType] => form
+    [CronNotification] => yes
+    [BCC] => yes
+    [ReviewMail] => Array
+        (
+            [1] => Array
+                (
+                    [id] => 1
+                    [Enabled] => yes
+                    [Name] => send email for review
+                    [OrderStatusID] => 9
+                    [CustomerGroupID] => send_all
+                    [Delay] => 0
+                    [DateType] => date_modified
+                    [ReviewType] => per_purchase
+                    [DisplayImages] => no
+                    [DiscountType] => F
+                    [Discount] => 1
+                    [TotalAmount] => 1
+                    [DiscountValidity] => 90
+                    [DiscountMailEnabled] => yes
+                    [Subject] => Array
+                        (
+                            [1] => Smart-Prototyping - Please Review Your Order #{order_id} 
+                        )
+
+                    [Message] => Array
+                        (
+                            [1] =>                                                                                                                                        ​Hello {first_name} {last_name},&lt;br&gt;&lt;br&gt;Recently you've purchased {order_products} from us, order number &lt;span class=&quot;help&quot;&gt;{order_id}&lt;/span&gt;. What are your thoughts about the product? We'd love to hear your feedback.&lt;br&gt;&lt;br&gt;{review_form}&lt;br&gt;&lt;span class=&quot;help&quot;&gt;{reviewmail_link}&lt;/span&gt;&lt;br&gt;Thanks for your time, A &lt;span style=&quot;font-weight: bold;&quot;&gt;US$1 coupon code&lt;/span&gt; is all yours- we'll send it via email soon. We really appreciate your feedback and we are looking forward to your visiting again.&lt;br&gt;&lt;br&gt;Kind Regards,&lt;br&gt;Smart-Prototyping Team.                                                                                                                                       
+                        )
+
+                    [SubjectDiscount] => Array
+                        (
+                            [1] => Smart-Prototyping - Coupon code for reviewing order #{order_id}
+                        )
+
+                    [MessageDiscount] => Array
+                        (
+                            [1] => Hello {first_name} {last_name},&lt;br&gt;&lt;br&gt;Thank you for your review!&lt;br&gt;We would like to give you a special discount code &quot;&lt;span style=&quot;font-weight: bold;&quot;&gt;{discount_code}&lt;/span&gt;&quot; which gives you &lt;span style=&quot;font-weight: bold;&quot;&gt;US${discount_value} OFF&lt;/span&gt; your next order. This promotion is uniquely yours and expires on &lt;span style=&quot;font-weight: bold;&quot;&gt;{date_end}&lt;/span&gt;.&lt;br&gt;If you're looking for more discounts, please check out our website on how to get &lt;a href=&quot;http://smart-prototyping.com/index.php?route=information/information&amp;information_id=7&quot;&gt;free store credit&lt;/a&gt;.&lt;br&gt;We hope to see you soon.&lt;br&gt;&lt;br&gt;Kind Regards,&lt;br&gt;Smart-prototyping Team.&lt;br&gt;
+                        )
+
+                    [DateFormat] => m-d-Y
+                )
+
+        )
+
+    [LicensedOn] => 1463450258
+    [License] => Array
+        (
+            [productTitle] => OrderReviews - Email Clients to Rate and Review Products
+            [productId] => AL1FPBHBHW
+            [licenseTitle] => Single-domain license with 1 year Premium Support and Updates
+            [licenseCode] => VZOVDJ-HP1JFR-BS4HVJ-8FUVZ9-EBRN6D
+            [licensePurchaseDate] => 2016-05-16 10:55:02
+            [licenseExpireDate] => 2017-05-16 10:55:02
+            [licenseExpireDateTimestamp] => 1494921302
+            [licenseDomainsUsed] => Array
+                (
+                    [0] => smart-prototyping.com
+                )
+
+            [customerName] => Lech Alexander
+            [customerEmail] => alex@noa-labs.com
+            [status] => Active
+            [maxDomains] => 1
+            [error] => 
+            [licensedOn] => 1463450258
+        )
+
+)
+
+2016-10-12 8:21:41 - Array
+(
+    [Enabled] => yes
+    [EmailType] => form
+    [CronNotification] => yes
+    [BCC] => yes
+    [ReviewMail] => Array
+        (
+            [1] => Array
+                (
+                    [id] => 1
+                    [Enabled] => yes
+                    [Name] => send email for review
+                    [OrderStatusID] => 9
+                    [CustomerGroupID] => send_all
+                    [Delay] => 0
+                    [DateType] => date_modified
+                    [ReviewType] => per_purchase
+                    [DisplayImages] => no
+                    [DiscountType] => F
+                    [Discount] => 1
+                    [TotalAmount] => 1
+                    [DiscountValidity] => 90
+                    [DiscountMailEnabled] => yes
+                    [Subject] => Array
+                        (
+                            [1] => Smart-Prototyping - Please Review Your Order #{order_id} 
+                        )
+
+                    [Message] => Array
+                        (
+                            [1] =>                                                                                                                                        ​Hello {first_name} {last_name},&lt;br&gt;&lt;br&gt;Recently you've purchased {order_products} from us, order number &lt;span class=&quot;help&quot;&gt;{order_id}&lt;/span&gt;. What are your thoughts about the product? We'd love to hear your feedback.&lt;br&gt;&lt;br&gt;{review_form}&lt;br&gt;&lt;span class=&quot;help&quot;&gt;{reviewmail_link}&lt;/span&gt;&lt;br&gt;Thanks for your time, A &lt;span style=&quot;font-weight: bold;&quot;&gt;US$1 coupon code&lt;/span&gt; is all yours- we'll send it via email soon. We really appreciate your feedback and we are looking forward to your visiting again.&lt;br&gt;&lt;br&gt;Kind Regards,&lt;br&gt;Smart-Prototyping Team.                                                                                                                                       
+                        )
+
+                    [SubjectDiscount] => Array
+                        (
+                            [1] => Smart-Prototyping - Coupon code for reviewing order #{order_id}
+                        )
+
+                    [MessageDiscount] => Array
+                        (
+                            [1] => Hello {first_name} {last_name},&lt;br&gt;&lt;br&gt;Thank you for your review!&lt;br&gt;We would like to give you a special discount code &quot;&lt;span style=&quot;font-weight: bold;&quot;&gt;{discount_code}&lt;/span&gt;&quot; which gives you &lt;span style=&quot;font-weight: bold;&quot;&gt;US${discount_value} OFF&lt;/span&gt; your next order. This promotion is uniquely yours and expires on &lt;span style=&quot;font-weight: bold;&quot;&gt;{date_end}&lt;/span&gt;.&lt;br&gt;If you're looking for more discounts, please check out our website on how to get &lt;a href=&quot;http://smart-prototyping.com/index.php?route=information/information&amp;information_id=7&quot;&gt;free store credit&lt;/a&gt;.&lt;br&gt;We hope to see you soon.&lt;br&gt;&lt;br&gt;Kind Regards,&lt;br&gt;Smart-prototyping Team.&lt;br&gt;
+                        )
+
+                    [DateFormat] => m-d-Y
+                )
+
+        )
+
+    [LicensedOn] => 1463450258
+    [License] => Array
+        (
+            [productTitle] => OrderReviews - Email Clients to Rate and Review Products
+            [productId] => AL1FPBHBHW
+            [licenseTitle] => Single-domain license with 1 year Premium Support and Updates
+            [licenseCode] => VZOVDJ-HP1JFR-BS4HVJ-8FUVZ9-EBRN6D
+            [licensePurchaseDate] => 2016-05-16 10:55:02
+            [licenseExpireDate] => 2017-05-16 10:55:02
+            [licenseExpireDateTimestamp] => 1494921302
+            [licenseDomainsUsed] => Array
+                (
+                    [0] => smart-prototyping.com
+                )
+
+            [customerName] => Lech Alexander
+            [customerEmail] => alex@noa-labs.com
+            [status] => Active
+            [maxDomains] => 1
+            [error] => 
+            [licensedOn] => 1463450258
+        )
+
+)
+
+2016-10-12 8:35:14 - Array
+(
+    [Enabled] => yes
+    [EmailType] => form
+    [CronNotification] => yes
+    [BCC] => yes
+    [ReviewMail] => Array
+        (
+            [1] => Array
+                (
+                    [id] => 1
+                    [Enabled] => yes
+                    [Name] => send email for review
+                    [OrderStatusID] => 9
+                    [CustomerGroupID] => send_all
+                    [Delay] => 0
+                    [DateType] => date_modified
+                    [ReviewType] => per_purchase
+                    [DisplayImages] => no
+                    [DiscountType] => F
+                    [Discount] => 1
+                    [TotalAmount] => 1
+                    [DiscountValidity] => 90
+                    [DiscountMailEnabled] => yes
+                    [Subject] => Array
+                        (
+                            [1] => Smart-Prototyping - Please Review Your Order #{order_id} 
+                        )
+
+                    [Message] => Array
+                        (
+                            [1] =>                                                                                                                                        ​Hello {first_name} {last_name},&lt;br&gt;&lt;br&gt;Recently you've purchased {order_products} from us, order number &lt;span class=&quot;help&quot;&gt;{order_id}&lt;/span&gt;. What are your thoughts about the product? We'd love to hear your feedback.&lt;br&gt;&lt;br&gt;{review_form}&lt;br&gt;&lt;span class=&quot;help&quot;&gt;{reviewmail_link}&lt;/span&gt;&lt;br&gt;Thanks for your time, A &lt;span style=&quot;font-weight: bold;&quot;&gt;US$1 coupon code&lt;/span&gt; is all yours- we'll send it via email soon. We really appreciate your feedback and we are looking forward to your visiting again.&lt;br&gt;&lt;br&gt;Kind Regards,&lt;br&gt;Smart-Prototyping Team.                                                                                                                                       
+                        )
+
+                    [SubjectDiscount] => Array
+                        (
+                            [1] => Smart-Prototyping - Coupon code for reviewing order #{order_id}
+                        )
+
+                    [MessageDiscount] => Array
+                        (
+                            [1] => Hello {first_name} {last_name},&lt;br&gt;&lt;br&gt;Thank you for your review!&lt;br&gt;We would like to give you a special discount code &quot;&lt;span style=&quot;font-weight: bold;&quot;&gt;{discount_code}&lt;/span&gt;&quot; which gives you &lt;span style=&quot;font-weight: bold;&quot;&gt;US${discount_value} OFF&lt;/span&gt; your next order. This promotion is uniquely yours and expires on &lt;span style=&quot;font-weight: bold;&quot;&gt;{date_end}&lt;/span&gt;.&lt;br&gt;If you're looking for more discounts, please check out our website on how to get &lt;a href=&quot;http://smart-prototyping.com/index.php?route=information/information&amp;information_id=7&quot;&gt;free store credit&lt;/a&gt;.&lt;br&gt;We hope to see you soon.&lt;br&gt;&lt;br&gt;Kind Regards,&lt;br&gt;Smart-prototyping Team.&lt;br&gt;
+                        )
+
+                    [DateFormat] => m-d-Y
+                )
+
+        )
+
+    [LicensedOn] => 1463450258
+    [License] => Array
+        (
+            [productTitle] => OrderReviews - Email Clients to Rate and Review Products
+            [productId] => AL1FPBHBHW
+            [licenseTitle] => Single-domain license with 1 year Premium Support and Updates
+            [licenseCode] => VZOVDJ-HP1JFR-BS4HVJ-8FUVZ9-EBRN6D
+            [licensePurchaseDate] => 2016-05-16 10:55:02
+            [licenseExpireDate] => 2017-05-16 10:55:02
+            [licenseExpireDateTimestamp] => 1494921302
+            [licenseDomainsUsed] => Array
+                (
+                    [0] => smart-prototyping.com
+                )
+
+            [customerName] => Lech Alexander
+            [customerEmail] => alex@noa-labs.com
+            [status] => Active
+            [maxDomains] => 1
+            [error] => 
+            [licensedOn] => 1463450258
+        )
+
+)
+
+2016-10-12 8:35:14 - Array
+(
+)
+

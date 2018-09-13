@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>KP Price Zero For journal2 theme</name>
+    <code>kp_price_zero</code>
+    <update>2016-11-23</update>
+    <version>1.0.0</version>
+    <author>Kevin Pan</author>
+
+    <file path="catalog/controller/product/product.php">
+        <operation info="输出不带货币符号的商品价格">
+            <search >
+	        <![CDATA[$data['price'] = false;]]>
+            </search>
+            <add position="after" offset="1"><![CDATA[
+$data['price_zero'] = $product_info['price']==0 ? 1 : 0;
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/view/theme/journal2/template/product/product.tpl">
+        <operation info="价格为0时替换原有的价格显示方式">
+            <search >
+	        <![CDATA[<?php if ($price) { ?>]]>
+            </search>
+            <add position="before" ><![CDATA[
+<?php if($price_zero){$price = false;} ?>
+]]></add>
+        </operation>
+        <operation info="价格为0时，不显示model信息">
+            <search >
+	        <![CDATA[<li class="p-model"><?php echo $text_model; ?> <span class="p-model" itemprop="model"><?php echo $model; ?></span></li>]]>
+            </search>
+            <add position="replace" ><![CDATA[
+<?php if(!$price_zero){ ?>
+    <li class="p-model"><?php echo $text_model; ?> <span class="p-model" itemprop="model"><?php echo $model; ?></span></li>
+<?php } ?>
+]]></add>
+        </operation>
+        
+        <operation info="价格为0时，不显示reward等信息">
+            <search >
+	        <![CDATA[<li class="p-rewards"><?php echo $text_reward; ?> <span class="p-rewards"><?php echo $reward; ?></span></li>]]>
+            </search>
+            <add position="replace" ><![CDATA[
+<?php if(!$price_zero){ ?>
+    <li class="p-rewards"><?php echo $text_reward; ?> <span class="p-rewards"><?php echo $reward; ?></span></li>
+<?php } ?>
+]]></add>
+        </operation>
+        
+        <operation info="价格为0时，不显示stock等信息">
+            <search >
+	        <![CDATA[<li class="p-stock"><?php echo $text_stock; ?> <span class="journal-stock <?php echo isset($stock_status) ? $stock_status : ''; ?>"><?php echo $stock; ?></span></li>]]>
+            </search>
+            <add position="replace" ><![CDATA[
+<?php if(!$price_zero){ ?>
+    <li class="p-stock"><?php echo $text_stock; ?> <span class="journal-stock <?php echo isset($stock_status) ? $stock_status : ''; ?>"><?php echo $stock; ?></span></li>
+<?php } ?>
+]]></add>
+        </operation>
+        
+        <operation info="价格为0时，不显示add to cart">
+            <search >
+	        <![CDATA[<div class="form-group cart <?php echo isset($labels) && is_array($labels) && isset($labels['outofstock']) ? 'outofstock' : ''; ?>">]]>
+            </search>
+            <add position="replace" ><![CDATA[
+<?php if($price_zero){ ?>
+    <div class="form-group">
+        <!-- <a style="width:200px" class="button" href="index.php?route=product/product&product_id=<?php echo $product_id; ?>" target="_blank">Contact&nbsp;&nbsp;Us</a> -->
+        <a style="width:200px" class="button" href="mailto:shop@smart-prototyping.com?subject=Enquiry%20Prototype&body=Dear%20Smart%20Prototyping%20Team%2C%0A%0AI%20need%3A%0A1.%20...%0A2.%20...%0A3.%20...%0A%0APlease%20find%20attached%20all%20relevant%20files%20and%20send%20me%20a%20quotation%20as%20soon%20as%20possible.%0A%0AThanks%2C%0A%3CYour%20Customer%3E" >Contact&nbsp;&nbsp;Us</a>
+    </div>
+    <div class="form-group cart <?php echo isset($labels) && is_array($labels) && isset($labels['outofstock']) ? 'outofstock' : ''; ?>" style="display:none">
+<?php }else{ ?>
+    <div class="form-group cart <?php echo isset($labels) && is_array($labels) && isset($labels['outofstock']) ? 'outofstock' : ''; ?>">
+<?php } ?>
+]]></add>
+        </operation>
+        
+        <operation info="价格为0时，不显示wishlist-compare信息">
+            <search >
+	        <![CDATA[<div class="wishlist-compare">]]>
+            </search>
+            <add position="replace" ><![CDATA[
+<?php if($price_zero){ ?>
+    <div class="wishlist-compare" style="display:none">
+<?php }else{ ?>
+    <div class="wishlist-compare">       
+<?php } ?>
+]]></add>
+        </operation>
+        
+        <operation info="价格为0时，不显示wishlist-compare信息">
+            <search index='0' >
+	        <![CDATA[<div class="rating">]]>
+            </search>
+            <add position="replace" ><![CDATA[
+<?php if($price_zero){ ?>
+    <div class="rating" style="display:none">
+<?php }else{ ?>
+    <div class="rating">
+<?php } ?>
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/product/category.php">
+        <operation info="输出不带货币符号的商品价格">
+            <search >
+	        <![CDATA['price'       => $price,]]>
+            </search>
+            <add position="after" ><![CDATA[
+'price_zero'       => $result['price']==0 ? 1 : 0,
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/view/theme/journal2/template/product/category.tpl">
+        <operation info="分类页中，更改价格为0的商品的按钮，不显示add to cart">
+            <search >
+	        <![CDATA[<a onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button hint--top" data-hint="<?php echo $button_cart; ?>"><i class="button-left-icon"></i><span class="button-cart-text"><?php echo $button_cart; ?></span><i class="button-right-icon"></i></a>]]>
+            </search>
+            <add position="replace" ><![CDATA[
+<?php if($product['price_zero']){ ?>
+    <a style="width:120px;height:35px" class="button hint--top" href="index.php?route=product/product&product_id=<?php echo $product['product_id']; ?>" target="_blank">Contact&nbsp;&nbsp;Us</a>
+<?php }else{ ?>
+    <a style="height:35px" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button hint--top" data-hint="<?php echo $button_cart; ?>"><i class="button-left-icon"></i><span class="button-cart-text"><?php echo $button_cart; ?></span><i class="button-right-icon"></i></a>
+<?php } ?>
+]]></add>
+        </operation>
+        
+        <operation info="分类页中，更改价格为0的商品的按钮，不显示wishlist和compare">
+            <search >
+	        <![CDATA[<div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>]]>
+            </search>
+            <add position="replace" offset='1'><![CDATA[
+<?php if($product['price_zero']){ ?>
+    <div class="wishlist" style="opacity:0"><a onclick="javascript:void(0);" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>
+    <div class="compare" style="opacity:0"><a onclick="javascript:void(0);" class="hint--top" data-hint="<?php echo $button_compare; ?>"><i class="compare-icon"></i><span class="button-compare-text"><?php echo $button_compare;?></span></a></div>
+<?php }else{ ?>
+    <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>
+    <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_compare; ?>"><i class="compare-icon"></i><span class="button-compare-text"><?php echo $button_compare;?></span></a></div>
+<?php } ?>
+]]></add>
+        </operation>
+        
+        <operation info="分类页中，更改价格为0的商品的显示方式">
+            <search >
+	        <![CDATA[<?php if ($product['price']) { ?>]]>
+            </search>
+            <add position="before" ><![CDATA[
+<?php if($product['price_zero']){
+    echo '<p class="price" style="opacity:0">none</p>';
+    $product['price'] = false;
+ } ?>
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/module/bestseller.php">
+        <operation info="输出不带货币符号的商品价格">
+            <search >
+	        <![CDATA['price'       => $price,]]>
+            </search>
+            <add position="after" ><![CDATA[
+'price_zero'       => $result['price']==0 ? 1 : 0,
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/view/theme/journal2/template/module/bestseller.tpl">
+        <operation info="bestseller页中，更改价格为0的商品的显示方式">
+            <search >
+	        <![CDATA[<?php if ($product['price']) { ?>]]>
+            </search>
+            <add position="before" ><![CDATA[
+<?php if($product['price_zero']){
+    echo '<p class="price" style="opacity:0">none</p>';
+    $product['price'] = false;
+ }else{echo "<!-- {$product['price_zero']};-->";} ?>
+]]></add>
+        </operation>
+        <operation info="bestseller页中，更改价格为0的商品的按钮，不显示wishlist和compare">
+            <search >
+	        <![CDATA[<div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>]]>
+            </search>
+            <add position="replace" offset='1'><![CDATA[
+<?php if($product['price_zero']){ ?>
+    <div class="wishlist" style="opacity:0"><a onclick="javascript:void(0);" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>
+    <div class="compare" style="opacity:0"><a onclick="javascript:void(0);" class="hint--top" data-hint="<?php echo $button_compare; ?>"><i class="compare-icon"></i><span class="button-compare-text"><?php echo $button_compare;?></span></a></div>
+<?php }else{ ?>
+    <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>
+    <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_compare; ?>"><i class="compare-icon"></i><span class="button-compare-text"><?php echo $button_compare;?></span></a></div>
+<?php } ?>
+]]></add>
+        </operation>
+        <operation info="bestseller页中，更改价格为0的商品的按钮，不显示add to cart">
+            <search >
+	        <![CDATA[<a onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button hint--top" data-hint="<?php echo $button_cart; ?>"><i class="button-left-icon"></i><span class="button-cart-text"><?php echo $button_cart; ?></span><i class="button-right-icon"></i></a>]]>
+            </search>
+            <add position="replace" ><![CDATA[
+<?php if($product['price_zero']){ ?>
+    <a style="width:120px;height:35px" class="button hint--top" href="index.php?route=product/product&product_id=<?php echo $product['product_id']; ?>" target="_blank">Contact&nbsp;&nbsp;Us</a>
+<?php }else{ ?>
+    <a style="height:35px" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button hint--top" data-hint="<?php echo $button_cart; ?>"><i class="button-left-icon"></i><span class="button-cart-text"><?php echo $button_cart; ?></span><i class="button-right-icon"></i></a>
+<?php } ?>
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/module/special.php">
+        <operation info="输出不带货币符号的商品价格">
+            <search >
+	        <![CDATA['price'       => $price,]]>
+            </search>
+            <add position="after" ><![CDATA[
+'price_zero'       => $result['price']==0 ? 1 : 0,
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/view/theme/journal2/template/module/special.tpl">
+        <operation info="bestseller页中，更改价格为0的商品的显示方式">
+            <search >
+	        <![CDATA[<?php if ($product['price']) { ?>]]>
+            </search>
+            <add position="before" ><![CDATA[
+<?php if($product['price_zero']){
+    echo '<p class="price" style="opacity:0">none</p>';
+    $product['price'] = false;
+ } ?>
+]]></add>
+        </operation>
+        <operation info="bestseller页中，更改价格为0的商品的按钮，不显示wishlist和compare">
+            <search >
+	        <![CDATA[<div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>]]>
+            </search>
+            <add position="replace" offset='1'><![CDATA[
+<?php if($product['price_zero']){ ?>
+    <div class="wishlist" style="opacity:0"><a onclick="javascript:void(0);" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>
+    <div class="compare" style="opacity:0"><a onclick="javascript:void(0);" class="hint--top" data-hint="<?php echo $button_compare; ?>"><i class="compare-icon"></i><span class="button-compare-text"><?php echo $button_compare;?></span></a></div>
+<?php }else{ ?>
+    <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>
+    <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_compare; ?>"><i class="compare-icon"></i><span class="button-compare-text"><?php echo $button_compare;?></span></a></div>
+<?php } ?>
+]]></add>
+        </operation>
+        <operation info="bestseller页中，更改价格为0的商品的按钮，不显示add to cart">
+            <search >
+	        <![CDATA[<a onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button hint--top" data-hint="<?php echo $button_cart; ?>"><i class="button-left-icon"></i><span class="button-cart-text"><?php echo $button_cart; ?></span><i class="button-right-icon"></i></a>]]>
+            </search>
+            <add position="replace" ><![CDATA[
+<?php if($product['price_zero']){ ?>
+    <a style="width:120px;height:35px" class="button hint--top" href="index.php?route=product/product&product_id=<?php echo $product['product_id']; ?>" target="_blank">Contact&nbsp;&nbsp;Us</a>
+<?php }else{ ?>
+    <a style="height:35px" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button hint--top" data-hint="<?php echo $button_cart; ?>"><i class="button-left-icon"></i><span class="button-cart-text"><?php echo $button_cart; ?></span><i class="button-right-icon"></i></a>
+<?php } ?>
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/module/latest.php">
+        <operation info="输出不带货币符号的商品价格">
+            <search >
+	        <![CDATA['price'       => $price,]]>
+            </search>
+            <add position="after" ><![CDATA[
+'price_zero'       => $result['price']==0 ? 1 : 0,
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/view/theme/journal2/template/module/latest.tpl">
+        <operation info="bestseller页中，更改价格为0的商品的显示方式">
+            <search >
+	        <![CDATA[<?php if ($product['price']) { ?>]]>
+            </search>
+            <add position="before" ><![CDATA[
+<?php if($product['price_zero']){
+    echo '<p class="price" style="opacity:0">none</p>';
+    $product['price'] = false;
+ } ?>
+]]></add>
+        </operation>
+        <operation info="bestseller页中，更改价格为0的商品的按钮，不显示wishlist和compare">
+            <search >
+	        <![CDATA[<div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>]]>
+            </search>
+            <add position="replace" offset='1'><![CDATA[
+<?php if($product['price_zero']){ ?>
+    <div class="wishlist" style="opacity:0"><a onclick="javascript:void(0);" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>
+    <div class="compare" style="opacity:0"><a onclick="javascript:void(0);" class="hint--top" data-hint="<?php echo $button_compare; ?>"><i class="compare-icon"></i><span class="button-compare-text"><?php echo $button_compare;?></span></a></div>
+<?php }else{ ?>
+    <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>
+    <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_compare; ?>"><i class="compare-icon"></i><span class="button-compare-text"><?php echo $button_compare;?></span></a></div>
+<?php } ?>
+]]></add>
+        </operation>
+        <operation info="bestseller页中，更改价格为0的商品的按钮，不显示add to cart">
+            <search >
+	        <![CDATA[<a onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button hint--top" data-hint="<?php echo $button_cart; ?>"><i class="button-left-icon"></i><span class="button-cart-text"><?php echo $button_cart; ?></span><i class="button-right-icon"></i></a>]]>
+            </search>
+            <add position="replace" ><![CDATA[
+<?php if($product['price_zero']){ ?>
+    <a style="width:120px;height:35px" class="button hint--top" href="index.php?route=product/product&product_id=<?php echo $product['product_id']; ?>" target="_blank">Contact&nbsp;&nbsp;Us</a>
+<?php }else{ ?>
+    <a style="height:35px" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button hint--top" data-hint="<?php echo $button_cart; ?>"><i class="button-left-icon"></i><span class="button-cart-text"><?php echo $button_cart; ?></span><i class="button-right-icon"></i></a>
+<?php } ?>
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/module/journal2_custom_sections.php">
+        <operation info="custom section输出特殊变量">
+            <search >
+	        <![CDATA['price'         => $price,]]>
+            </search>
+            <add position="after" ><![CDATA[
+'price_zero'       => $product['price']==0 ? 1 : 0,
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/view/theme/journal2/template/journal2/module/custom_sections_product.tpl">
+        <operation info="custom section页中，更改价格为0的商品的显示方式">
+            <search >
+	        <![CDATA[<?php if ($product['price']) { ?>]]>
+            </search>
+            <add position="before" ><![CDATA[
+<?php if($product['price_zero']){
+    echo '<p class="price" style="opacity:0">none</p>';
+    $product['price'] = false;
+ } ?>
+]]></add>
+        </operation>
+        <operation info="更改价格为0的商品的按钮，不显示add to cart">
+            <search >
+	        <![CDATA[<a onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button hint--top" data-hint="<?php echo $button_cart; ?>"><i class="button-left-icon"></i><span class="button-cart-text"><?php echo $button_cart; ?></span><i class="button-right-icon"></i></a>]]>
+            </search>
+            <add position="replace" ><![CDATA[
+<?php if($product['price_zero']){ ?>
+    <a style="width:120px;height:35px" class="button hint--top" href="index.php?route=product/product&product_id=<?php echo $product['product_id']; ?>" target="_blank">Contact&nbsp;&nbsp;Us</a>
+<?php }else{ ?>
+    <a style="height:35px" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button hint--top" data-hint="<?php echo $button_cart; ?>"><i class="button-left-icon"></i><span class="button-cart-text"><?php echo $button_cart; ?></span><i class="button-right-icon"></i></a>
+<?php } ?>
+]]></add>
+        </operation>
+        <operation info="更改价格为0的商品的按钮，不显示wishlist和compare">
+            <search >
+	        <![CDATA[<div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>]]>
+            </search>
+            <add position="replace" offset='1'><![CDATA[
+<?php if($product['price_zero']){ ?>
+    <div class="wishlist" style="opacity:0"><a onclick="javascript:void(0);" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>
+    <div class="compare" style="opacity:0"><a onclick="javascript:void(0);" class="hint--top" data-hint="<?php echo $button_compare; ?>"><i class="compare-icon"></i><span class="button-compare-text"><?php echo $button_compare;?></span></a></div>
+<?php }else{ ?>
+    <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_wishlist; ?>"><i class="wishlist-icon"></i><span class="button-wishlist-text"><?php echo $button_wishlist;?></span></a></div>
+    <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');" class="hint--top" data-hint="<?php echo $button_compare; ?>"><i class="compare-icon"></i><span class="button-compare-text"><?php echo $button_compare;?></span></a></div>
+<?php } ?>
+]]></add>
+        </operation>
+    </file>
+</modification>

@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>KP Order Exporter</name>
+    <code>kp_order_exporter</code>
+    <version>2.4.1</version>
+    <author>Kevin Pan</author>
+
+    <file path="admin/view/template/sale/order_list.tpl">
+        <operation info="添加按钮">
+            <search >
+	        <![CDATA[<button type="submit" id="button-shipping" form="form-order" formaction="<?php echo $shipping; ?>" data-toggle="tooltip" title="<?php echo $button_shipping_print; ?>" class="btn btn-info"><i class="fa fa-truck"></i></button>]]>
+            </search>
+            <add position="before"><![CDATA[
+<button type="button"  data-toggle="tooltip" title="导出订单" class="btn btn-info" onclick="KPOpenDialog();">导出订单</button>
+]]></add>
+        </operation>
+
+        <operation info="添加dialog">
+            <search >
+	        <![CDATA[<?php echo $footer; ?>]]>
+            </search>
+            <add position="after"><![CDATA[
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Please select the date range of orders：</h4>
+      </div>
+      <div class="modal-body">
+
+          <form id='exporterForm' action="<?php echo HTTP_CATALOG ?>order_exporter/index.php" method="post" target='_blank'>
+<?php
+$seed = 'hhs823(^3Y';
+$date = date('ymdh');
+$export_token = md5($date . $seed);
+echo "<input type='hidden' name='export_token' value='$export_token'>";
+?>
+
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                        <label class="control-label" for="input-date-start">Start Date</label>
+                        <div class="input-group kpdate">
+                          <input type="text" name="date_start" value="" data-date-format="YYYY-MM-DD" id="input-date-start" class="form-control" />
+                          <span class="input-group-btn">
+                          <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+                          </span></div>
+                      </div>
+                  </div>
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <label class="control-label" for="input-date-end">End Date</label>
+                        <div class="input-group kpdate">
+                          <input type="text" name="date_end" value=""  data-date-format="YYYY-MM-DD" id="input-date-end" class="form-control" />
+                          <span class="input-group-btn">
+                          <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+                          </span></div>
+                     </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="KPsubmitForm();">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function KPsubmitForm(){
+    $('#exporterForm').submit();
+}
+function KPOpenDialog(){
+    $('#myModal').modal({});
+    $('#myModal .kpdate').datetimepicker({pickTime: false});
+}
+
+$(document).ready(function(){
+    $('#myModal').on('hidden.bs.modal', function (e) {
+        $('#myModal .kpdate').datetimepicker('remove');
+    })
+})
+
+</script>
+           ]]></add>
+        </operation>
+    </file>
+
+    <!--  Written By Joy, Product Supplier  -->
+    <file path="admin/controller/catalog/product.php">
+        <operation info="Add new tab: [Supplier]">
+            <search>
+            <![CDATA[
+                $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+            ]]>
+            </search>
+            <add position="before"><![CDATA[
+
+                if ($this->request->get['route'] === 'catalog/product/edit') {
+                    $querySupplier = $this->model_catalog_product->getProductSupplier($this->request->get['product_id']);
+
+                    // TODO: 数据兼容，旧数据没有此数据项，显示为空
+                    $supplier_cost = isset($querySupplier['supplier_cost']) ? $querySupplier['supplier_cost'] : '';
+                    $purchase_link = isset($querySupplier['purchase_link']) ? $querySupplier['purchase_link'] : '';
+                    $supplier_remarks = isset($querySupplier['supplier_remarks']) ? $querySupplier['supplier_remarks'] : '';
+                } else {
+                    $querySupplier = '';
+
+                    $supplier_cost = '';
+                    $purchase_link = '';
+                    $supplier_remarks = '';
+                }
+
+                $data['debug_supplier'] = $querySupplier;
+
+        		$data['supplier_value_supplier_cost'] = $supplier_cost;
+                $data['supplier_value_purchase_link'] = $purchase_link;
+                $data['supplier_value_supplier_remarks'] = $supplier_remarks;
+
+            ]]></add>
+        </operation>
+    </file>
+
+    <file path="admin/model/catalog/product.php">
+        <operation info="Rewrite model@product:add">
+            <search>
+            <![CDATA[
+        $product_id = $this->db->getLastId();
+            ]]>
+            </search>
+            <add position="after"><![CDATA[
+                $supplier_cost = isset($data['supplier_cost']) ? $data['supplier_cost'] : '';
+                $purchase_link = isset($data['purchase_link']) ? $data['purchase_link'] : '';
+                $supplier_remarks = isset($data['supplier_remarks']) ? $data['supplier_remarks'] : '';
+
+                $exec_table = DB_PREFIX . "supplier";
+                $exec = <<<SQL
+INSERT INTO `$exec_table` (`product_id`, `supplier_cost`, `purchase_link`, `supplier_remarks`)
+VALUES ('$product_id', '$supplier_cost', '$purchase_link', '$supplier_remarks');
+SQL;
+                $this->db->query($exec);
+            ]]></add>
+        </operation>
+
+        <operation info="Rewrite model@product:edit">
+            <search>
+            <![CDATA[
+    public function getProductDescriptions($product_id) {
+            ]]>
+            </search>
+            <add position="before"><![CDATA[
+    public function getProductSupplier($product_id) {
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "supplier WHERE product_id = '" . (int)$product_id . "'");
+        $supplier = $query->rows;
+        return count($supplier) > 0 ? $supplier[0] : null;
+    }
+            ]]></add>
+        </operation>
+
+        <operation info="Rewrite model@product:edit#update">
+            <search>
+            <![CDATA[
+        $this->db->query("DELETE FROM `" . DB_PREFIX . "product_recurring` WHERE product_id = " . (int)$product_id);
+            ]]>
+            </search>
+            <add position="before"><![CDATA[
+
+        $supplier_cost = isset($this->request->post['supplier_cost']) ? $this->request->post['supplier_cost'] : 0;
+        $purchase_link = isset($this->request->post['purchase_link']) ? $this->request->post['purchase_link'] : '';
+        $supplier_remarks = isset($this->request->post['supplier_remarks']) ? $this->request->post['supplier_remarks'] : '';
+
+        $exec_table = DB_PREFIX . "supplier";
+        $SQL2 = "UPDATE `$exec_table` SET `supplier_cost` = '$supplier_cost', `purchase_link` = '$purchase_link', `supplier_remarks` = '$supplier_remarks' WHERE `product_id` = '$product_id'; ";
+        $update = $this->db->query($SQL2);
+
+        // 旧数据，查询不到记录的话，则新增记录
+        $query = $this->db->query("SELECT * FROM $exec_table WHERE `product_id` = '$product_id';");
+
+        if(count($query->rows) <= 0) {
+            $SQL3 = "INSERT INTO `$exec_table` (`product_id`, `supplier_cost`, `purchase_link`, `supplier_remarks`) VALUES ('$product_id', '$supplier_cost', '$purchase_link', '$supplier_remarks');";
+            $this->db->query($SQL3);
+        }
+
+        // TODO: 学习官方写法，先 DELETE 再 INSERT
+            ]]></add>
+        </operation>
+
+        <operation info="Rewrite model@product:copy">
+            <search>
+            <![CDATA[
+			$data['product_recurrings'] = $this->getRecurrings($product_id);
+            ]]>
+            </search>
+            <add position="after"><![CDATA[
+                $querySupplier = $this->db->query("SELECT * FROM " . DB_PREFIX . "supplier WHERE product_id = '" . (int)$product_id . "'");
+                if ($querySupplier->num_rows) {
+                    $supplier = $querySupplier->row;
+                    $data['supplier_cost'] = isset($supplier['supplier_cost']) ? $supplier['supplier_cost'] : 0;
+                    $data['purchase_link'] = isset($supplier['purchase_link']) ? $supplier['purchase_link'] : '';
+                    $data['supplier_remarks'] = isset($supplier['supplier_remarks']) ? $supplier['supplier_remarks'] : '';
+                }
+            ]]></add>
+        </operation>
+
+        <operation info="Rewrite model@product:delete">
+            <search>
+            <![CDATA[
+		$this->event->trigger('pre.admin.product.delete', $product_id);
+            ]]>
+            </search>
+            <add position="after"><![CDATA[
+		$this->db->query("DELETE FROM " . DB_PREFIX . "supplier WHERE product_id = '" . (int)$product_id . "'");
+            ]]></add>
+        </operation>
+    </file>
+
+    <!--  订单详情控制器  -->
+    <file path="admin/controller/sale/order.php">
+        <operation info="show supplier cost at @sale/order">
+            <search>
+            <![CDATA[
+				$data['products'][] = array(
+            ]]>
+            </search>
+            <add position="replace" offset="1"><![CDATA[
+                $data['products'][] = array(
+                    'order_product_id' => $product['order_product_id'],
+                    'purchase_cost' => $this->currency->format($product['purchase_cost']),
+                    'purchase_cost_raw' => $product['purchase_cost'],
+            ]]></add>
+        </operation>
+
+        <operation info="add method: update supplier cost at @sale/order">
+            <search>
+            <![CDATA[
+	public function api() {
+            ]]>
+            </search>
+            <add position="before"><![CDATA[
+	public function update_purchase_cost() {
+        $this->load->model('sale/order');
+
+        $order_id = $this->request->get['order_id'];
+
+        $purchase_cost = $this->request->post['purchase_cost'];
+        $order_product_id = $this->request->post['order_product_id'];
+
+        $updated = $this->model_sale_order->updatePurchaseCost($purchase_cost, $order_id, $order_product_id);
+
+        $output = array(
+            'status' => ($updated > 0) ? 1: 0,
+            'message' => ($updated > 0) ? 'Updated successfully!': 'Something wrong happened!',
+        );
+
+        $this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($output));
+    }
+            ]]></add>
+        </operation>
+    </file>
+
+    <!--  前台产品模型  -->
+    <file path="catalog/model/catalog/product.php">
+        <operation info="Add a method to get product supplier cost">
+            <search>
+            <![CDATA[
+    public function getTotalProductSpecials() {
+            ]]>
+            </search>
+            <add position="before"><![CDATA[
+    public function getProductSupplier($product_id) {
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "supplier WHERE product_id = '" . (int)$product_id . "'");
+        $supplier = $query->rows;
+        return count($supplier) > 0 ? $supplier[0] : null;
+    }
+            ]]></add>
+        </operation>
+    </file>
+
+    <!--  更新订单 purchase cost  -->
+    <file path="admin/model/sale/order.php">
+        <operation info="add method: update supplier cost at model@sale/order">
+            <search>
+            <![CDATA[
+	public function getOrder($order_id) {
+            ]]>
+            </search>
+            <add position="before"><![CDATA[
+	public function updatePurchaseCost($purchase_cost, $order_id, $order_product_id) {
+        $table_order = DB_PREFIX . 'order_product';
+        $query = <<<SQL
+UPDATE `$table_order`
+SET purchase_cost = '$purchase_cost'
+WHERE order_id = '$order_id' and order_product_id = '$order_product_id'
+SQL;
+        return $this->db->query($query);
+    }
+            ]]></add>
+        </operation>
+    </file>
+
+    <!--  添加 purchase cost 到订单产品处 -->
+    <file path="catalog/model/checkout/order.php">
+        <operation info="Add supplier cost to checkout order">
+            <search>
+            <![CDATA[
+		$order_id = $this->db->getLastId();
+            ]]>
+            </search>
+            <add position="after"><![CDATA[
+        // 读取产品表
+        $this->load->model('catalog/product');
+            ]]></add>
+        </operation>
+
+        <operation info="Add purchase cost to checkout order">
+            <search>
+            <![CDATA[
+				$this->db->query("INSERT INTO " . DB_PREFIX . "order_product SET order_id = '" . (int)$order_id . "', product_id = '" . (int)$product['product_id'] . "', name = '" . $this->db->escape($product['name']) . "', model = '" . $this->db->escape($product['model']) . "', quantity = '" . (int)$product['quantity'] . "', price = '" . (float)$product['price'] . "', total = '" . (float)$product['total'] . "', tax = '" . (float)$product['tax'] . "', reward = '" . (int)$product['reward'] . "'");
+            ]]>
+            </search>
+            <add position="replace"><![CDATA[
+
+                $table_order_product = DB_PREFIX . 'order_product';
+                $table_data_product_id = (int)$product['product_id'];
+                $table_data_name = $this->db->escape($product['name']);
+                $table_data_model = $this->db->escape($product['model']);
+                $table_data_quantity = (int)$product['quantity'];
+                $table_data_price = (float)$product['price'];
+                $table_data_total = (float)$product['total'];
+                $table_data_tax = (float)$product['tax'];
+                $table_data_reward = (int)$product['reward'];
+
+                $supplier_info = $this->model_catalog_product->getProductSupplier($table_data_product_id);
+                $supplier_cost = isset($supplier_info['supplier_cost']) ? (float) $supplier_info['supplier_cost'] : 0;
+                $table_data_purchase_cost = $supplier_cost * $table_data_quantity;
+
+                // TODO: [情况] 订单产品不能编辑数量，只能删除该记录重新添加，此时， purchase cost 会按照产品的 supplier cost 重新计算
+
+                $insert = <<<SQL
+INSERT INTO $table_order_product
+SET order_id = '$order_id',
+product_id = '$table_data_product_id',
+name = '$table_data_name',
+model = '$table_data_model',
+quantity = '$table_data_quantity',
+price = '$table_data_price',
+total = '$table_data_total',
+tax = '$table_data_tax',
+purchase_cost = '$table_data_purchase_cost',
+reward = '$table_data_reward'
+SQL;
+
+				$this->db->query($insert);
+            ]]></add>
+        </operation>
+    </file>
+
+    <!--  journal2 的 catalog/controller/journal2/checkout.php  -->
+    <file path="catalog/controller/journal2/checkout.php">
+        <operation info="Load model@catalog/product">
+            <search>
+            <![CDATA[
+        $this->load->model('localisation/zone');
+            ]]>
+            </search>
+            <add position="after"><![CDATA[
+        $this->load->model('catalog/product');
+            ]]></add>
+        </operation>
+    </file>
+
+    <!--  journal2 的 catalog/model/journal2/checkout.php  -->
+    <file path="catalog/model/journal2/checkout.php">
+        <operation info="Load model@catalog/product">
+            <search>
+            <![CDATA[
+        $this->order_data['products'] = array();
+            ]]>
+            </search>
+            <add position="after"><![CDATA[
+        $this->load->model('catalog/product');
+            ]]></add>
+        </operation>
+
+        <operation info="Edit order @editDBOrderOC2">
+            <search>
+            <![CDATA[
+                $this->db->query("INSERT INTO " . DB_PREFIX . "order_product SET order_id = '" . (int)$order_id . "', product_id = '" . (int)$product['product_id'] . "', name = '" . $this->db->escape($product['name']) . "', model = '" . $this->db->escape($product['model']) . "', quantity = '" . (int)$product['quantity'] . "', price = '" . (float)$product['price'] . "', total = '" . (float)$product['total'] . "', tax = '" . (float)$product['tax'] . "', reward = '" . (int)$product['reward'] . "'");
+            ]]>
+            </search>
+            <add position="replace"><![CDATA[
+                // TODO: [情况] 订单产品不能编辑数量，只能删除该记录重新添加，此时， purchase cost 会按照产品的 supplier cost 重新计算
+                $supplier_info = $this->model_catalog_product->getProductSupplier($product['product_id']);
+                $supplier_cost = isset($supplier_info['supplier_cost']) ? (float) $supplier_info['supplier_cost'] : 0;
+                $purchase_cost = $supplier_cost * (int) $product['quantity'];
+
+                $table = DB_PREFIX . 'order_product';
+                $table_product_id = (int)$product['product_id'];
+                $table_product_name = $this->db->escape($product['name']);
+                $table_product_model = $this->db->escape($product['model']);
+                $table_product_quantity = (int)$product['quantity'];
+                $table_product_price = (float)$product['price'];
+                $table_product_total = (float)$product['total'];
+                $table_product_tax = (float)$product['tax'];
+                $table_product_reward = (int)$product['reward'];
+
+                $query = <<<EOF
+INSERT INTO $table
+SET
+    order_id = '$order_id',
+    product_id = '$table_product_id',
+    name = '$table_product_name',
+    model = '$table_product_model',
+    quantity = '$table_product_quantity',
+    price = '$table_product_price',
+    total = '$table_product_total',
+    tax = '$table_product_tax',
+    reward = '$table_product_reward',
+    purchase_cost = '$purchase_cost'
+EOF;
+
+                $this->db->query($query);
+            ]]></add>
+        </operation>
+
+        <operation info="Edit order @editDBOrderOC156">
+            <search>
+            <![CDATA[
+            $this->db->query("INSERT INTO " . DB_PREFIX . "order_product SET order_id = '" . (int)$this->order_id . "', product_id = '" . (int)$product['product_id'] . "', name = '" . $this->db->escape($product['name']) . "', model = '" . $this->db->escape($product['model']) . "', quantity = '" . (int)$product['quantity'] . "', price = '" . (float)$product['price'] . "', total = '" . (float)$product['total'] . "', tax = '" . (float)$product['tax'] . "', reward = '" . (int)$product['reward'] . "'");
+            ]]>
+            </search>
+            <add position="replace"><![CDATA[
+            // TODO: [情况] 订单产品不能编辑数量，只能删除该记录重新添加，此时， purchase cost 会按照产品的 supplier cost 重新计算
+            $supplier_info = $this->model_catalog_product->getProductSupplier($product['product_id']);
+            $supplier_cost = isset($supplier_info['supplier_cost']) ? (float) $supplier_info['supplier_cost'] : 0;
+            $purchase_cost = $supplier_cost * (int) $product['quantity'];
+
+            $table = DB_PREFIX . 'order_product';
+            $table_order_id = (int)$this->order_id;
+            $table_product_id = (int)$product['product_id'];
+            $table_product_name = $this->db->escape($product['name']);
+            $table_product_model = $this->db->escape($product['model']);
+            $table_product_quantity = (int)$product['quantity'];
+            $table_product_price = (float)$product['price'];
+            $table_product_total = (float)$product['total'];
+            $table_product_tax = (float)$product['tax'];
+            $table_product_reward = (int)$product['reward'];
+
+            $query = <<<EOF
+INSERT INTO $table
+SET
+    order_id = '$table_order_id',
+    product_id = '$table_product_id',
+    name = '$table_product_name',
+    model = '$table_product_model',
+    quantity = '$table_product_quantity',
+    price = '$table_product_price',
+    total = '$table_product_total',
+    tax = '$table_product_tax',
+    reward = '$table_product_reward',
+    purchase_cost = '$purchase_cost'
+EOF;
+            $this->db->query($query);
+            ]]></add>
+        </operation>
+    </file>
+
+    <!--
+    ********************
+    界面HTML
+    ********************
+    -->
+
+    <file path="admin/view/template/sale/order_info.tpl">
+        <operation info="Add new tab: [Supplier]">
+            <search>
+            <![CDATA[
+                <div class="tab-pane" id="tab-product">
+            ]]>
+            </search>
+            <add position="replace" offset="46"><![CDATA[
+                <div class="tab-pane" id="tab-product">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <td class="text-left"><?php echo $column_product; ?></td>
+                        <td class="text-left"><?php echo $column_model; ?></td>
+                        <td class="text-right"><?php echo $column_quantity; ?></td>
+                        <td class="text-right"><?php echo $column_price; ?></td>
+                        <td class="text-right"><?php echo $column_total; ?></td>
+                        <td class="text-right">Purchase Cost</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php foreach ($products as $product) { ?>
+                      <tr>
+                        <td class="text-left"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+                          <?php foreach ($product['option'] as $option) { ?>
+                          <br />
+                          <?php if ($option['type'] != 'file') { ?>
+                          &nbsp;<small> - <?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
+                          <?php } else { ?>
+                          &nbsp;<small> - <?php echo $option['name']; ?>: <a href="<?php echo $option['href']; ?>"><?php echo $option['value']; ?></a></small>
+                          <?php } ?>
+                          <?php } ?></td>
+                        <td class="text-left"><?php echo $product['model']; ?></td>
+                        <td class="text-right"><?php echo $product['quantity']; ?></td>
+                        <td class="text-right"><?php echo $product['price']; ?></td>
+                        <td class="text-right"><?php echo $product['total']; ?></td>
+                        <td class="text-right">
+                            <span class="data-purchase-cost">
+                                <?php echo $product['purchase_cost']; ?>
+                            </span>
+                            <span class="edit-purchase-cost" style="display: block;float: right;width: 16px;cursor: pointer;" data-order-product-id="<?=$product['order_product_id']?>" data-purchase-cost="<?=$product['purchase_cost']?>"  data-purchase-cost-raw="<?=$product['purchase_cost_raw']?>"><i class="fa fa-pencil"></i></span>
+                        </td>
+                      </tr>
+                      <?php } ?>
+                      <?php foreach ($vouchers as $voucher) { ?>
+                      <tr>
+                        <td class="text-left"><a href="<?php echo $voucher['href']; ?>"><?php echo $voucher['description']; ?></a></td>
+                        <td class="text-left"></td>
+                        <td class="text-right">1</td>
+                        <td class="text-right"><?php echo $voucher['amount']; ?></td>
+                        <td class="text-right"><?php echo $voucher['amount']; ?></td>
+                        <td class="text-right">&nbsp;</td>
+                      </tr>
+                      <?php } ?>
+                      <?php foreach ($totals as $total) { ?>
+                      <tr>
+                        <td colspan="4" class="text-right"><?php echo $total['title']; ?>:</td>
+                        <td class="text-right"><?php echo $total['text']; ?></td>
+                        <td class="text-right">&nbsp;</td>
+                      </tr>
+                      <?php } ?>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="modal fade" id="edit-purchase-cost">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Edit Purchase Cost</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Please enter a new value to apply a new purchase cost for the current order.</p>
+                        <div class="input-group" style="margin-top: 15px">
+                          <span class="input-group-addon" id="data-purchase-cost">New Purchase Cost</span>
+                          <input type="number" class="form-control" aria-describedby="data-purchase-cost" id="data-purchase-cost-input">
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <input type="hidden" id="data-order-product-id">
+                        <input type="hidden" id="data-currency">
+                        <button type="button" class="btn btn-primary save-purchase-cost">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <script>
+                    function formatCost(cost, currency) {
+                        // 判断小数
+                        cost = parseFloat(cost);
+                        var cost_a = parseInt(cost);
+                        var cost_b = (cost - cost_a).toFixed(2);
+
+                        cost_a = (cost_a + '').split('');
+                        var len = cost_a.length;
+                        var flag = 1;
+                        var value = '';
+                        for (var i = len-1;i>=0;i--) {
+                            value += cost_a[i];
+                            if (flag % 3 == 0 && i > 0) value += ',';
+                            flag++;
+                        }
+
+                        var temp = '';
+                        value = value.split('');
+                        len = value.length;
+                        for (var i = len-1;i>=0;i--) {
+                            temp += value[i];
+                        }
+
+                        var re = currency + temp + (cost_b > 0 ? ('' + cost_b).substr(1) : '.00');
+                        return re;
+                    }
+
+                    $(function(){
+                        $('.edit-purchase-cost').on('click', function(e){
+                            var $self = $(this);
+                            var order_product_id = $self.attr('data-order-product-id');
+                            var purchase_cost = $self.attr('data-purchase-cost-raw');
+                            var currency = $self.attr('data-purchase-cost');
+
+                            // 获取前缀单位
+                            currency = $.trim(currency);
+                            currency = currency.substr(0,1);
+
+                            $('#data-order-product-id').val(order_product_id);
+                            $('#data-currency').val(currency);
+
+                            purchase_cost = parseFloat(purchase_cost).toFixed(2);
+
+                            $('#data-purchase-cost').parent().find('input').val(purchase_cost);
+                            $('#edit-purchase-cost').modal('show');
+                        });
+
+                        // 点击按钮保存
+                        $(document.body).on('click', '.save-purchase-cost', function(e){
+                            var purchase_cost = $('#data-purchase-cost-input').val();
+                            var order_product_id = $('#data-order-product-id').val();
+                            var currency = $('#data-currency').val();
+                            $.ajax({
+                                url: 'index.php?route=sale/order/update_purchase_cost&token=<?=$_GET['token']?>&order_id=<?=$_GET['order_id']?>',
+                                type: 'post',
+                                data: {
+                                    purchase_cost: parseFloat(purchase_cost),
+                                    order_product_id: parseInt(order_product_id)
+                                },
+                                success: function(data) {
+
+                                    if (data.status === 0) {
+                                        var dom = $('<div>').css({width: '160px', lineHeight: '18px', backgroundColor: '#f44336', position: 'fixed', top: '60px', left: 0, right: 0, margin: '0 auto', padding: '8px', textAlign: 'center', color: '#fff', borderRadius: '4px'}).html(data.message).appendTo(document.body);
+                                        setTimeout(function(){  dom.remove();  }, 3000);
+                                    } else {
+                                        $('[data-order-product-id="' + order_product_id + '"]').parent().find('.data-purchase-cost').html(formatCost(purchase_cost, currency));
+                                        $('[data-order-product-id="' + order_product_id + '"]').attr('data-purchase-cost', formatCost(purchase_cost, currency));
+                                        $('[data-order-product-id="' + order_product_id + '"]').attr('data-purchase-cost-raw', purchase_cost);
+
+                                        var dom = $('<div>').css({width: '160px', lineHeight: '18px', backgroundColor: '#cddc39', position: 'fixed', top: '60px', left: 0, right: 0, margin: '0 auto', padding: '8px', textAlign: 'center', color: '#fff', borderRadius: '4px'}).html(data.message).appendTo(document.body);
+                                        setTimeout(function(){  dom.remove();  }, 3000);
+
+                                    }
+                                },
+                                error: function() {
+                                    var dom = $('<div>').css({width: '160px', lineHeight: '18px', backgroundColor: '#f44336', position: 'fixed', top: '60px', left: 0, right: 0, margin: '0 auto', padding: '8px', textAlign: 'center', color: '#fff', borderRadius: '4px'}).html('未知错误：请刷新重试').appendTo(document.body);
+                                    setTimeout(function(){  dom.remove();  }, 3000);
+                                }
+
+                            });
+
+                            $('#edit-purchase-cost').modal('hide');
+                        });
+
+                    });
+                </script>
+            ]]></add>
+        </operation>
+
+    </file>
+
+    <file path="admin/view/template/catalog/product_form.tpl">
+        <operation info="Add new tab [Supplier]">
+            <search>
+            <![CDATA[
+                <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+            ]]>
+            </search>
+            <add position="after"><![CDATA[
+                <li><a href="#tab-supplier" data-toggle="tab">Supplier</a></li>
+            ]]></add>
+        </operation>
+
+        <operation info="Add new tab [Supplier] content">
+            <search>
+            <![CDATA[
+                <div class="tab-pane" id="tab-design">
+            ]]>
+            </search>
+            <add position="after" offset="41"><![CDATA[
+            <div class="tab-pane" id="tab-supplier">
+              <div class="form-group">
+                <label class="col-lg-2 control-label" for="input-supplier-cost">
+                    <span data-toggle="tooltip" title="Cost of product from the supplier">Supplier Cost</span>
+                </label>
+                <div class="col-lg-10">
+                  <input type="text" name="supplier_cost" value="<?php echo $supplier_value_supplier_cost; ?>" placeholder="Please enter supplier cost" id="input-supplier-cost" class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-lg-2 control-label" for="input-purchase-link">
+                    <span data-toggle="tooltip" title="The link of purchase">Purchase Link</span>
+                </label>
+                <div class="col-lg-10">
+                  <input type="text" name="purchase_link" value="<?php echo $supplier_value_purchase_link; ?>" placeholder="Please enter purchase link with the prefix, http(s):// " id="input-purchase-link" class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-lg-2 control-label" for="input-supplier-remarks">
+                    <span data-toggle="tooltip" title="The remarks of supplier">Supplier Remarks</span>
+                </label>
+                <div class="col-lg-10">
+                  <textarea name="supplier_remarks" placeholder="Please enter supplier remarks for product" id="input-supplier-remarks" class="form-control" maxlength="500"><?php echo $supplier_value_supplier_remarks; ?></textarea>
+                </div>
+              </div>
+          </div>
+            ]]></add>
+        </operation>
+    </file>
+
+</modification>

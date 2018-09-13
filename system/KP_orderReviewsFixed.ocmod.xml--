@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>KP OrderReviews Fixed</name>
+    <code>kp_orderReviews_fixed</code>
+    <update>2016-10-10</update>
+    <version>1.0.0</version>
+    <author>Kevin Pan</author>
+
+    <file path="catalog/model/module/orderreviews.php">
+        <operation info="增加新函数，保存url参数，并生成加密的的sha1码">
+            <search >
+	        <![CDATA[public function sendReviewMail($order_id, $order_status_id) {]]>
+            </search>
+            <add position="before"><![CDATA[
+public function addUrlEncryptRecord($order_id, $reviewmail_id, $store_id) {
+    $sha1 = sha1($order_id.$reviewmail_id.$store_id.time());
+    $this->db->query("INSERT INTO " . DB_PREFIX . "orderreviews_url_encrypt SET order_id = '" . (int)$order_id . "', reviewmail_id = '" . (int)$reviewmail_id . "', store_id = '" . (int)$store_id . "', sha1 = '" . $this->db->escape($sha1) . "'");
+    return $sha1;
+}
+public function getParamsByEncryptCode($code){
+    $record = $this->db->query("SELECT * FROM " . DB_PREFIX . "orderreviews_url_encrypt WHERE `sha1` = '" . $this->db->escape($code) . "' LIMIT 1");
+    return $record->row;
+}
+]]></add>
+        </operation>
+        <operation info="修改加密邮件中的超链接">
+            <search >
+	        <![CDATA[$ReveiewMailLink = $store['url'].'index.php?route=module/orderreviews/sendReview&order_id='.$order['order_id'].'&reviewmail_id='.$reviewmail['id'].'&store_id='.$store['store_id'];]]>
+            </search>
+            <add position="replace"><![CDATA[
+$encrypt = $this->addUrlEncryptRecord($order['order_id'], $reviewmail['id'], $store['store_id']);
+$ReveiewMailLink = $store['url'].'index.php?route=module/orderreviews/sendReview&encrypt='.$encrypt;
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/module/orderreviews.php">
+        <operation info="读取超链接中的加密参数并转为对应的明文参数_p1">
+            <search >
+	        <![CDATA[if (isset($this->request->get['order_id']) && isset($this->request->get['reviewmail_id']) && isset($this->request->get['store_id'])) {]]>
+            </search>
+            <add position="replace"><![CDATA[if (isset($this->request->get['encrypt'])) {]]></add>
+        </operation>
+        <operation info="读取超链接中的加密参数并转为对应的明文参数_p2">
+            <search >
+	        <![CDATA[$order_id			= $this->request->get['order_id'];]]>
+            </search>
+            <add position="before"><![CDATA[
+$realUrlParams = $this->{$this->moduleModel}->getParamsByEncryptCode( $this->request->get['encrypt'] );
+if(!empty($realUrlParams)){
+    $this->request->get['order_id'] = $realUrlParams['order_id'];
+    $this->request->get['reviewmail_id'] = $realUrlParams['reviewmail_id'];
+    $this->request->get['store_id'] = $realUrlParams['store_id'];
+]]></add>
+        </operation>
+        <operation info="读取超链接中的加密参数并转为对应的明文参数_p3">
+            <search >
+	        <![CDATA[} else if ($missing_data) {]]>
+            </search>
+            <add position="before"><![CDATA[
+}else{
+    $data['FormData']	= '<div class="warning">'.$this->language->get('error_form').'</div>';
+}
+]]></add>
+        </operation>
+        <operation info="修复模版渲染不正确的bug">
+            <search >
+	        <![CDATA[if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/facebooklogin.tpl')) {]]>
+            </search>
+            <add position="replace"><![CDATA[
+if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/orderreviews_success.tpl')) {
+]]></add>
+        </operation>
+    </file>
+
+</modification>

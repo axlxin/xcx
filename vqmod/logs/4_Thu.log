@@ -1,0 +1,36 @@
+---------- Date: 2016-10-20 21:52:36 ~ IP : 176.34.159.227 ----------
+REQUEST URI : /
+VQMod::_parseMods - INVALID XML FILE: : Document is empty in /home/lechmura/public_html/bestofchina/vqmod/xml/webvet_amount_saved_to_specials_OpencartV2031.xml, line: 1
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-10-20 21:52:50 ~ IP : 119.136.222.202 ----------
+REQUEST URI : /Wireless-Charger--5V-500mA-.html
+MOD DETAILS:
+   modFile   : /home/lechmura/public_html/bestofchina/vqmod/xml/webvet_amount_saved_to_specials_OpencartV2031.xml
+   id        : Display Amount Saved for Special Prices - OPENCART 2.0.3.1
+   version   : 1.0
+   vqmver    : 2.5.1
+   author    : WebVet Services || support@webvetservices.com
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <h2><?php echo $special; ?></h2>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-10-20 21:56:50 ~ IP : 119.136.222.202 ----------
+REQUEST URI : /Wireless-Charger--5V-500mA-.html
+MOD DETAILS:
+   modFile   : /home/lechmura/public_html/bestofchina/vqmod/xml/webvet_amount_saved_to_specials_OpencartV2031.xml
+   id        : Display Amount Saved for Special Prices - OPENCART 2.0.3.1
+   version   : 1.0
+   vqmver    : 2.5.1
+   author    : WebVet Services || support@webvetservices.com
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <h2><?php echo $special; ?></h2>
+
+----------------------------------------------------------------------
+
+

@@ -1,0 +1,31 @@
+<modification>
+    <id>KP Express DATA Exporter></id>
+    <version>1.2</version>
+    <vqmver required="true">2.4.1</vqmver>
+    <author>Kevin Pan</author>
+    <file path="admin/view/template/sale/order_list.tpl">
+        <operation info="添加按钮">
+            <search >
+	        <![CDATA[<button type="submit" id="button-shipping" form="form-order" formaction="<?php echo $shipping; ?>" data-toggle="tooltip" title="<?php echo $button_shipping_print; ?>" class="btn btn-info"><i class="fa fa-truck"></i></button>]]>
+            </search>
+            <add position="before"><![CDATA[
+<button type="submit" id="button-sfcExporter" form="form-order" formaction="<?php echo HTTP_CATALOG ?>express_exporter/sfc.php" data-toggle="tooltip" title="SFC数据导出" class="btn btn-info">SFC数据导出</button>
+<button type="submit" id="button-DHLExporter" form="form-order" formaction="<?php echo HTTP_CATALOG ?>express_exporter/dhl.php" data-toggle="tooltip" title="DHL数据导出" class="btn btn-info">DHL数据导出</button>
+]]></add>
+        </operation>
+        <operation info="添加安全验证码">
+            <search  >
+	        <![CDATA[<form method="post" enctype="multipart/form-data" target="_blank" id="form-order">]]>
+            </search>
+            <add position="after"><![CDATA[
+<?php 
+$seed = 'hhs823(^3Y';
+$date = date('ymdh');
+$export_token = md5($date . $seed);
+echo "<input type='hidden' name='export_token' value='$export_token'>";
+?>
+]]></add>
+        </operation>
+    </file>
+   
+</modification>

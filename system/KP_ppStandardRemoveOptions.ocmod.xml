@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>KP Paypal Standard Remove Options</name>
+    <code>kp_paypal_standard_remove_options</code>
+    <version>2.4.1</version>
+    <author>Kevin Pan</author>
+
+    <file path="catalog/controller/payment/pp_standard.php">
+        <operation info="取消把商品中的options信息发送到paypal，以免长度超出限制导致无法支付的问题">
+            <search >
+	        <![CDATA[foreach ($product['option'] as $option) {]]>
+            </search>
+            <add position="replace" offset="17"><![CDATA[]]></add>
+        </operation>
+    </file>
+
+    
+        
+</modification>

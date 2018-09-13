@@ -1,0 +1,34 @@
+<modification>
+    <name>Quick Checkout Weight</name>
+    <version>1.0.0</version>
+    <author>Kevin Pan</author>
+    <desc>在Journal2的Qucik Checkout页面增加“重量”字段的显示</desc>
+    <link>http://www.opencart.com</link>
+    
+    <file path="catalog/controller/journal2/checkout.php">
+        <operation>
+            <search><![CDATA[public function cart($return = false) {]]></search>
+            <add position="after"><![CDATA[
+if ($this->config->get('config_cart_weight')) {
+    $this->data['weight'] = $this->weight->format($this->cart->getWeight(), $this->config->get('config_weight_class_id'), $this->language->get('decimal_point'), $this->language->get('thousand_point'));
+} else {
+    $this->data['weight'] = '';
+}
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/view/theme/journal2/template/journal2/checkout/cart.tpl">
+        <operation>
+            <search><![CDATA[<h2 class="secondary-title"><?php echo $this->journal2->settings->get('one_page_lang_shop_cart', 'Shopping Cart');?></h2>]]></search>
+            <add position="replace"><![CDATA[
+<h2 class="secondary-title"><?php echo $this->journal2->settings->get('one_page_lang_shop_cart', 'Shopping Cart'); ?>
+<?php if ($weight) { ?>
+&nbsp;(<?php echo $weight; ?>)
+<?php } ?>
+</h2>
+]]></add>
+        </operation>
+    </file>
+   
+</modification>

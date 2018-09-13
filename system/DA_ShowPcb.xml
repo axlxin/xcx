@@ -1,0 +1,33 @@
+<modification>
+    <name>Show  Pcb</name>
+    <version>2.1.160217</version>
+    <author>David</author>
+    <link>http://www.opencart.com</link>
+    
+    <file path="catalog/controller/product/product.php">
+        <operation info="添加显示pcb文件方法">
+            <search><![CDATA[public function write() {]]></search>
+            <add position="before"><![CDATA[public function showpcb(){
+
+       $data = array();
+       $data['footer'] = $this->load->controller('common/footer');
+       $data['header'] = $this->load->controller('common/header');
+       $this->document->addStyle('catalog/view/theme/journal2/css/DA_showpcb.css');
+       $this->document->addScript('catalog/view/theme/journal2/js/DA_showpcb.js');
+       if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/DA_showpcb.tpl')) {
+            $this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/product/DA_showpcb.tpl', $data));
+        } else {
+            $this->response->setOutput($this->load->view('default/template/product/DA_showpcb.tpl', $data));
+        }
+
+    } ]]></add>
+        </operation>
+        
+        
+        
+        
+    </file>
+
+   
+ 
+</modification>

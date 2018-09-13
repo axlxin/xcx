@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>KP Upload Fulll Name </name>
+    <code>kp_upload_full_name</code>
+    <update>2018-07-05</update>
+    <version>1.0.0</version>
+    <author>David</author>
+
+    <file path ="catalog/controller/account/order.php">
+        <operation info="显示上传文件的全名">
+            <search >
+	        <![CDATA[foreach ($options as $option) {
+                    if ($option['type'] != 'file') {
+                        $value = $option['value'];
+                    } else {
+                        $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+
+                        if ($upload_info) {
+                            $value = $upload_info['name'];
+                        } else {
+                            $value = '';
+                        }
+                    }
+
+                    $option_data[] = array(
+                        'name'  => $option['name'],
+                        'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+                        
+                    );
+                }]]>
+            </search>
+            <add position="replace"><![CDATA[
+foreach ($options as $option) {
+                    if ($option['type'] != 'file') {
+                        $value = $option['value'];
+                    } else {
+                        $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+
+                        if ($upload_info) {
+                            $value = $upload_info['name'];
+                        } else {
+                            $value = '';
+                        }
+                    }
+
+                    $option_data[] = array(
+                        'name'  => $option['name'],
+                        'value' => $value
+                        
+                    );
+                }
+]]></add>
+        </operation>
+    </file>
+
+    <file path="catalog/controller/checkout/cart.php">
+        <operation info="显示上传文件的全名">
+            <search >
+            <![CDATA[foreach ($product['option'] as $option) {
+                    if ($option['type'] != 'file') {
+                        $value = $option['value'];
+                    } else {
+                        $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+
+                        if ($upload_info) {
+                            $value = $upload_info['name'];
+                        } else {
+                            $value = '';
+                        }
+                    }
+
+                    $option_data[] = array(
+                        'name'  => $option['name'],
+                         'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+                        
+                    );
+                }]]>
+            </search>
+            <add position="replace"><![CDATA[
+foreach ($product['option'] as $option) {
+                    if ($option['type'] != 'file') {
+                        $value = $option['value'];
+                    } else {
+                        $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+
+                        if ($upload_info) {
+                            $value = $upload_info['name'];
+                        } else {
+                            $value = '';
+                        }
+                    }
+
+                    $option_data[] = array(
+                        'name'  => $option['name'],
+                         'value' => $value
+                        
+                    );
+                }
+]]></add>
+        </operation>
+    </file>
+
+    <file path="catalog/controller/checkout/confirm.php">
+        <operation info="显示上传文件的全名">
+            <search >
+            <![CDATA[foreach ($product['option'] as $option) {
+                    if ($option['type'] != 'file') {
+                        $value = $option['value'];
+                    } else {
+                        $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+
+                        if ($upload_info) {
+                            $value = $upload_info['name'];
+                        } else {
+                            $value = '';
+                        }
+                    }
+
+                    $option_data[] = array(
+                        'name'  => $option['name'],
+                        'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+                        
+                    );
+                }]]>
+            </search>
+            <add position="replace"><![CDATA[
+foreach ($product['option'] as $option) {
+                    if ($option['type'] != 'file') {
+                        $value = $option['value'];
+                    } else {
+                        $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+
+                        if ($upload_info) {
+                            $value = $upload_info['name'];
+                        } else {
+                            $value = '';
+                        }
+                    }
+
+                    $option_data[] = array(
+                        'name'  => $option['name'],
+                        'value' =>  $value
+                        
+                    );
+                }
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/model/journal2/checkout.php">
+        <operation info="显示上传文件的全名">
+            <search >
+	        <![CDATA[foreach ($product['option'] as $option) {
+                if ($option['type'] != 'file') {
+                    $value = Front::$IS_OC2 ? $option['value'] : $option['option_value'];
+                } else {
+                    if (Front::$IS_OC2) {
+                        $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+
+                        if ($upload_info) {
+                            $value = $upload_info['name'];
+                        } else {
+                            $value = '';
+                        }
+                    } else {
+                        $filename = $this->encryption->decrypt($option['option_value']);
+                        $value = utf8_substr($filename, 0, utf8_strrpos($filename, '.'));
+                    }
+                }
+
+                $option_data[] = array(
+                    'name'  => $option['name'],
+                     'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+                    
+                );
+            }]]>
+            </search>
+            <add position="replace"><![CDATA[
+foreach ($product['option'] as $option) {
+                if ($option['type'] != 'file') {
+                    $value = Front::$IS_OC2 ? $option['value'] : $option['option_value'];
+                } else {
+                    if (Front::$IS_OC2) {
+                        $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+
+                        if ($upload_info) {
+                            $value = $upload_info['name'];
+                        } else {
+                            $value = '';
+                        }
+                    } else {
+                        $filename = $this->encryption->decrypt($option['option_value']);
+                        $value = utf8_substr($filename, 0, utf8_strrpos($filename, '.'));
+                    }
+                }
+
+                $option_data[] = array(
+                    'name'  => $option['name'],
+                      'value' =>  $value
+                    
+                );
+            }
+]]></add>
+        </operation>
+    </file>
+
+</modification>

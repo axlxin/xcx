@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+	
+	<name>MailChimp Integration Pro</name>
+    <code>mailchimp_integration</code>
+	<version>v302.2</version>
+	<author>Clear Thinking, LLC</author>
+	<link>http://www.getclearthinking.com/contact?inquiry=Question regarding MailChimp Integration Pro: </link>
+	
+	<!-- Admin actions (2.0.1 - 2.0.3) -->
+	<file path="admin/model/sale/customer.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function addCustomer($data) {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if ($data['newsletter']) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					$mailchimp_integration->send(array_merge($data, array('double_optin' => false, 'send_welcome' => false)));
+				}
+				// end
+			]]></add>
+		</operation>
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function editCustomer($customer_id, $data) {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+				$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+				$mailchimp_integration->send(array_merge($data, array('customer_id' => $customer_id, 'double_optin' => false, 'send_welcome' => false)));
+				// end
+			]]></add>
+		</operation>
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function deleteCustomer($customer_id) {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+				$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+				$mailchimp_integration->send(array('customer_id' => $customer_id));
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- Admin actions (2.1 or later) -->
+	<file path="admin/model/customer/customer.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function addCustomer($data) {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if ($data['newsletter']) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					$mailchimp_integration->send(array_merge($data, array('double_optin' => false, 'send_welcome' => false)));
+				}
+				// end
+			]]></add>
+		</operation>
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function editCustomer($customer_id, $data) {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+				$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+				$mailchimp_integration->send(array_merge($data, array('customer_id' => $customer_id, 'double_optin' => false, 'send_welcome' => false)));
+				// end
+			]]></add>
+		</operation>
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function deleteCustomer($customer_id) {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+				$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+				$mailchimp_integration->send(array('customer_id' => $customer_id));
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- Customer actions -->
+	<file path="catalog/model/account/customer.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				$customer_group_info['approval']) {
+			]]></search>
+			<add position="before" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (!empty($data['newsletter'])) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					$mailchimp_integration->send(array_merge($data, array('customer_id' => $customer_id, 'customer_newsletter' => 0)));
+				}
+				// end
+			]]></add>
+		</operation>
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function editCustomer($data) {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if ($this->customer->getNewsletter()) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					$mailchimp_integration->send(array_merge($data, array('newsletter' => 1, 'customer_id' => $this->customer->getId())));
+				}
+				// end
+			]]></add>
+		</operation>
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function editNewsletter($newsletter) {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+				$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+				$mailchimp_integration->send(array('newsletter' => $newsletter, 'customer_id' => $this->customer->getId()));
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/model/account/address.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function editAddress($address_id, $data) {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (!empty($data['default']) && $this->customer->getNewsletter()) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					$mailchimp_integration->send(array_merge($data, array('newsletter' => 1, 'customer_id' => $this->customer->getId())));
+				}
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- Pop-up if enabled -->
+	<file path="catalog/controller/common/footer.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				function index() {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				$data['mailchimp_integration'] = $this->load->controller('extension/module/mailchimp_integration/popup');
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/view/theme/*/template/common/footer.tpl">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				</body>
+			]]></search>
+			<add position="before" trim="true"><![CDATA[
+				<?php echo $mailchimp_integration; ?>
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/view/theme/*/template/common/footer.twig">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				</body>
+			]]></search>
+			<add position="before" trim="true"><![CDATA[
+				{{ mailchimp_integration }}
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- Guest Checkout if that modification is added -->
+	<file path="catalog/controller/{checkout,onecheckout}/guest.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				unset($this->session->data['shipping_methods']);
+			]]></search>
+			<add position="before" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (!empty($this->request->post['newsletter'])) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					$mailchimp_integration->send(array_merge($this->request->post, array('customer_id' => 0)));
+				}
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- Contact Form if that modification is added -->
+	<file path="catalog/controller/information/contact.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (!empty($this->request->post['newsletter'])) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					$mailchimp_integration->send(array_merge($this->request->post, array('customer_id' => $this->customer->getId())));
+				}
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- One-Page Checkout extension -->
+	<file path="catalog/model/onecheckout/checkout.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function addCustomer($data) {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+				$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+				$mailchimp_integration->send($data);
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- Journal theme -->
+	<file path="catalog/controller/{module,extension/module}/journal2_newsletter.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				$newsletter->subscribe();
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+				$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+				$mailchimp_integration->send(array('newsletter' => 1, 'email' => $this->request->post['email'], 'customer_id' => $this->customer->getId()));
+				// end
+			]]></add>
+		</operation>
+	</file>
+        
+        <!-- Send crt data of Journal theme -->
+        <file path="catalog/controller/journal2/checkout.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				$this->session->data['journal_checkout_account'] = Journal2Utils::getProperty($this->request->post, 'account');
+			]]></search>
+			<add position="before" trim="true"><![CDATA[
+				$customer_id = ($this->customer->isLogged()) ? (int)$this->customer->getId() : $this->session->data['guest']['email'];
+                                if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+                                $mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+                                $mailchimp_integration->sendCart($this->cart, $customer_id);
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- Pavilion theme -->
+	<file path="system/vendor/BurnEngine/extension/newsletter/catalog/controller/NewsletterController.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				return $this->sendJsonSuccess($this->extension->translate('text_subscribed'));
+			]]></search>
+			<add position="before" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+				$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+				$mailchimp_integration->send(array('newsletter' => 1, 'email' => $this->request->post['email'], 'customer_id' => $this->customer->getId()));
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- Pav newsletter -->
+	<file path="catalog/controller/{module,extension/module}/pavnewsletter.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function subscribe() {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration
+				if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+				$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+				$mailchimp_integration->send(array('newsletter' => 1, 'email' => $this->request->post['email'], 'customer_id' => $this->customer->getId()));
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- ============================================================================== -->
+	
+	<!-- Ecommerce Orders -->
+	<file path="catalog/controller/common/header.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				function index() {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration Pro
+				$prefix = (version_compare(VERSION, '3.0', '<')) ? '' : 'module_';
+				
+				if ($this->config->get($prefix . 'mailchimp_integration_ecommerce360')) {
+					if (isset($this->request->get['mc_cid'])) {
+						setcookie('mc_cid', $this->request->get['mc_cid'], time() + 60*60*24 * $this->config->get($prefix . 'mailchimp_integration_cookietime'), '/');
+					}
+					if (isset($this->request->get['mc_eid'])) {
+						setcookie('mc_eid', $this->request->get['mc_eid'], time() + 60*60*24 * $this->config->get($prefix . 'mailchimp_integration_cookietime'), '/');
+					}
+				}
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/model/checkout/order.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				$this->db->query("UPDATE `" . DB_PREFIX . "order` SET order_status_id = '" . (int)$order_status_id . "', date_modified = NOW() WHERE order_id = '" . (int)$order_id . "'");
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration Pro
+				$prefix = (version_compare(VERSION, '3.0', '<')) ? '' : 'module_';
+				
+				if ($this->config->get($prefix . 'mailchimp_integration_ecommerce360')) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					
+					$mailchimp_order_info = $order_info;
+					$mailchimp_order_info['order_status_id'] = $order_status_id;
+					
+					$mailchimp_integration->sendOrder($mailchimp_order_info, $this->config->get($prefix . 'mailchimp_integration_ordertype'));
+					$mailchimp_integration->deleteOrder($mailchimp_order_info);
+				}
+				// end
+			]]></add>
+		</operation>
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function deleteOrder($order_id) {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration Pro
+				$prefix = (version_compare(VERSION, '3.0', '<')) ? '' : 'module_';
+				
+				if ($this->config->get($prefix . 'mailchimp_integration_ecommerce360')) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					
+					$order_info = $this->getOrder($order_id);
+					$mailchimp_integration->deleteOrder($order_info);
+				}
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/model/openbay/ebay_order.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				$this->db->query("UPDATE `" . DB_PREFIX . "order` SET order_status_id = '" . (int)$order_status_id . "', date_modified = NOW() WHERE order_id = '" . (int)$order_id . "'");
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration Pro
+				$prefix = (version_compare(VERSION, '3.0', '<')) ? '' : 'module_';
+				
+				if ($this->config->get($prefix . 'mailchimp_integration_ecommerce360')) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					
+					$mailchimp_order_info = $order_info;
+					$mailchimp_order_info['order_status_id'] = $order_status_id;
+					
+					$mailchimp_integration->sendOrder($mailchimp_order_info, $this->config->get($prefix . 'mailchimp_integration_ordertype'));
+					$mailchimp_integration->deleteOrder($mailchimp_order_info);
+				}
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/model/openbay/*.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				$this->db->query("UPDATE `" . DB_PREFIX . "order` SET `order_status_id` = " . (int)$status_id . " WHERE `order_id` = " . (int)$order_id);
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration Pro
+				$prefix = (version_compare(VERSION, '3.0', '<')) ? '' : 'module_';
+				
+				if ($this->config->get($prefix . 'mailchimp_integration_ecommerce360')) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					
+					$this->load->model('checkout/order');
+					$mailchimp_order_info = $this->model_checkout_order->getOrder($order_id);
+					$mailchimp_order_info['order_status_id'] = $status_id;
+					
+					$mailchimp_integration->sendOrder($mailchimp_order_info, $this->config->get($prefix . 'mailchimp_integration_ordertype'));
+					$mailchimp_integration->deleteOrder($mailchimp_order_info);
+				}
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<!-- Abandoned Carts -->
+	<file path="catalog/controller/checkout/cart.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				$this->cart->add(
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration Pro
+				$prefix = (version_compare(VERSION, '3.0', '<')) ? '' : 'module_';
+				if ($this->config->get($prefix . 'mailchimp_integration_sendcarts') && $this->customer->isLogged()) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					$mailchimp_integration->sendCart($this->cart, $this->customer->getId());
+				}
+				// end
+			]]></add>
+		</operation>
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				$this->cart->remove(
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration Pro
+				$prefix = (version_compare(VERSION, '3.0', '<')) ? '' : 'module_';
+				if ($this->config->get($prefix . 'mailchimp_integration_sendcarts') && $this->customer->isLogged()) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					$mailchimp_integration->sendCart($this->cart, $this->customer->getId());
+				}
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/controller/account/{login,register}.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				unset($this->session->data['guest']);
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration Pro
+				$prefix = (version_compare(VERSION, '3.0', '<')) ? '' : 'module_';
+				if ($this->config->get($prefix . 'mailchimp_integration_sendcarts') && $this->cart->hasProducts()) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					$mailchimp_integration->sendCart($this->cart, (int)$this->customer->getId());
+				}
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/controller/*/shipping_method.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				public function index() {
+			]]></search>
+			<add position="after" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration Pro
+				$prefix = (version_compare(VERSION, '3.0', '<')) ? '' : 'module_';
+				if ($this->config->get($prefix . 'mailchimp_integration_sendcarts')) {
+					$customer_id = ($this->customer->isLogged()) ? (int)$this->customer->getId() : $this->session->data['guest']['email'];
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					$mailchimp_integration->sendCart($this->cart, $customer_id);
+				}
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/model/checkout/order.php">
+		<operation error="skip">
+			<search trim="true"><![CDATA[
+				$this->db->query("UPDATE `" . DB_PREFIX . "order` SET order_status_id = '" . (int)$order_status_id . "', date_modified = NOW() WHERE order_id = '" . (int)$order_id . "'");
+			]]></search>
+			<add position="before" trim="true"><![CDATA[
+				// Clear Thinking: MailChimp Integration Pro
+				$prefix = (version_compare(VERSION, '3.0', '<')) ? '' : 'module_';
+				if ($this->config->get($prefix . 'mailchimp_integration_sendcarts')) {
+					if (version_compare(VERSION, '2.1', '<')) $this->load->library('mailchimp_integration');
+					$mailchimp_integration = new MailChimp_Integration($this->config, $this->db, $this->session, $this->url);
+					$mailchimp_integration->deleteCart($order_info['email']);
+				}
+				// end
+			]]></add>
+		</operation>
+	</file>
+	
+</modification>

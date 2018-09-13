@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>KP Product PCB Prototype and Assembly</name>
+    <code>kp_product_pcb_prototype</code>
+    <version>1.0.0</version>
+    <author>Kevin Pan</author>
+
+    <file path="catalog/controller/product/product.php">
+        <operation info="修改商品详情页的要渲染的tpl文件路径,基于Journal2">
+            <search >
+	        <![CDATA[if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {]]>
+            </search>
+            <add position="replace"><![CDATA[
+if ($this->request->get['product_id'] == '142') {
+    $this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/product/kp_productPcb.tpl', $data));
+}elseif($this->request->get['product_id'] == '52') {
+    $data['currency_current_symbol_left'] = $this->currency->getSymbolLeft();
+    $this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/product/kp_productPcbAssembly.tpl', $data));
+}elseif(file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')){
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/common/header.php">
+        <operation info="修改商品详情页的要渲染的header.tpl文件路径,基于Journal2">
+            <search >
+	        <![CDATA[if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {]]>
+            </search>
+            <add position="replace"><![CDATA[
+if (isset($this->request->get['product_id']) && $this->request->get['product_id'] == '142') {
+    return $this->load->view($this->config->get('config_template') . '/template/common/kp_headerPcb.tpl', $data);
+}elseif(isset($this->request->get['product_id']) && $this->request->get['product_id'] == '52') {
+    return $this->load->view($this->config->get('config_template') . '/template/common/kp_headerPcbAssembly.tpl', $data);
+}elseif (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/common/footer.php">
+        <operation info="修改商品详情页的要渲染的footer.php文件路径,基于Journal2">
+            <search >
+	        <![CDATA[if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/footer.tpl')) {]]>
+            </search>
+            <add position="replace"><![CDATA[
+if (isset($this->request->get['product_id']) && $this->request->get['product_id'] == '142') {
+     return $this->load->view($this->config->get('config_template') . '/template/common/kp_footerPcb.tpl', $data);
+}elseif (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/footer.tpl')) {
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/controller/journal2/ajax.php">
+        <operation info="追加PCB Orders和Stencil Cost子项的价格变量输出">
+            <search index="1">
+	        <![CDATA[$this->response->setOutput(json_encode(array(]]>
+            </search>
+            <add position="before"><![CDATA[
+$pcb_orders_price = isset($pcb_orders_price) ? $pcb_orders_price : 0;
+$stencil_price = isset($stencil_price) ? $stencil_price : 0;
+$product_weight = isset($product_weight) ? $product_weight : 0;
+]]></add>
+        </operation>
+        <operation info="同上">
+            <search>
+	        <![CDATA['points'    => $this->language->get('text_points') . ' ' . $points,]]>
+            </search>
+            <add position="before"><![CDATA[
+'pcb_orders_price' => $this->currency->format($this->tax->calculate($pcb_orders_price, $product_info['tax_class_id'], $this->config->get('config_tax'))),
+'stencil_price' => $this->currency->format($this->tax->calculate($stencil_price, $product_info['tax_class_id'], $this->config->get('config_tax'))),
+'product_weight' => $this->weight->format($product_weight, $this->config->get('config_weight_class_id'), $this->language->get('decimal_point'), $this->language->get('thousand_point')),
+]]></add>
+        </operation>
+    </file>
+    
+    <file path="catalog/model/shipping/ocaaspro.php">
+        <operation info="修改OCAAdvancedShippingPro插件，使其支持被本插件调用">
+            <search>
+	        <![CDATA[private function construct($address) {]]>
+            </search>
+            <add position="replace"><![CDATA[private function construct($address, $pcb=false, $pcb_cartProducts=null, $pcb_savedCart=null) {]]></add>
+        </operation>
+        <operation info="修改OCAAdvancedShippingPro插件，使其支持被本插件调用">
+            <search>
+	        <![CDATA[$this->cartProducts			= $this->getProducts();]]>
+            </search>
+            <add position="replace" offset="1"><![CDATA[
+if(!$pcb){
+    $this->cartProducts			= $this->getProducts();
+    $this->savedCart			= $this->saveCart();
+}else{
+    $this->cartProducts			= $pcb_cartProducts;
+    $this->savedCart			= $pcb_savedCart;
+}
+]]></add>
+        </operation>
+        <operation info="修改OCAAdvancedShippingPro插件，使其支持被本插件调用">
+            <search>
+	        <![CDATA[public function getQuote($address) {]]>
+            </search>
+            <add position="replace"><![CDATA[public function getQuote($address, $pcb=false, $pcb_cartProducts=null, $pcb_savedCart=null) {]]></add>
+        </operation>
+        <operation info="修改OCAAdvancedShippingPro插件，使其支持被本插件调用">
+            <search>
+	        <![CDATA[$this->construct($address);]]>
+            </search>
+            <add position="replace"><![CDATA[$this->construct($address, $pcb, $pcb_cartProducts, $pcb_savedCart);]]></add>
+        </operation>
+    </file>
+
+    <file path="catalog/controller/checkout/cart.php">
+        <operation info="购物车界面只显示部分[SPECIAL REQUIREMENTS]和[PCB STENCIL]的非默认选项">
+            <search >
+	        <![CDATA[$products = $this->cart->getProducts();]]>
+            </search>
+            <add position="before"><![CDATA[
+$this->load->model('catalog/product');
+]]></add>
+        </operation>
+        
+        <operation info="购物车界面只显示部分[SPECIAL REQUIREMENTS]和[PCB STENCIL]的非默认选项">
+            <search >
+	        <![CDATA[foreach ($product['option'] as $option) {]]>
+            </search>
+            <add position="before"><![CDATA[
+$productAllOptions = array();
+if($product["product_id"]=='142'){
+    $tmpAllOptions = $this->model_catalog_product->getProductOptions($product['product_id']);
+    $filter_product_option_ids = array(653,654,655,656,657,658,659,645,646,651,661,662,664);
+    foreach($tmpAllOptions as $tmpAllOption){
+        if(in_array($tmpAllOption["product_option_id"], $filter_product_option_ids)){
+            $product_option_id = $tmpAllOption["product_option_id"];
+            if(count($tmpAllOption["product_option_value"])>0){
+                $product_option_default_value_id = null;
+                foreach($tmpAllOption["product_option_value"] as $option_value){
+                    if($option_value['if_default']==1){
+                        //这个是设置的option value
+                        $product_option_default_value_id = $option_value['product_option_value_id'];
+                        break;
+                    }
+                }
+                $productAllOptions[$product_option_id] = $product_option_default_value_id;
+            }
+            
+        }
+    }
+}
+]]></add>
+        </operation>
+
+        <operation info="购物车界面只显示部分[SPECIAL REQUIREMENTS]和[PCB STENCIL]的非默认选项">
+            <search >
+	        <![CDATA[foreach ($product['option'] as $option) {]]>
+            </search>
+            <add position="after"><![CDATA[
+if(isset($productAllOptions[$option['product_option_id']]) && $productAllOptions[$option['product_option_id']]){
+    $tmpProductOptionValueId = $productAllOptions[$option['product_option_id']];
+    if($tmpProductOptionValueId==$option['product_option_value_id']){
+        continue;
+    }
+}
+]]></add>
+        </operation>
+
+        <operation info="取出下载链接">
+            <search >
+                <![CDATA[foreach ($product['option'] as $option) {]]>
+            </search>
+            <add position="replace"   offset="26"><![CDATA[ foreach ($product['option'] as $option) {
+             if(isset($productAllOptions[$option['product_option_id']]) && $productAllOptions[$option['product_option_id']]){
+    $tmpProductOptionValueId = $productAllOptions[$option['product_option_id']];
+    if($tmpProductOptionValueId==$option['product_option_value_id']){
+        continue;
+    }
+}
+					if ($option['type'] != 'file') {
+						$option_data[] = array(
+												'name'  => $option['name'],
+												'value' => $option['value'],
+												'type'  => $option['type']
+											);
+					} else {
+						$upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+
+						if ($upload_info) {
+							$option_data[] = array(
+								'name'  => $option['name'],
+								'value' => $upload_info['name'],
+								'type'  => $option['type'],
+
+							);
+						}
+					}
+
+
+				]]></add>
+        </operation>
+
+        
+
+
+    </file>
+    
+    <file path="catalog/model/journal2/checkout.php">
+        <operation info="journal的checkout界面只显示部分[SPECIAL REQUIREMENTS]和[PCB STENCIL]的非默认选项">
+            <search index="1">
+	        <![CDATA[foreach ($this->cart->getProducts() as $product) {]]>
+            </search>
+            <add position="before" ><![CDATA[
+$this->load->model('catalog/product');
+]]></add>
+        </operation>
+        
+        <operation info="购物车界面只显示部分[SPECIAL REQUIREMENTS]和[PCB STENCIL]的非默认选项">
+            <search index="1">
+	        <![CDATA[foreach ($product['option'] as $option) {]]>
+            </search>
+            <add position="before"><![CDATA[
+$productAllOptions = array();
+if($product["product_id"]=='142'){
+    $tmpAllOptions = $this->model_catalog_product->getProductOptions($product['product_id']);
+    $filter_product_option_ids = array(653,654,655,656,657,658,659,645,646,651,661,662,664);
+    foreach($tmpAllOptions as $tmpAllOption){
+        if(in_array($tmpAllOption["product_option_id"], $filter_product_option_ids)){
+            $product_option_id = $tmpAllOption["product_option_id"];
+            if(count($tmpAllOption["product_option_value"])>0){
+                $product_option_default_value_id = null;
+                foreach($tmpAllOption["product_option_value"] as $option_value){
+                    if($option_value['if_default']==1){
+                        //这个是设置的option value
+                        $product_option_default_value_id = $option_value['product_option_value_id'];
+                        break;
+                    }
+                }
+                $productAllOptions[$product_option_id] = $product_option_default_value_id;
+            }
+            
+        }
+    }
+}
+]]></add>
+        </operation>
+        
+        <operation info="购物车界面只显示部分[SPECIAL REQUIREMENTS]和[PCB STENCIL]的非默认选项">
+        <search index="1">
+            <![CDATA[foreach ($product['option'] as $option) {]]>
+        </search>
+        <add position="after"><![CDATA[
+if(isset($productAllOptions[$option['product_option_id']]) && $productAllOptions[$option['product_option_id']]){
+    $tmpProductOptionValueId = $productAllOptions[$option['product_option_id']];
+    if($tmpProductOptionValueId==$option['product_option_value_id']){
+        continue;
+    }
+}
+]]></add>
+    </operation>
+
+        <operation info="显示上传文件全名">
+            <search index="1">
+                <![CDATA[foreach ($product['option'] as $option) {]]>
+            </search>
+            <add position="replace"  offset="31"  ><![CDATA[ foreach ($product['option'] as $option) {
+
+if(isset($productAllOptions[$option['product_option_id']]) && $productAllOptions[$option['product_option_id']]){
+    $tmpProductOptionValueId = $productAllOptions[$option['product_option_id']];
+    if($tmpProductOptionValueId==$option['product_option_value_id']){
+        continue;
+    }
+}
+
+                if ($option['type'] != 'file') {
+                    $value = Front::$IS_OC2 ? $option['value'] : $option['option_value'];
+                } else {
+                    if (Front::$IS_OC2) {
+                        $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+
+                        if ($upload_info) {
+                            $value = $upload_info['name'];
+                        } else {
+                            $value = '';
+                        }
+                    } else {
+                        $filename = $this->encryption->decrypt($option['option_value']);
+                        $value = utf8_substr($filename, 0, utf8_strrpos($filename, '.'));
+                    }
+                }
+
+                $option_data[] = array(
+                    'name'  => $option['name'],
+                     'value' => $value
+
+                );
+            }]]></add>
+        </operation>
+    </file>
+    
+    <file path="admin/controller/sale/order.php">
+        <operation info="journal的checkout界面只显示部分[SPECIAL REQUIREMENTS]和[PCB STENCIL]的非默认选项">
+            <search index="0">
+	        <![CDATA[$products = $this->model_sale_order->getOrderProducts($order_id);]]>
+            </search>
+            <add position="after" ><![CDATA[
+$this->load->model('catalog/product');
+]]></add>
+        </operation>
+        
+        <operation info="购物车界面只显示部分[SPECIAL REQUIREMENTS]和[PCB STENCIL]的非默认选项">
+            <search index="1">
+	        <![CDATA[foreach ($options as $option) {]]>
+            </search>
+            <add position="before"><![CDATA[
+$productAllOptions = array();
+if($product["product_id"]=='142'){
+    $tmpAllOptions = $this->model_catalog_product->getProductOptions($product['product_id']);
+    $filter_product_option_ids = array(653,654,655,656,657,658,659,645,646,651,661,662,664);
+    foreach($tmpAllOptions as $tmpAllOption){
+        if(in_array($tmpAllOption["product_option_id"], $filter_product_option_ids)){
+            $product_option_id = $tmpAllOption["product_option_id"];
+            if(count($tmpAllOption["product_option_value"])>0){
+                $product_option_default_value_id = null;
+                foreach($tmpAllOption["product_option_value"] as $option_value){
+                    if($option_value['if_default']==1){
+                        //这个是设置的option value
+                        $product_option_default_value_id = $option_value['product_option_value_id'];
+                        break;
+                    }
+                }
+                $productAllOptions[$product_option_id] = $product_option_default_value_id;
+            }
+            
+        }
+    }
+}
+]]></add>
+        </operation>
+        
+        <operation info="购物车界面只显示部分[SPECIAL REQUIREMENTS]和[PCB STENCIL]的非默认选项">
+            <search index="1">
+	        <![CDATA[foreach ($options as $option) {]]>
+            </search>
+            <add position="after"><![CDATA[
+if(isset($productAllOptions[$option['product_option_id']]) && $productAllOptions[$option['product_option_id']]){
+    $tmpProductOptionValueId = $productAllOptions[$option['product_option_id']];
+    if($tmpProductOptionValueId==$option['product_option_value_id']){
+        continue;
+    }
+}
+]]></add>
+        </operation>
+    </file>
+</modification>

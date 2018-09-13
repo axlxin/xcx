@@ -1,0 +1,16 @@
+<modification>
+	 <name>Change refesh</name>
+	 <version>1.0.0</version>
+	 <author>Damon Lin</author>
+	  <desc>在Modification页面刷新默认不开启网页维护模式</desc>
+	  <link>http://www.opencart.com</link>
+
+	  <file path="admin/controller/extension/modification.php">
+	  	<operation>
+	  		<search><![CDATA[$this->model_setting_setting->editSettingValue('config', 'config_maintenance',false);}]]></search>
+	  		<add position="after">
+	  			<![CDATA[else{$this->load->model('setting/setting');$this->model_setting_setting->editSettingValue('config', 'config_maintenance',false);}]]>
+	  		</add>
+	  	</operation>
+	  </file>
+</modification>

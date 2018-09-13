@@ -1,0 +1,50 @@
+<modification>
+	<id>GCRdev Sitemap 2</id>
+	<version>2</version>
+	<vqmver>2.0</vqmver>
+	<author>GCRdev</author>
+	<file name="admin/controller/common/menu.php">
+		<operation>
+			<search position="after"><![CDATA[
+		$data['order_recurring'] = $this->url->link('sale/recurring', 'token=' . $this->session->data['token'], 'SSL');
+			]]></search>
+			<add><![CDATA[
+				$data['gcrdev_sitemap_2_page'] = $this->url->link('feed/gcrdev_sitemap', 'token=' . $this->session->data['token'], 'SSL');
+			]]></add>
+		</operation>
+		
+		<operation>
+			<search position="after"><![CDATA[
+		$data['text_openbay_order_import'] = $this->language->get('text_openbay_order_import');
+			]]></search>
+			<add><![CDATA[
+				$data['gcrdev_sitemap_2'] = $this->language->get('gcrdev_sitemap_2');
+			]]></add>
+		</operation>		
+	</file>
+	
+	
+	<file name="admin/language/english/common/menu.php">
+		<operation>
+			<search position="after"><![CDATA[
+			$_['text_paypal_search']               = 'Search';
+			]]></search>
+			<add><![CDATA[
+				$_['gcrdev_sitemap_2'] = 'GCRdev Sitemap 2';
+			]]></add>
+		</operation>
+	</file>
+	
+	
+	<file name="admin/view/template/common/menu.tpl">
+		<operation>
+			<search position="after"><![CDATA[
+				 <li><a href="<?php echo $total; ?>"><?php echo $text_total; ?></a></li>
+			]]></search>
+			<add><![CDATA[
+				<li> <a href="<?php echo $gcrdev_sitemap_2_page; ?>" class="top"><?php echo $gcrdev_sitemap_2; ?></a></li>
+			]]></add>
+		</operation>
+	</file>
+	
+</modification>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>KP Forbid Mime Type Check</name>
+    <code>kp_forbid_mime_type_check</code>
+    <update>2016-09-21</update>
+    <version>1.0.0</version>
+    <author>Kevin Pan</author>
+
+    <file path="catalog/controller/tool/upload.php">
+        <operation info="弃用文件mime type检查">
+            <search >
+	        <![CDATA[if (!in_array($this->request->files['file']['type'], $allowed)) {]]>
+            </search>
+            <add position="replace" offset="3"><![CDATA[]]></add>
+        </operation>
+    </file>
+
+</modification>

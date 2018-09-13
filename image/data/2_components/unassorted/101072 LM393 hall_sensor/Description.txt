@@ -1,0 +1,25 @@
+Specifications feature: 
+
+size:32mm x 11mm x 20mm
+
+main chips:LM393,hall3144
+
+Supply Voltage:DC-5V
+
+Output with indication lamp,Effective signal output low level
+
+Adjustable sensitivity
+
+The module can be used in motor speed, position stick
+
+Datasheet:
+
+LM393.pdf
+
+example code for Arduino
+
+Product pictures:
+
+1,01
+
+

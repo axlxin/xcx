@@ -1,0 +1,27 @@
+Features:
+
+using high-quality dual-panel design, with a power indicator and TTL signal output instructions;
+
+with the DO switch signal (TTL) output, and AO analog signal output;
+
+TTL output valid signal is low. (When the low output signal light can be connected directly to the microcontroller or relay module)
+
+0 ~ 5V analog output voltage, the higher the concentration, the higher the voltage.
+
+there have four screw holes for easy positioning;
+
+Size: 32 (L) * 20 (W) * 22 (H)
+
+with a long life and reliable stability
+
+rapid response and recovery characteristics
+
+operating voltage: 5V
+
+Datasheet£º
+
+MQ-8.pdf
+
+Product picture:
+
+1

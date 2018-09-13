@@ -1,0 +1,52 @@
+Overview
+ 
+The display is a TFT active matrix electrophoretic display , with interface and a reference system design. The 2.9¡± active area contains 296¡Á128 pixels, and has 1-bit full display capabilities. An integrated circuit contains gate buffer, source buffer, interface, timing control logic, oscillator, DC-DC. SRAM. LUT ,VCOM, and border are supplied with each panel
+ 
+ 
+Features
+ 
+High contrast
+High reflectance
+Ultra wide viewing angle
+Ultra low power consumption
+Pure reflective mode
+Bi-stable
+Commercial temperature range
+Landscape, portrait mode
+Antiglare hard-coated front-surface
+Low current deep sleep mode
+On chip display RAM
+Serial peripheral interface available
+On-chip oscillator
+On-chip booster and regulator control for generating VCOM, Gate and source driving voltage .
+IC Signal Master Interface to read external temperature sensor
+Available in COG package IC thickness 300um
+
+ 
+
+GDE029 Main Parameters                                                                                                                                                                  
+
+Model:GDE029
+
+Dimension:79.0 (H)x36.7 (V) x1.18(D)mm
+
+Screen Size:2.9inch
+
+E-Paper Type:E-ink (EPD)
+
+Resolution:296(H)x128(V)
+
+Pixel Pitch:0.227¡Á0.226mm
+
+Active Area:66.9 (H)¡Á29.1 (V)mm
+
+Operation Temperature:0~50¡æ
+
+Storage Temperature:-20~70¡æ 
+
+Weight:7.35¡À0.5g
+
+Pixel Configuration:Rectangle
+
+Controller IC:UC8157C
+

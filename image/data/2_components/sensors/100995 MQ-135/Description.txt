@@ -1,0 +1,23 @@
+Specification features:
+
+Main chip: LM393,MQ-135 gas sensor
+
+Operating voltage: DC 5V
+
+With signal output indicator instructions.
+
+Dual signal output (analog output, and TTL level output).
+
+TTL output valid signal is low level,  (output low signal light, which can be accessed microcontroller IO port).
+
+analog output increases with gas concentration, the higher the concentration,the higher the voltage .
+
+high sensitivity with Sulfide, benzene vapor, and other harmful gases.
+
+with a long service life and reliable stability.
+
+Size:32mm x 22mm x 27mm(L x W x H)
+
+Package content:
+
+1 x MQ-135 sensor module.

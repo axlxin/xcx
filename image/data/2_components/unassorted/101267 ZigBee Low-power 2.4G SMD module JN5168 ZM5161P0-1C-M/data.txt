@@ -1,0 +1,32 @@
+<div>
+ <strong>Hardware parameter:</strong></div>
+<ul>
+</ul>
+<div>
+ Tipical DC characteristic:ZM5168P0</div>
+<ul>
+ <li>
+  Power consuption under sleep-mode:100nA</li>
+ <li>
+  Sleep current:0.7uA</li>
+ <li>
+  Transmitting current:15.3mA</li>
+ <li>
+  Receiving current:17mA</li>
+ <li>
+  Center frequency shift:+/-25ppm</li>
+</ul>
+<div>
+ Tipical RF characteristic:</div>
+<ul>
+ <li>
+  Receiving sensitivity:-95dBm</li>
+ <li>
+  Transmitted power:2.5dBm</li>
+ <li>
+  Maximal received power:10dBm</li>
+ <li>
+  RSSI range:-95dBm to -10dBm</li>
+ <li>
+  Output interface impedance:50¦¸</li>
+</ul>

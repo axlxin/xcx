@@ -1,0 +1,16 @@
+Paramenters£º
+Outer diameter£º    6mm
+
+Length excluding axis£º6mm
+
+output axis diameter£º1.65mm
+
+axis length£º12mm
+
+Two phase four-wire step-motor has two winding: A, B.A winding with forward current (+ A);With reverse current (-a) said.Ditto said B winding method.
+Current order:
+Two phase£¬four time£º(+A)(+B)--(-A)(+B)--(-A)(-B)--(+A)(-B)--
+Single phase£¬four time£º(+A)--(+B)--(-A)--(-B)--
+Eight time£¬half stap£º(+A)(+B)--(+B)--(-A)(+B)--(-A)--(-A)(-B)--(-B)--(+A)(-B)--(+A)--¡£
+
+The drive above can use a dedicated driver circuit ,it also can use the microcontroller programming to control.

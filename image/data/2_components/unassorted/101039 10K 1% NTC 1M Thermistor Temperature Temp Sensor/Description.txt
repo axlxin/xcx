@@ -1,0 +1,29 @@
+Specifications feature:
+
+Stainless steel sheath and waterproof.(do not suggest used in water for a long time)
+
+Measurement range: -40 to 120 ¡ãC
+
+Length of wire: 1 meter
+
+Size of probe: 4 x 25 mm
+
+Type: NTC 10k¡À1%
+
+measure environmental temperatures using arduino ADC and this 10k NTC LINK
+
+Resistance to temperature conversion table LINK
+
+B-constant : 3435K -/+ 1%
+
+Typical Dissipation Constant 5mW/ ¡ãC
+
+Probe insulation: >100MOhm
+
+Package content:
+
+1 x NTC Temperature Sensor
+
+Product picture:
+
+1

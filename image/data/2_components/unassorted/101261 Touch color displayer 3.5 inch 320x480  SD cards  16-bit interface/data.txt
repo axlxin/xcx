@@ -1,0 +1,17 @@
+
+<div>
+ <strong>Product parameter:</strong></div>
+<ul>
+ <li>
+  Dimension:3.5 inch</li>
+ <li>
+  Resolution:320x480</li>
+ <li>
+  Touch screen type: Four wire resistive touchscreen</li>
+ <li>
+  Supply voltage:3.3V</li>
+ <li>
+  Interface type:16 bit 8080 interface</li>
+ <li>
+  Additional function:Independent SD-card socket</li>
+</ul>

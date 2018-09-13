@@ -1,0 +1,8 @@
+MODEL:STM32F103RBT6
+CORE:ARM Cortex-M3 CPU
+SIZE:44.70mm*44.70mm(1760mil*1760mil)
+debug mode:SWD
+About MCU:
+	1.The highest working frequency of 72M
+        2.Single cycle multiplication and hardware division.
+        3.128K flash program memory

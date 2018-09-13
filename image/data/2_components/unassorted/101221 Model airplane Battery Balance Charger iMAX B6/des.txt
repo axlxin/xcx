@@ -1,0 +1,43 @@
+Note: The charger factory standard is without power, and must bring their own power, you must select contain 12V5A power. "
+
+Play model necessary for a charger.
+
+Whether it is the entry-level mode of Friends, or upgrade type players, B6 are the most common, and often chose a balance charger.
+
+Players can meet the general needs of .1S-6S charging lithium can be used.
+
+Charging high accuracy, good balance effect, no damage to the battery.
+
+Balancing discharge can facilitate the use of the battery saving.
+
+
+Product Information / PRODUCT INFO
+
+
+
+ Product Name:
+
+IMAX B6 charger
+
+ Product Specifications:
+
+Chargers parameters:
+- Input voltage: DC11.0-18.0V
+- The maximum charging power: 50W
+- Maximum discharge power: 5W
+- Charging current: 0.1-5.0A (adjustable)
+- Discharge current value: 0.1-1.0A (adjustable)
+- A single battery current: 300mah / cell
+- NiMH / NiCd battery number: 1-15cell
+- Lithium ion / polymer series: 1-6 Day (Note: Support for Li-Fe battery, namely A123)
+-PB Battery voltage: 2-20V
+
+Adapter parameters:
+
+Input voltage: 220V
+
+Output voltage: 12V
+
+Output Current: 5A
+
+Power cord length: 1M

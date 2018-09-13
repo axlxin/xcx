@@ -1,0 +1,73 @@
+Specifications feature:
+
+Frequency range: 433.92M
+
+High sensitivity up to -121dBm
+
+Maximum output power: 20dBm
+
+Data transfer rate: 0.123-256kbps
+
+FSK, GFSK and OOK modulation mode
+
+1.8-3.6 V power supply
+
+Ultra low power off mode
+
+The digital received signal strength indicator (RSSI)
+
+Timing wake-up function
+
+Automatic antenna matching and bidirectional switch control
+
+Configurable data packet structure
+
+Before the synchronization signal detection
+
+64 bytes RX data register (FIFO)
+
+Low power testing
+
+Temperature sensing and 8 bit analog to digital converter
+
+Operating temperature range: -20 ~ +60 C
+
+Integrated voltage regulator
+
+Frequency hopping
+
+Power on reset function
+
+Built in lens adjustment function
+
+Application:
+
+Remote Control
+
+Remote meter reading
+
+Home security alarm and remote keyless entry
+
+Industrial Control
+
+Telemetry Home Automation
+
+Personal data records
+
+Toy Control
+
+Sensor networks
+
+Tire pressure monitoring
+
+Health Monitoring
+
+Wireless PC peripherals
+
+Tag readers
+
+Package content:
+
+1 x SI4432 433M wireless transceiver module
+
+1 X   antenna

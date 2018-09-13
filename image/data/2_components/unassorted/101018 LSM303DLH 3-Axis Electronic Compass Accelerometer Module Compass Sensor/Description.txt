@@ -1,0 +1,23 @@
+Product Description:
+
+Chip Embedded 12bit ADC, 16 Bits output
+
+Power Supply: 3V-5V
+
+Communication protocol: Standard IIC
+
+Range of magnetic field: ¡À1.3 / ¡À1.9 / ¡À2.5 /¡À 4.0 / ¡À4.7 /¡À5.6 / ¡À8.1 gauss
+
+Acceleration range: ¡À2 g/¡À4 g/¡À8 g
+
+Package content:
+
+1 x LSM303DLH 3-Axis Electronic Compass Accelerometer Module
+
+Datasheet:
+
+LSM303DLH.pdf
+
+Product pictures:
+
+1,2

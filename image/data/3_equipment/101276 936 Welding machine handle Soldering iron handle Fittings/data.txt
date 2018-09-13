@@ -1,0 +1,28 @@
+<div>
+	<strong>Parameter:</strong></div>
+<ul>
+	<li>
+		Product Nume:936 Handle</li>
+	<li>
+		Power:50W</li>
+	<li>
+		Interface type:Five core interface</li>
+	<li>
+		Standard welding head:900M-I</li>
+</ul>
+<div>
+	<strong>Features:</strong></div>
+<ul>
+	<li>
+		Used superior heating core which commonly used in most of soldering stations for convenient replacement</li>
+	<li>
+		The handle is light and Suitable for long time use.</li>
+	<li>
+		Antistatic design,avoids damage of SMD components from static and electric leakage.</li>
+	<li>
+		Rapid heating,transient temperature compensation,accurate and stable temperature control</li>
+</ul>
+<div>
+	<strong>Specifications &amp; dimensions:</strong></div>
+<ul>
+</ul>

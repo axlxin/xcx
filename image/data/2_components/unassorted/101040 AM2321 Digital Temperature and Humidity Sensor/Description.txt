@@ -1,0 +1,33 @@
+Description:
+
+AM2321 capacitive humidity sensing digital temperature and humidity sensor is a temperature and humidity own calibration digital signal output composite sensor. Temperature and humidity using a dedicated acquisition technology to ensure that products with high reliability and excellent long-term stability. The sensor includes a capacitive sensor wet components and a high-precision integrated temperature measurement devices, and connected with a high-performance microprocessor. The product has excellent quality, fast response, anti-interference ability, cost and other advantages.
+ 
+The AM2321 communication single bus, both standard I2C communication. Standard single-bus interface, system integration becomes simpler and quicker. The ultra-small size, low power consumption, signal transmission distance up to 20 meters, making it the best choice for all kinds of applications and even the most demanding applications. I2C communication using standard communication timing, the user can be linked directly to the I2C communication bus, no additional wiring, simple to use. The two communication modes are used directly outputs the temperature-compensated digital information such as humidity, temperature and check CRC second calculation, the user does not need to be the digital output without the need for temperature compensation of humidity, can get an accurate temperature and humidity information. Two communication modes can be free to switch, users are free to choose, easy to use, should the fields. 4 lead, easy connection, Special packages can be provided according to user needs.
+ 
+Completely interchangeable, low-cost, long-term stability, relative humidity and temperature measurements, ultra-long distance signal transmission, the digital signal output, precise calibration, low power consumption, the standard single-bus digital interface standard I2C bus digital interface, communication may freely selected.
+
+Applications
+ 
+HVAC, dehumidifier, test and inspection equipment, consumer goods, automotive, automatic control, data loggers, weather stations, home appliances, humidifiers, medical, and other related humidity detection and control.
+
+Specifications feature:
+
+Resolution ratio:16bit
+
+Temperature range:0~50¡æ
+
+Temperature precision:¡À2¡æ
+
+Humidity range:20%~95%RH
+
+Humidity precision:¡À5%RH
+
+Response time:<5S
+
+Power supply:2.6-5.5V DC
+
+Size:11.3x7.8x4mm
+
+Package Content:
+
+1 x AM2321 Digital Temperature and Humidity Sensor module

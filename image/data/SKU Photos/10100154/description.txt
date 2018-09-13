@@ -1,0 +1,24 @@
+Product Descriptions:
+
+Input voltage 7V to 24V, output voltage 5.01V, Current continuous 2.5A output, Peak 4A output, Able to provide to 3A of continuous load current.
+The module has a USB recognition, the perfect support for IPHONE4 IPAD, NOKIA N8 series phones.
+Use original Sanyo low ESR filter capacitor, Can make the ripple voltage as low as 30mV, Fully comparable linear power.
+DIY Mobile Power Supply, to achieve 5V output for charging Phone, MP3, MP4, PSP etc.
+with ultra-high efficiency, ultra-low-loss characteristics, perfect beyond lm2596 power module.
+
+Specifications:
+
+Module Properties: non-isolated constant current and voltage module
+Rectification: Synchronous rectification
+Input voltage: DC 7-24V
+Output voltage: DC 5V
+Output current: 4A(Spike/Short time), Continuous Current 3A
+Conversion efficiency: 96% (MAX)
+Switching frequency: 340KHz
+Output ripple: 30mV (max)
+Load regulation: б└ 0.5%
+Voltage regulation: б└ 2.5%
+Operating Temperature: -40 бу C to +85 бу C
+Dimension: 60 x 21 x 14 mm (2 6/16 x 13/16 x 9/16 in)
+With Short-circuit Protection: 5A short-circuit
+

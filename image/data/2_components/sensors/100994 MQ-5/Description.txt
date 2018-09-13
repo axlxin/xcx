@@ -1,0 +1,31 @@
+Product description:
+
+Sensitive material of MQ-5 gas sensor is SnO2, which with lower conductivity in clean air. When the target combustible gas exist, The sensors conductivity is more higher along with the gas concentration rising. Please use simple electrocircuit, Convert change of conductivity to correspond output signal of gas concentration.
+
+MQ-5 gas sensor has high sensitity to Methane, Propane and Butane, and could be used to detect both Methane and Propane. The sensor could be used to detect different combustible gas especially Methane, it is with low cost and suitable for different application.
+
+Specifications feature:
+
+Indication of the signal output.
+
+Dual signal output (analog output, and TTL level output)
+
+TTL output signal is low. (When low output signal light, and can be connected directly to the microcontroller)
+
+0 ~ 5V analog output voltage, the higher the concentration, the higher the voltage.
+
+Liquefied petroleum gas, natural gas, city gas, better sensitivity.
+
+Has a long life and reliable stability
+
+Fast response and recovery characteristics
+
+Operating voltage: DC 5 V
+
+Application : 
+
+Domestic gas leakage detector
+
+Industrial Combustible gas detector
+
+Portable gas detector

@@ -1,0 +1,19 @@
+Product Features£º
+
+It can detect the surrounding luminance or light then output analog value.
+
+Adjustable Sensitivity, Stable Performance
+
+Applicable to a variety of platforms including Arduino / AVR / ARM.
+
+Adopt photoconductive resistance , suitable for detecting a wide range of luminance or light.
+
+Size:23 x 21mm
+
+Package content:
+
+1 x Light Sensor Module
+
+Product pictures:
+
+1,2

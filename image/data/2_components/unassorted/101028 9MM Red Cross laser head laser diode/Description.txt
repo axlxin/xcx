@@ -1,0 +1,27 @@
+Specification feature:
+
+Name : Laser small bronze head ( red )
+
+Transmit Power : 50mW
+
+Working life : 1000 hours or more
+
+Spot modes: point-like spot , continuous output
+
+Laser wavelength : 650nm
+
+Power: 50mW
+
+Voltage : 3V
+
+Current : <20mA
+
+Working temperature: -36 degrees to 65 degrees 
+
+Storage temperature: -36 degrees to 65 degrees
+
+Spot size : 15 meters spot to ¦Õ10mm ~ ¦Õ15mm
+
+Product picture:
+
+1

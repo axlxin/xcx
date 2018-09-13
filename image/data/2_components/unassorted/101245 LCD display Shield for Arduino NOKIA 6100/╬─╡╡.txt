@@ -1,0 +1,30 @@
+101245 Arduino LCD display LCD Shield for Arduino 685 SHD_LCD_NOKIA
+
+http://linksprite.com/wiki/index.php5?title=Color_Image_LCD_Shield_for_Arduino
+Introduction 
+This 128x128 mini color LCD is a perfect match for the portable application. It is designed to repalce a broken screen in a cell phone. So the connector was not designed for multiple attachment/detachment. Please be gentle and handle with care. 
+This inexpensive LCD comes with a powerful white LED backlight and a relatively simple serial interface. It's a 9-bit interface, so beware. But we were able to get the LCD up and running on a LPC2138 with a few hours worth of work. 
+Frame Dimensions: 1.35x1.58" Active Display Dimensions: 1.2"x1.2" 
+ 
+Features 
+，	CD Logic - 3.3V @ 2-3mA 
+，	LED Backlight - 7V @ 40-50mA (very bright) 
+，	Full 4,096 Color Display 
+，	Uses the Epson S1D15G10 or Philips PCF8833 Controller (we cannot guarantee which one you will receive, please see Jim Lynch's tutorial below as to why) 
+
+Pin definition and Rating 
+，	VCC-Digital (3.3V) 
+，	RESET 
+，	SDATA 
+，	SCK 
+，	CS 
+，	VCC-Display (3.3V) 
+，	N/C 
+，	GND 
+，	LED GND 
+，	LED V+ (6-7V) 
+FAQ 
+Please list your question here: 
+Support 
+If you have questions or other better design ideas, you can go to our forum to discuss or creat a ticket for your issue at linksprite support. 
+

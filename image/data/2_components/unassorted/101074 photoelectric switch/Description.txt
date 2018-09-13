@@ -1,0 +1,15 @@
+Specifications feature: 
+
+Model:E18-D80NK;
+
+Operating Voltage:DC 5V 100mA;
+
+Operating distance:3-80cm
+
+Response time <2ms
+
+example code for Arduino
+
+Product picture:
+
+1,2

@@ -1,0 +1,100 @@
+Overview
+
+Phone Shield SIM908 is an Arduino shield based on the Quad-band GSM/GPRS module SIM908.
+SIM908 Features
+
+General
+
+    Quad-band 850/900/1800/1900MHz
+    GPRS multi-slot class 10
+    GPRS mobile station class B 
+    Compliant to GSM phase 2/2+
+        Class 4 (2 W @ 850/900 MHz)
+        Class 1 (1 W @ 1800/1900 MHz)
+    Control via AT commands (GSM 07.07, 07.05 and SIMCom enhanced AT Commands)
+    SIM application toolkit
+    Supply voltage range :
+        GPRS: 3.2 ~ 4.8 V
+        GPS: 3.0 ~ 4.5V
+    Operation temperature : -40 °„C to +85 °„C
+
+SMS
+
+    Point-to-point MO and MT
+    SMS cell broadcast
+    Text and PDU mode
+
+Audio
+
+    Tricodec
+        Half rate (HR)
+        Full rate (FR)
+        Enhanced Full rate (EFR)
+    Hands-free operation
+    Echo cancellation
+
+GPRS
+
+    GPRS class 8/10: max. 85.6 kbps (downlink)
+    PBCCH support
+    Coding schemes CS 1, 2, 3, 4
+    PPP-stack
+
+CSD
+
+    CSD up to 14.4 kbps
+    USSD
+    Non transparent mode
+
+GPS
+
+    Receiver type
+        42-channel
+        GPS L1 C/A code
+        High-performance STE engine
+    Sensitivity
+        Tracking: -160 dBm
+        Cold starts : -143 dBm
+    Time-To-First-Fix
+        Cold starts : 30s (typ.)
+        Hot starts : 1s (typ.)
+    Accuracy
+        Horizontal position : <2.5m CEP
+    Power consumption (GSM engine in idle mode)
+        Acquisition : 77mA
+        Tracking : 76mA
+
+What's on Board
+    Earphone jack : SIM908 2nd analog voice channel output
+    GSM antenna connector : SMA interface
+    Arduino expansion connector : for connecting with an Arduino board
+    GSM antenna connector
+    UART interface : for debugging
+    GPS antenna placeholder
+    SIM908 control interface
+    GPS antenna connector
+    External UART module power jumper
+    SIM908
+    SIM card slot
+    Mic : SIM908 1st analog voice channel input
+    Power switch
+    6V~9V DC power jack
+    Power indicator
+    SIM908 status indicator : light up when SIM908 is powered
+    SIM908 network indicator : blinking slowly when network registration is successful
+    Arduino reset button
+    NOKIA original speaker : SIM908 1st analog voice channel output
+    MIC29302 power chip
+    74HC125
+    Onboard vibration motor
+    NCP2890 power amplifier : amplifies the SIM908 1st analog voice channel
+    NCP2890 enable jumper :
+        short the EN and VBAT to enable
+        short the EN and GND to disable
+    SIM908 analog output positive jumper :
+        open it when NCP2890 is enabled
+        short it when NCP2890 is disabled
+    SIM908 analog output negative jumper :
+        open it when NCP2890 is enabled
+        short it when NCP2890 is disabled
+

@@ -1,0 +1,34 @@
+Product description:
+
+Sensitive material of MQ-4 gas sensor is SnO2, which with lower conductivity in clean air. When the 
+target combustible gas exist, The sensor¨s conductivity is more higher along with the gas concentration 
+rising. Please use simple electrocircuit, Convert change of conductivity to correspond output signal of 
+gas concentration. 
+
+MQ-4 gas sensor has high sensitity to Methane, also to Propane and Butane. The sensor could be 
+used to detect different combustible gas, especially Methane, it is with low cost and suitable for different 
+application. 
+
+Feature:
+
+High sensitivity to Combustible gas in wide range 
+
+High sensitivity to Natural gas、Methane、Coal gas、CO etc gas
+
+Fast response
+
+Wide detection range
+
+Stable performance、long life、low cost     
+
+Simple drive circuit
+
+Application:
+
+Domestic gas leakage detector 
+
+Industrial Combustible gas detector 
+
+Portable gas detector 
+
+Datasheet:

@@ -1,0 +1,30 @@
+/*
+counter------------arduino
+ VCC------------------5v
+ GND------------------GND
+ OUT------------------3*/
+
+int pbIn = 0;                  
+int ledOut = 13;                
+int counter=0;
+volatile int state = LOW;      
+
+void setup()
+{                
+  pinMode(ledOut, OUTPUT);
+  Serial.begin(9600);
+  attachInterrupt(pbIn, stateChange,FALLING);//Interrupt  3-pin  Falling edge
+}
+ 
+void loop()                     
+{
+  Serial.println(counter);
+}
+ 
+void stateChange()
+{
+  counter++;
+  if(counter==9999) counter=0;
+  state = !state;
+  digitalWrite(ledOut, state);  
+}

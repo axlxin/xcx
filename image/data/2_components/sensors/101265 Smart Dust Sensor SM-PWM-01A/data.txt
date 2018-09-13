@@ -1,0 +1,46 @@
+<div>
+	<strong>Overview:</strong></div>
+<ul>
+	<li>
+		The SMART Dust sensor can detect the small particles like cigarette smoke and it can distinguish small particles like smoke from large house dust by pulse pattern of singal output.</li>
+</ul>
+<div>
+	<strong>Features:</strong></div>
+<ul>
+	<li>
+		Compact size,light weight(about W59xH46xD18mm,35g)</li>
+	<li>
+		PWM(pulse width modulation)output(Low pulse output)</li>
+	<li>
+		Enable to distinguish small particle of cigarette smoke from large house dust.</li>
+	<li>
+		Constant forced air convection flow by heater risister in dust sensor</li>
+	<li>
+		Lead free and ROHS directive compliant.</li>
+	<li>
+		Minimum particle size can be detected over 1 um</li>
+	<li>
+		(House dust size:avg 20um, yellow dust size:avg 20um, cigartte dust size:avg 1um)</li>
+</ul>
+<p>
+	<strong>Specification:</strong></p>
+<ul>
+	<li>
+		Supply voltage:-0.3V to +7V</li>
+	<li>
+		Operating temperture:-10 °„C to 60 °„C</li>
+	<li>
+		Storage temperture:-30 °„C to 80 °„C</li>
+	<li>
+		Current consumption:&lt;100°¿5% mA</li>
+	<li>
+		Humidity:&lt;85% RH</li>
+	<li>
+		Singal output:H1&gt;4.5V,Lo&lt;0.7V</li>
+</ul>
+<div>
+	<strong>Product picture:</strong></div>
+<p>
+	<img alt="" src="http://smart-prototyping.com/image/data/2_components/unassorted/101265 Smart Dust Sensor SM-PWM-01A/1.jpg" style="width: 750px; height: 897px;" /></p>
+<ul>
+</ul>

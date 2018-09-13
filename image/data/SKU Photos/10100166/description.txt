@@ -1,0 +1,8 @@
+Product Descriptions:
+
+1 Input: 1-5 V dc 2.5 V (1 V input voltage must be higher than to the output voltage above.)
+2 output: 1.8 V (+ 0.05 V error), 800 ma (load current should not exceed 800 ma)
+3 double panel design, layout and generous;
+4 2pin input and 2pin output, simple and easy to use.
+5 PCB dimension: 2.5 cm * 1.1 cm
+

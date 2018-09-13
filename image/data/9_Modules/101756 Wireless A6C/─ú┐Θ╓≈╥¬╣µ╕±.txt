@@ -1,0 +1,37 @@
+ Size22.8×16.8×2.5mm；
+
+l  operating temperature: -30℃to+80℃；
+
+l  operating voltage: 3.3V-4.2V;
+
+l  starting up voltage >3.4V;
+
+l  average standby electric current <3ma;
+
+l  frequency range: 850MHZ,900MHZ,1800MHZ,1900MHZ；
+
+l  GPRS Class 10;
+
+l  sensitivity <-105;
+
+l  voice communication；
+
+l  SMS message；
+
+l  GPRS data traffic，download <85.6Kbps, upload <42.8Kbps；
+
+l  支持标准GSM07.07,07.05 AT命令及Ai Thinker扩展命令；
+
+l  支持2个串口，一个下载串口，一个AT命令口；
+
+l  AT命令支持标准AT和TCP/IP命令接口；
+
+l  支持数字音频和模拟音频，支持HR，FR，EFR，AMR语音编码；
+
+ 
+
+l  支持ROHS，FCC，CE，CTA认证；
+
+l  SMT 42PIN封装；
+
+Doc: http://www.electrodragon.com/w/GSM_GPRS_A6_Module

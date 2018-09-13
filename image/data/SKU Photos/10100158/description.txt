@@ -1,0 +1,14 @@
+Specifications:
+
+input voltage: 4-38 v
+Output voltage: 1.25-36 v continuous adjustable
+Output current: adjustable, maximum 5A
+Output power: 75W maximum 
+Working temperature: - 40 ~ + 85 degrees
+Working frequency: 180 KHZ
+Conversion efficiency: up to 96%
+Short circuit protection: (limit current 8A)
+Overtemperature protection: (automatic shut off output)
+Input reverse connect protection: no
+Module size: 15 mm x 61.7 mm x 26.2 mm
+Weight: 25 g

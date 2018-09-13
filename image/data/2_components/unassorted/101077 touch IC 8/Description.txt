@@ -1,0 +1,23 @@
+Specifications feature:
+
+Input Operating voltage: DC 2.0V - 5.5V
+
+Input with reverse polarity protection.
+
+LED Color: connected to Output pin
+
+Idle current: <10uA
+
+Size: 47.4mmx46mm
+
+Package content:
+
+1 x touch module
+
+Schematic£º
+
+TTP226.pdf
+
+Product picture:
+
+1,01,02,03

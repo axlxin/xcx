@@ -1,0 +1,17 @@
+Features:
+
+1. This DC-DC power module has a Segment Displays as voltmeter, you can press the button to shift displaying input/ouput 
+2. Memory the last voltage;
+3. Long press the button for 3 seconds to disable the LED display, light touch button to anable the LED display;
+4. The maximum output current can reach 2.5 A;
+
+Specifications:
+
+Module properties: non-isolated module
+Input voltage: 3-34 v
+Continuous adjustable output voltage: 4-35 (v)
+Output current: 2.5 A (MAX)
+Input current: 3 A(MAX)
+Module size: 49 x26 (mm)
+
+

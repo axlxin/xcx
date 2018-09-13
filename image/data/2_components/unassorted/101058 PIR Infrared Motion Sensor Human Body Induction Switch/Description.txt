@@ -1,0 +1,26 @@
+Specifications feature:
+
+Operating voltage: 220VAC°¿10%50HZ
+
+Rated load:4A
+
+Power:°‹3mW
+
+Delay the closing time :10-300 seconds (adjustable) 
+
+Detection range: °‹ 8M 
+
+Detection angle: 120 °„
+
+Adjustable light sensing range: adjustable from 10LUX to connect during the day 
+
+Recommended mounting height:1.4-1.6M
+
+Temperature:-10-50°„C
+
+Power Warm-up Time:40-80seconds
+
+Product picture:
+
+1
+ 

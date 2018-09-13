@@ -1,0 +1,5 @@
+description
+1.A low price, only to earn a small profit base, hope that this will bring more rapid development of animal networking 
+2.Two powerful internal ran LWIP agreement 
+3.supports three modes: AP, STA, AP + STA coexistence mode. 
+4.perfect simple and efficient AT commands, allowing you to develop more simple.  

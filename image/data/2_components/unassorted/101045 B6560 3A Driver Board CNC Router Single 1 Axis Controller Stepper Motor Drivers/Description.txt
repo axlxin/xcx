@@ -1,0 +1,31 @@
+Specifications feature:
+
+100% brand new and high quality
+
+TB6560 3A stepper motor drives
+
+Working voltage DC 10V-35V
+
+Using 6N137 high-speed optical coupling to ensure high speed without losing step 
+
+Toshiba TB6560AHQ new original chip,
+
+The low-pressure shut-off, overheating and over-current protection circuit parking to ensure optimal performance
+
+Rated maximum output: ¡À 3A, 3.5A peak
+
+3A fit within the two-phase stepper 42,57 / four-phase / four-wire / six-wire stepper motor,
+
+Not suitable for a stepping motor more than 3A
+
+Automatic half current function segments: full step, half step, 1/ 8 step, 1/16 steps, up to 16 segments
+
+Size:50 x 75  35mm (W x L  H)
+
+Package content:
+
+1 x Driver Board 
+
+Product pictures:
+
+1,2,3

@@ -1,0 +1,35 @@
+Features: 
+
+High quality
+
+Built-in hardware and link layer
+
+Automatic response and automatic retransmission function
+
+Address and CRC check function
+
+Wireless rate: 1 or 2 MBPS
+
+SPI interface rate: 0 ~ 8MBPS
+
+125 optional channels work
+
+Channel switching time is very short, can be used for frequency hopping
+
+Fully compatible with nRF24XX series
+
+I/O can accept 5v level of input
+
+¡À60ppm 16MHz crystal
+
+Low working voltage: 1.9 ~ 3.6 V
+
+The global open ISM frequency band, the maximum 0dbm transmitted power, free license to use. 14.Transmission distance up to 100 meters in outdoor open occasions!
+
+Package content:
+
+1 x  NRF24L01+ 2.4GHz Antenna Wireless Transceiver Module For Microcontroller
+
+Product pictures:
+
+1,2

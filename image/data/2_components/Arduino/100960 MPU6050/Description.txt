@@ -1,0 +1,25 @@
+Product features:
+1.Acceleration,Gyroscope and  magnetometer
+2.10DOF modules (three-axis gyroscope + triaxial accelerometer and three-axis magnetic field + atmospheric pressure) 
+2.chip:MPU6050+HMC5883+BMP180
+3.voltage:3.3V/5V
+4.Communication protocol:IIC(fully compatible with 3-5v system containing LLC circuit) 
+5.size:2.2cm*1.7cm
+6.wight:6g
+
+
+
+
+The MPU-6000/6050 devices combine a 3-axis gyroscope and a 3-axis accelerometer on the same silicon die together with an onboard Digital Motion Processor (DMP) capable of processing complex 9-axis MotionFusion algorithms. The parts¡¯ integrated 9-axis MotionFusion algorithms access external magnetometers or other sensors through an auxiliary master I2C bus, allowing the devices to gather a full set of sensor data without intervention from the system processor. The devices are offered in the same 4x4x0.9 mm QFN footprint and pinout as the current MPU-3000? family of integrated 3-axis gyroscopes, providing a simple upgrade path and making it easy to fit on space constrained boards.
+
+The InvenSense MotionApps Platform that comes with the MPU-6050 abstracts motion-based complexities, offloads sensor management from the operating system and provides a structured set of APIs for application development.
+
+For precision tracking of both fast and slow motions, the parts feature a user-programmable gyro full-scale range of ¡À250, ¡À500, ¡À1000, and ¡À2000¡ã/sec (dps) and a user-programmable accelerometer full-scale range of ¡À2g, ¡À4g, ¡À8g, and ¡À16g.
+
+
+The Honeywell HMC5883 is a surface mount multi-chip module designed for low field magnetic sensing with a digital interface for applications such as low cost compassing and magnetometry. The HMC5883 includes our state of the art, high-resolution HMC118X series magneto-resistive sensors plus Honeywell developed ASIC containing amplification, automatic degaussing strap drivers, offset cancellation, 12-bit ADC that enables 1¡ã to 2¡ã compass heading accuracy. The I2C serial bus allows for easy interface. The HMC5883 is a 3.0x3.0x0.9mm surface mount 16-pin leadless chip carrier (LCC). Applications for the HMC5883 include Mobile Phones, Netbooks, Consumer Electronics, Auto Navigation Systems, and Personal Navigation Devices.
+
+
+The BMP180 is the new digital barometric pressure sensor of Bosch Sensortec, with a very high performance, which enables applications in advanced mobile devices, such as smart phones, tablet PCs and sports devices. It follows the BMP085 and brings many improvements, like the smaller size and the expansion of digital interfaces.
+
+The ultra-low power consumption down to 3 ¦ÌA makes the BMP180 the leader in power saving for your mobile devices. BMP180 is also distinguished by its very stable behavior (performance) with regard to the independency of the supply voltage.

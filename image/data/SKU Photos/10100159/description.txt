@@ -1,0 +1,7 @@
+Product Descriptions:
+
+Input voltage range: 5V - 60V (adviced below 50V)
+Range of output voltage: 1.25V - 26V
+Output maximum current: 3A
+Continuous/Stable working current: 1.2 A (total power output within 20W)
+Dimension: 4.3x3.0x1.2 cm(length,width,height)

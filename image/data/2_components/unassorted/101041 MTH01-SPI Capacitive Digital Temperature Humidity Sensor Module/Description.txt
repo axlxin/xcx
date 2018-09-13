@@ -1,0 +1,53 @@
+Features:
+ 
+The relative temperature and humidity sensor (humidity range 18% - 98% temperature range - 40 °„C - 70 °„C);
+
+Precomputed temperature and humidity sensing, without additional calculation;
+
+High precision plus or minus 3% RH (maximum not more than plus or minus 5% RH), + / - 0.5 °„C;
+
+Can calculate dew point;
+
+Completely calibration, digital output;
+
+Good long-term stability;
+
+No extra components;
+
+Low power consumption, 3 V - 5.5 V (minimum 2 V) power supply;
+
+Completely interchangeable;
+
+The size is small;
+
+Automatic cut-off;
+ 
+Application 
+ 
+hvac 
+
+test and testing equipment
+
+car 
+
+data recorder
+
+consumer goods 
+
+automatic control
+
+weather station 
+
+home appliance
+
+humidity regulator 
+
+medical treatment
+
+Package content:
+
+1 x MTH01-SPI Capacitive Digital Temperature Humidity Sensor Module
+
+Product pictures:
+
+1,2

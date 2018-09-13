@@ -1,0 +1,31 @@
+/*
+arduino----------Relay
+ 5V--------------VCC
+ GND-------------GND
+  7--------------IN*/
+//If you use the serial port after sending the characters a,The relay will be closed 200ms.
+//the Blue LED lights. 
+int OUT=7;
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(OUT,OUTPUT);
+  //digitalWrite(OUT,HIGH);
+}
+void loop()
+{
+  char val;
+  if(Serial.available()>0)
+  {
+    val=Serial.read();
+    if(val=='a')
+    {
+     // Serial.println(val);
+      digitalWrite(OUT,HIGH);
+      delay(200);
+      digitalWrite(OUT,LOW);
+    }
+ 
+      digitalWrite(OUT,LOW);
+  }
+}

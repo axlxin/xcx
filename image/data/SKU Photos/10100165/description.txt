@@ -1,0 +1,14 @@
+Descriptions:
+
+This power module is a new version module, with larger inductance, better heat cooling system, working more stable.
+
+Specifications:
+
+Input voltage: 5-30 v
+Adjustable output voltage: 1.25 V - 26 V
+Adjustable output current: 0.2 A - 2 A
+Size: 3.8 * 5.5 * 5.5 CM (width)
+Limitation: input maximum 32 v, output current 2.6 A
+Take care of the heat cooling when you make the module full load work. 
+Constant voltage ripple: 50 mv, 52 khz ripple 
+

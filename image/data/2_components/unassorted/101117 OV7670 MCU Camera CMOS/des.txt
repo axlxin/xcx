@@ -1,0 +1,21 @@
+Item Description
+
+The OV7660 camera module is a low cost 0.3 mega pixel CMOS color camera module, which is compatible with OV7670 module that can output 640x480 VGA resolution image at 30fps. The OV7660 camera module build in onboard LDO regulator only single 3.3V power needed and can be used in Arduino, STM32,Chipkit, ARM, DSP , FPGA and etc. For more information how to use camera modules please visit www.arducam.com.
+Features:
+
+    Optical size 1/5 inch
+    Resolution 640x480 VGA
+    Onboard regulator, only single 3.3V supply needed
+    Standard 0.1inch (2.54mm) pin pitch header connector
+    Mounted with high quality F1.8 / 8mm lens
+    Output support for Raw RGB, RGB (GRB 4:2:2, RGB565/555), YUV (4:2:2) and YCbCr (4:2:2) formats
+    High sensitivity for low-light operation
+    Low operating voltage for embedded portable apps
+    Standard SCCB interface compatible with I2C interface
+    Supports image sizes: VGA, QVGA,QQVGA,CIF,QCIF,QQCIF
+    VarioPixel? method for sub-sampling
+    Automatic image control functions including: Automatic
+    Exposure Control (AEC), Automatic Gain Control (AGC), Automatic White Balance (AWB), Automatic
+    Band Filter (ABF), and Automatic Black-Level Calibration (ABLC)
+    Image quality controls including color saturation, hue, gamma, sharpness (edge enhancement), and anti-blooming
+

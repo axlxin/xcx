@@ -1,0 +1,26 @@
+Description: 
+1.板载ULN2003A电机驱动芯片;
+2.芯片所有管脚已经引出，方便连接使用
+3.插针5-12V供电
+4.板载4路信号指示灯
+4.板载XH-5P插座，可以直接连接28BYJ-48型号的步进电机
+5.PCB板尺寸：40.5(mm)*21.3(mm)
+Specifications feature:
+
+ULN2003A motor driver chip
+
+supply voltage:3. 5-12V
+
+4-way signal indicator
+
+XH-5P socket can connect 28BYJ-48 Model stepper motor directly
+
+Size: 40.5 (mm) x21.3 (mm)
+
+Datasheet:
+
+uln2003a.pdf
+
+Product pictures:
+
+1,2,3,01,02,03,04

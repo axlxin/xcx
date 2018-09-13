@@ -1,0 +1,120 @@
+/*
+GY-87             arduino
+ VCC_IN-----------5V
+ GND--------------GND
+ SCL--------------A5
+ SDA--------------A4
+*/
+#include "Wire.h"
+#include "I2Cdev.h"
+#include "MPU6050.h"
+#include "Timer.h"//time rotation, data acquisition and processing
+
+Timer t;//time class
+
+float timeChange=20;//Time interval  20ms
+float dt=timeChange*0.001;//ms-------->s
+// Gyroscope
+float angleAx,gyroGy;//The angle and angular velocity
+MPU6050 accelgyro;//Gyroscope class
+int16_t ax, ay, az, gx, gy, gz;//the original value of the acceleration and angle velocity
+
+//The first-order filter
+float K1 =0.05; 
+//float dt=20*0.001
+float angle1;
+//The Second-order filter
+float K2 =0.2; 
+float x1,x2,y1;
+//float dt=20*0.001;
+float angle2;
+
+//Kalman parameters
+float angle, angle_dot;
+float angle_0, angle_dot_0;
+//float dt=20*0.001;
+
+float P[2][2] = {{ 1, 0 },
+              { 0, 1 }};
+float Pdot[4] ={ 0,0,0,0};
+float Q_angle=0.001, Q_gyro=0.005; 
+float R_angle=0.5 ,C_0 = 1;
+float q_bias, angle_err, PCt_0, PCt_1, E, K_0, K_1, t_0, t_1;
+
+void setup() 
+{
+    Wire.begin();//IIC initialization
+    Serial.begin(9600);//Serial port initialization
+    accelgyro.initialize();//Sensor initialization
+    int tickEvent1=t.every(timeChange, getangle);//the callback function 
+    int tickEvent2=t.every(50, printout) ;//Serial output 
+}
+void loop() 
+{
+    t.update();
+}
+
+
+void printout()
+{
+     Serial.print(angleAx);Serial.print(',');
+     Serial.print(angle1);Serial.print(',');
+     Serial.print(angle2);Serial.print(',');
+     // Serial.print(gx/131.00);Serial.print(',');
+     Serial.println(angle);//Serial.print(',');
+     //   Serial.println(Output);
+}
+
+
+void getangle()
+{
+    accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);//Read the original data
+    angleAx=atan2(ax,az)*180/PI;//Direct calculation of angle
+    gyroGy=-gy/131.00;//Calculation of angular speed 
+    First_order_filter(angleAx,gyroGy);//The first-order filter
+    Second_order_filter(angleAx,gyroGy);//Second_order_filter output
+    Kalman_Filter(angleAx,gyroGy);   //kalman output
+}
+
+
+
+void First_order_filter(float angle_m, float gyro_m)
+{
+    angle1 = K1 * angle_m+ (1-K1) * (angle1 + gyro_m * dt);
+}
+
+void Second_order_filter(float angle_m,float gyro_m)
+{
+    x1=(angle_m-angle2)*(1-K2)*(1-K2);
+    y1=y1+x1*dt;
+    x2=y1+2*(1-K2)*(angle_m-angle2)+gyro_m;
+    angle2=angle2+ x2*dt;
+}
+
+void Kalman_Filter(double angle_m,double gyro_m)
+{
+    angle+=(gyro_m-q_bias) * dt;
+    angle_err = angle_m - angle;
+    Pdot[0]=Q_angle - P[0][1] - P[1][0];
+    Pdot[1]=- P[1][1];
+    Pdot[2]=- P[1][1];
+    Pdot[3]=Q_gyro;
+    P[0][0] += Pdot[0] * dt;
+    P[0][1] += Pdot[1] * dt;
+    P[1][0] += Pdot[2] * dt;
+    P[1][1] += Pdot[3] * dt;
+    PCt_0 = C_0 * P[0][0];
+    PCt_1 = C_0 * P[1][0];
+    E = R_angle + C_0 * PCt_0;
+    K_0 = PCt_0 / E;
+    K_1 = PCt_1 / E;
+    t_0 = PCt_0;
+    t_1 = C_0 * P[0][1];
+    P[0][0] -= K_0 * t_0;
+    P[0][1] -= K_0 * t_1;
+    P[1][0] -= K_1 * t_0;
+    P[1][1] -= K_1 * t_1;
+    angle += K_0 * angle_err; 
+    q_bias += K_1 * angle_err;
+    angle_dot = gyro_m-q_bias;
+}

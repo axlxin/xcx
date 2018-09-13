@@ -1,0 +1,20 @@
+TTP223B Digital Touch Sensor Capacitive Touch Switch Module for Arduino
+Description 
+1.Brand new with high quality
+
+2.On-board-level status indicator
+
+3.working voltage:2.0V-5.5V
+
+4.PCB board size:29(mm)*16(mm)
+
+5.Compatible with all types of single chip
+
+6.This is suitable for all kinds of control system, robot, intelligent vehicle, etc.
+
+7.wight:3g
+
+
+Package content
+1.1PCS*TTP223 Capacitive Touch switch Digital Touch Sensor Module
+

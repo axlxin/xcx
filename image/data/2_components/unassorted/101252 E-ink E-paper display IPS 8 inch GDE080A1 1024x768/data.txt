@@ -1,0 +1,31 @@
+Product parameter:
+Model:               GDE080A1
+Dimension:         134.11x178.56x1.18mm
+Active area:          112.11 X 162.82mm
+Resolution:           768 x 1024
+Dot spacing:           0.159(H) X 0.159(V) 
+Color:                black /white/gray scale
+Grayscale value:        16
+Contrast:              8:1
+Aspect ratio:          4:3
+Reflectance:           35%
+Refresh time:           960ms     
+Operative temperature:   0~50¡æ
+Storage temperature:     -20~60¡æ 
+Logic Supply Voltage:   3.3V
+Control IC:             HX8705-B
+
+ 
+Properties
+Build-in IC driver 
+Special developed DEMO	 
+Wide viewing angle
+Ultra low power consumption
+Pure reflection mode
+Bi-stable display
+Commercial temperature range
+Landscape, portrait modes
+Anti-dazzling front surface with hard coating
+Low current deep sleep mode
+Use COG packaging, IC thickness is 250 um
+Service life (refreshing times under normal use condition) : over a million times

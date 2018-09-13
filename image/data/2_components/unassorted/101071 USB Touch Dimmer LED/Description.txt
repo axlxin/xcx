@@ -1,0 +1,13 @@
+Specifications feature:
+
+supply voltage: 5 v
+
+current: 180 ma (5 v)
+
+Power: 0.9 W
+
+size: 50 x 12 x 3.3 MM
+
+Product pictures£º
+
+1,2

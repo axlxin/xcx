@@ -1,0 +1,23 @@
+Product descriptions:
+
+1 2 L9110S motor driver chip on board
+2 input power: 2.5-12v
+3 suitable motor: motor working voltage between 2.5 v to 12 v, 0.8 A maximum working current, compatiable most of the smart car motors on the market.
+4 It can drive two dc motors at the same time, or one 4 line 2 phase stepper motor.
+5 PCB size: 2.8 cm * 2.1 cm 
+6 mounting holes diameter: 3 mm
+
+6pin male header explain: 
+
+1 VCC: 2.5 V to 12 V voltage
+2 GND: GND
+3 IA1: microcontroller IO port
+4 IB1: microcontroller IO port
+5 IA2: microcontroller IO port
+6 IB2: microcontroller IO port
+
+4pin terminal explain: 
+
+1. OA1 OB1 connect to dc motor
+2. OA2 OB2 connect to dc motor
+

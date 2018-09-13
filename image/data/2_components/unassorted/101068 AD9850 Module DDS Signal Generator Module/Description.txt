@@ -1,0 +1,17 @@
+Specifications feature:
+
+Frequency Range: 0-40MHz
+
+Square Wave Range: 0-1MHz
+
+Adopt 125MHz active crystal
+
+Size (L x W x H): 1.65 x1.2 x 0.7 inch
+
+Package content:
+
+1x Signal Generator Module
+
+Product pictures:
+
+1,2,3

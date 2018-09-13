@@ -1,0 +1,30 @@
+Product description:
+
+Sensitive material of MQ-9 gas sensor is SnO2, which with lower conductivity in clean air. It make 
+detection by method of cycle high and low temperature, and detect CO when low temperature (heated 
+by 1.5V). The sensor¡¯s conductivity is more higher along with the gas concentration rising. When high 
+temperature (heated by 5.0V), it detects Methane, Propane etc combustible gas and cleans the other 
+gases adsorbed under low temperature. Please use simple electrocircuit, Convert change of conductivity 
+to correspond output signal of gas concentration. 
+
+MQ-9 gas sensor has high sensitity to Carbon Monoxide, Methane and LPG. The sensor could be 
+used to detect different gases contains CO and combustible gases, it is with low cost and suitable for 
+different application. 
+
+Feature:
+
+Good sensitivity to CO/Combustible gas 
+
+High sensitivity to Methane, Propane and CO 
+
+Long life and low cost 
+
+Simple drive circuit 
+
+Application:
+
+Domestic gas leakage detector 
+
+Industrial gas detector 
+
+Portable gas detector 

@@ -1,0 +1,21 @@
+
+<div>
+	<strong>Overview:</strong></div>
+<ul>
+	<li>
+		Application:the article apply to 907 60W solderling station,constant temperature soldering iron.</li>
+	<li>
+		Color:white</li>
+	<li>
+		Diameter:6mm</li>
+</ul>
+<div>
+	<strong>Features:</strong></div>
+<ul>
+	<li>
+		Principium of heating:Internal heating.</li>
+	<li>
+		High heat conductivity</li>
+	<li>
+		Stable quality</li>
+	</ul>

@@ -1,0 +1,12 @@
+
+<div>
+	<strong>Parameter of mechanical arm:</strong></div>
+<ul>
+<li>Material:aluminum alloy</li>
+<li>Weight:60.4g</li>
+<li>Maximum field angle:55mm(without installing the expension board)
+                    95mm(with expension board)</li>
+<li>Entire length:107mm(Maximum length when paw closed)</li>
+<li>Entire width:98mm(Maximum width when paw open)</li>
+</ul>
+

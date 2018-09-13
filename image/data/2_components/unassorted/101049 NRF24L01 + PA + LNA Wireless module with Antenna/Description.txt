@@ -1,0 +1,41 @@
+Specifications feature:
+
+Voltage:3-3.6 (3.3 best)V
+
+Maximum output power:+20dBm
+
+Transmit mode current (peak):115mA
+
+Receiving mode current (peak):45mA
+
+Power-down mode current:4.2uA
+
+Operating Temperature:-20~70C
+
+Receive 2Mbps mode:-92dBm
+
+Receive 1Mbps mode:-95dBm
+
+Receive 250Kbps mode:-104dBm
+
+PA Gain:20dB
+
+LNA Gain:10dB
+
+LNA noise figure:2.6dB
+
+Antenna Gain(peak):2dBI
+
+2Mbps transmission distance (open):520m
+
+Size: 45.54mm x 16.46mm
+
+Package Content:
+
+1x Wireless module
+
+1x Antenna
+
+Product picture£º
+
+1,2,3,4

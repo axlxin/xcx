@@ -1,0 +1,30 @@
+<div>
+	<strong>Paramater:</strong></div>
+<ul>
+	<li>
+		Color:red,green,blue,yellow,purple,orange,pink,transparent.</li>
+	<li>
+		Diameter of line(mm):§æ0.9¡¢§æ1.3¡¢§æ2.3(default)¡¢§æ3.2¡¢§æ4.3¡¢§æ5.0</li>
+</ul>
+<div>
+	<strong>Features:</strong></div>
+<ul>
+	<li>
+		Unwarming</li>
+	<li>
+		Waterproof</li>
+	<li>
+		It can be bended,pasted or suspension,also,it can be made into any shape,any length.</li>
+	<li>
+		Low power consumption(cold light source,17% of the power turn into light energy and no heat loss).</li>
+	<li>
+		Do not contain ultraviolet radiation, soft light, environmental products</li>
+</ul>
+<div>
+	<strong>Attention:</strong></div>
+<ul>
+	<li>
+		standard length is 1 m.</li>
+	<li>
+		Please tell the color,or we will delivery randomly.</li>
+</ul>

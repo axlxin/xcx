@@ -1,0 +1,19 @@
+Specifications feature:
+
+Input voltage range : 3.5V-35V 
+
+Output voltage range : 5.0V-56V
+
+Maximum input current : 3A 
+
+Continuous Input Current : 2A 
+
+Conversion efficiency: 90%
+
+Size:  4.3cm x 3.0cm x 1.2cm(L x W x H)
+
+Note : When you test if the output voltage is not higher than the input voltage , adjust the potentiometer clockwise , the output voltage will rise . Remember , do not attempt to make a buck regulator counterclockwise module , you must ensure to set the output voltage is higher than the input voltage, so as not to damage the module.
+
+Package content:
+
+1x DC-DC LM2577 Converter Step up Voltage Ajustable Module 

@@ -1,0 +1,62 @@
+<div>
+	<strong>Parameter:</strong></div>
+<ul>
+	<li>
+		Dimension:12.8x25mm</li>
+	<li>
+		Maximum power point:100mV</li>
+	<li>
+		Reference distance:1000m</li>
+	<li>
+		Antenna Type:ги PCB + IPEX )</li>
+	<li>
+		Center frequency:2.4Hz</li>
+	<li>
+		Voltage:2.0-3.6V</li>
+	<li>
+		Interface:1x8x1.27mm</li>
+	<li>
+		Emission current:95mA</li>
+	<li>
+		Receive Electric:16.9mA</li>
+	<li>
+		Maximum power point:20dbm(about100mW)</li>
+	<li>
+		Commumnication interface:Standard SPI (Max rate:10Mbps)</li>
+	<li>
+		RSSI support:NO</li>
+	<li>
+		Operating tempreture:-30буC- +85буC</li>
+	<li>
+		Working humidity:relative humidity&lt;90%</li>
+	<li>
+		Storage tempreture:-40буC- +125буC</li>
+	<li>
+		Working frequency band:2400MHz-2525MHz</li>
+	<li>
+		Receiving sensitivity:-102dbm @ 250Kbs,-96dbm @ 1Mbs,-92dbm @ 2Mbs</li>
+</ul>
+<div>
+	<strong>Pin definition:</strong></div>
+<ul>
+	<li>
+		1:GND,earth wire</li>
+	<li>
+		2:IRQ,input</li>
+	<li>
+		3:MISO,input</li>
+	<li>
+		4:MOSI,input</li>
+	<li>
+		5:SCK,input</li>
+	<li>
+		6:CSE,output</li>
+	<li>
+		7:CE,output</li>
+	<li>
+		8:VDD,supply power</li>
+</ul>
+<p>
+	<strong>Circuit diagram:</strong></p>
+<ul>
+</ul>

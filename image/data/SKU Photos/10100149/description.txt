@@ -1,0 +1,31 @@
+Specifications: 
+
+Module Model:LM2596 Buck Converter + Voltmeter 
+Cutting Size: 66.04mm x 35.05mm 
+Input Voltage: DC 4.0~40V 
+Output Voltage: 1.25V~37V (continuously adjustable, the input voltage must be 1V higher than the output voltage) 
+Output Current: 2A(normal and stable), 3A Max. 
+Ripple Frequency: About 150Khz 
+Ripple Peak: About 100mV 
+Display Color: Red 
+Voltage Meter precision: 0.1V 
+Measure Range:4~40V (for measure accurately, please ensure that the input voltage is more than 4V) 
+
+Features: 
+
+A key switch input and output voltage 
+green light: measuring the output voltage 
+red light: measuring the input voltage 
+with terminal and retain the wire bonding wiring point 
+If remove the P3 jumper cap, the voltmeter shutdown 
+Lower Power Consumption 
+(Please refer to the picture for more details.) 
+
+Close voltage display: 
+
+Press the switch for one second, then release, you can turn off the voltage display. 
+
+Package List: 
+
+2x DC Buck Converter + Voltmeter(LM2596) 
+

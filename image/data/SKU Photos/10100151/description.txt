@@ -1,0 +1,12 @@
+Product Descriptions:
+
+4.0 ~ 40 v input voltage (input voltage must be higher than output voltage of 1.5v above.)
+Low output voltage adjustable range 1.25 V ~ 37 V adjustable (input voltage must be higher than the output voltage of 1.5 V)
+Maximum output current can be as high as 3A, normal working current is in 2A.
+Low with voltmeter, according to the use of advanced microprocessor, voltmeter error is + / - 0.05 V, the range of 0 ~ 40 V.(note: to ensure the voltage meter's accuracy, please make sure that the input voltage is higher than 4 v)
+Low power light
+Low light touch on the right side of the button can change measuring input or output voltage, and a light show which way are measuring voltage, and save the Settings, even without electricity to boot
+Low voltage meter can be closed, when don't need to touch the left side of the button can easily implement
+With terminal blocks, no soldering iron can also ease of use, and keep welding line connection point
+Using the internal oscillation frequency 150 KHZ, the second generation of switch voltage regulator, low consumption, high efficiency.
+Low overheating protection and short circuit protection function

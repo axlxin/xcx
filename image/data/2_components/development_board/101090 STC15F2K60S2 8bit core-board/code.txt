@@ -1,0 +1,48 @@
+<p><strong>Specifications feature:</strong></p>
+<ul>
+      1) single chip minimum system board C51 development board,IAP15F2K60S2<br>
+        <br>
+      2) With automatic cold start function, dont need turn on or off button when download programs<br>
+      <br>
+      3) With simulation function<br>
+      <br>
+      4) With mini USB port, just need one data line<br>
+      <br>
+      5) IAP15F2K60S2 is 1T single chip (Crystal oscillator speed is equal to dominant frequency speed)<br>
+      <br>
+      6) Adopting STC-Y5 high speed CPU inner core<br>
+      <br>
+      7) With 8 channels 10 bits high speed ADC, 3 channels PWM can be used as 3 channels A/D<br>
+      <br>
+      8) Supporting inner high accuracy R/C timer(Can choose 5.5296MHz, 11.0592MHz, 22.1184MHz, 33.1776MHz)<br>
+      <br>
+      9) Two sets of high-speed asynchronous serial communication port can be used at the same time<br>
+      <br>
+      10) With a set of high-speed asynchronous serial SPI bus<br>
+      <br>
+      11) Single Chip Module Assembly:<br>
+      <br>
+      -IAP15F2K60S2 Chip<br>
+      <br>
+      -STC15F104E Chip<br>
+      <br>
+      -CH340T Download Chip<br>
+      <br>
+      -AMS1117 5V to 3.3V Chip<br>
+      <br>
+      12) IAP15F2K61S2 Chip:<br>
+      <br>
+      -Working Voltage: 3.8-5.5V<br>
+      <br>
+      -Flash Program Memory: 61K Byte<br>
+      <br>
+      -SRAM: 2K<br>
+      <br>
+      -DPTR: 2<br>
+      <br>
+      13) Size: 6.7cm(L) x 2.8cm(W) x 0.8cm(H)
+  <br>
+</ul>
+<p><strong>Package content:</strong></p> <ul>   <li>1 x modules </li>   
+  </ul> 
+<p><strong>Product pictures:</strong></p> 

@@ -1,0 +1,23 @@
+There is a constant current drive that is built in the laser head. When you use 3.2v to 5.5v, the electric current is not varies with the voltage, the output power is more stable.
+
+Parameters:
+      Wave length: 650nm (red laser)
+      Laser power: 200～250mW
+      Voltage: 3～5VDC (phone battery or three dry cells)
+      Current: <350mA
+      Diameter: 12mm
+      Length: 45mm
+      Mode of connection：red positive and black negative (2.54 pin)
+
+内置三五电子专用恒流驱动电路，在3.2V到5.5V供电电流不会随电压变化而变化，输出光功率更稳定，更适合工业设备等场合使用。
+
+技术参数：
+      波  长：650nm （红色激光，）
+      光功率：200～250毫瓦
+      电  压：3～5VDC （可使用手机电池或三节干电池等）
+      电  流：小于350毫安
+      直 径：12毫米
+      长 度：45毫米
+      接线方式：红色为正极，黑色为负极（2.54插头）
+
+友情提示：模组尾部供电电线方式长度极性方向 小批量批发可以定制

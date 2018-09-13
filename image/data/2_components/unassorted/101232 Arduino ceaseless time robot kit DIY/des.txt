@@ -1,0 +1,80 @@
+
+
+该机器人是前代产品的升级版，可以擦写当前的实时时间，真正可以当作个性化时钟使用。就算长时间断电，时钟模块有自带电源，在机器人重新上电后，仍然可以擦写当前的实时时间。
+
+参考视频：http://v.youku.com/v_show/id_XNzQ4OTAyNzQ4.html
+
+套件包括：
+Arduino UNO R3×1块
+
+DS1302时钟模块×1个（已经初始化）
+
+9g舵机×3个
+
+3mm厚白色亚克力激光切割组装材料×1套
+
+白金白板笔×1支
+
+300孔优质面包板×1个
+
+3mm×15mm螺栓螺丝垫片×8套
+
+1.5mm自攻螺丝×4个
+
+（不包括白板擦，需要自己用白板笔的笔帽制作）
+
+(购买后会通过邮件发送Arduino源码或者到topmaker.com.cn技术论坛下载)
+
+
+
+The robot is an upgraded version of the previous generation of products, you can erase the current real-time time really can be used as a personalized clock. Even if extended outages, the clock module has its own power source, after re-power the robot, you can still erase the current real-time time.
+
+Reference Video: http: //v.youku.com/v_show/id_XNzQ4OTAyNzQ4.html
+
+Kit includes:
+Arduino UNO R3 × 1 块
+
+DS1302 clock module × 1 PCS (already initialized)
+
+9g Servo × 3 个
+
+3mm thick white acrylic laser cutting assembly materials × 1 set
+
+Platinum whiteboard pen × 1 支
+
+300 hole quality bread plate × 1 PCS
+
+3mm × 15mm × 8 sets of bolt screw washer
+
+1.5mm self-tapping screws × 4 个
+
+(Not including whiteboard rub, needs its own whiteboard pen cap production)
+
+(Will be sent via e-mail after the purchase Arduino source code )
+
+
+
+The robot is an upgraded version of the previous generation of products, you can erase the current real-time time really can be used as a personalized clock. Even if extended outages, the clock module has its own power source, after re-power the robot, you can still erase the current real-time time.
+
+Reference Video: http: //v.youku.com/v_show/id_XNzQ4OTAyNzQ4.html
+
+Kit includes:
+Arduino UNO R3 × 1 块
+
+DS1302 clock module × 1 PCS (already initialized)
+
+9g Servo × 3 个
+
+3mm thick white acrylic laser cutting assembly materials × 1 set
+
+Platinum whiteboard pen × 1 支
+
+300 hole quality bread plate × 1 PCS
+
+3mm × 15mm × 8 sets of bolt screw washer
+
+1.5mm self-tapping screws × 4 个
+
+(Not including whiteboard rub, needs its own whiteboard pen cap production)
+
+(Will be sent via e-mail after the purchase Arduino source code or to topmaker.com.cn Technology Forum Download)

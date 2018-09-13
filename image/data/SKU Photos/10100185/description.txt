@@ -1,0 +1,12 @@
+Product Descriptions: 
+
+Emission head (2SC3357 transistor):
+The actual working distance 50-100m
+Operating voltage 3-12V
+Operating current :10-15mA
+Ways of working: AM
+Transfer rate: 4KB / S
+Transmit power: 10mW
+External antenna: 28cm ordinary multi-core or single core line
+Pinout from left ¡ú right: (DATA, VCC, GND)
+Size: 1.9CM * 1.9CM * 0.9CM

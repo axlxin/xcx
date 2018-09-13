@@ -1,0 +1,48 @@
+/*
+arduino---------------driver
+ 6--------------------IN1
+ 7--------------------IN2
+ 8--------------------IN3
+ 9--------------------IN4
+ 5V-------------------VCC
+ GND------------------GND
+*/
+
+
+typedef unsigned char uchar;
+const uchar  F_Rotation[8]={0x10,0x30,0x20,0x60,0x40,0xC0,0x80,0x90};//Forward
+const uchar  B_Rotation[8]={0x90,0x80,0xC0,0x40,0x60,0x20,0x30,0x10};//Reversal
+uchar DB[4]={9,8,7,6};
+
+void Write(uchar data);
+void Write(uchar data)
+{
+  uchar i,temp;
+  temp=data&0xf0;
+  for(i=DB[0];i>5;i--)
+  {
+    digitalWrite(i,temp&0x80);
+    temp<<=1;
+  }
+  
+}
+void setup()
+{
+  pinMode(6,OUTPUT);
+  pinMode(7,OUTPUT);
+  pinMode(8,OUTPUT);
+  pinMode(9,OUTPUT); 
+}
+void loop()
+{
+ unsigned char i;
+ while(1)
+ {
+  for(i=0;i<8;i++)      
+     {
+	     //P1=F_Rotation[i];  
+	     Write(B_Rotation[i]);
+             delay(2);        //Change delay can adjust the speed
+	 }
+  }
+}

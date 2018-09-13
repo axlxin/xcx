@@ -1,0 +1,27 @@
+/*
+sensor----------------arduino
+ VCC------------------5V
+ GND------------------GND 
+ DO-------------------8
+ AO-------------------A1
+*/
+//You can put some water on the sensor can test it.
+unsigned char RAIN_IN=8;
+unsigned char flag=0; 
+int val=0;
+void setup() 
+{
+  pinMode(RAIN_IN,INPUT);
+  Serial.begin(1200);
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  val=analogRead(1);
+  Serial.println(val);
+  flag=digitalRead(RAIN_IN);
+  if(flag==0) Serial.println("The rain is too heavy!");
+  // put your main code here, to run repeatedly:
+
+}

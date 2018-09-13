@@ -1,0 +1,46 @@
+<div>
+	<strong>Parameter:</strong></div>
+<ul>
+	<li>
+		Control chip power supply range:6.5V-12V or 4.5V-5.5V(With USB reverse protection)</li>
+	<li>
+		Steering engine power supply:5V DC</li>
+	<li>
+		Control channel:it can control 16 servos at the same time.(the speed of steering engine is adjustable)</li>
+	<li>
+		PIF in:USB or TTL/USART(you can use bluetooth or other wireless module to control steering engine)</li>
+	<li>
+		Signal output:PWM(accuracy=1us)</li>
+	<li>
+		Resolution of servo steering engine:1us,0.09 degree.</li>
+	<li>
+		Height between classis and ground:24mm</li>
+	<li>
+		Baud rate range:9600 19200 38400 57600 115200 128000(Fully automatic identification, without setting)</li>
+	<li>
+		Support servo steering engine:Futaba or Hitec and any steering engine use PWM control signal.</li>
+	<li>
+		PCB dimension:51mm x 43.5mm x 1.6mm(mounting hole spacing :42mm x 35.5mm)</li>
+	<li>
+		Control method:USB and TTL(with a free USB cable and the host control software)</li>
+	<li>
+		Flash:onboard 512k ROM</li>
+</ul>
+<div>
+	Features:</div>
+<ul>
+	<li>
+		By using 32-bit high speed CPU,it accelerate processing speed, control more accurately,operating more steadily)</li>
+	<li>
+		Even if you know nothing about programing,as long as you can use your mouse,you are able to make your robot dancing.</li>
+	<li>
+		Perfect off-line operation function, without external MCU, no need to connect the PC,it can run thousands of action</li>
+	<li>
+		Automatic identification of baud rate(9600,19200,38400,57600,115200,128000)</li>
+	<li>
+		USB and TTL serial port using different IO to handled separately, avoided any interference.</li>
+	<li>
+		After action group performed,it will return to "AGF \ r \ n", so that we can test action group if it has finished, in order to follow other orders.</li>
+	<li>
+		After a single command,it will return to"# CC \ r \ n", for example, if you send "p1500 # 2 # 3 p1500t1000 \ r \ n", after a control panel performed, it will return "# CC \ r \ n" to said is performed.</li>
+</ul>

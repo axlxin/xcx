@@ -1,0 +1,22 @@
+Product Descriptions:
+
+This is a high-performance switching current 4A upgrade module. The module uses the second generation of high-frequency switching technology XL6009E1 chip, higher performance than the first generation LM2577 with lower cost. 
+Wide input voltage 3V ~ 32V, optimum operating voltage range is 5 ~ 32V;
+Wide output voltage 5V ~ 35V;
+Built-in 4A efficient MOSFET switch, rise the conversion efficiency up to 94%; (LM2577 current is only 3A)
+Ultra-high switching frequency 400KHz, you can use a small-capacity filter capacitors get very good effect, the ripple is even lower than LM2577. (LM2577 frequency only 50KHz)
+
+Features:
+
+Rectification method: Non-Synchronous Rectification
+Input voltage range: 3V ~ 32V
+Output voltage range: 5V ~ 35V
+Input Current: 4A (max)
+Conversion efficiency: <94% (the higher input voltage, the lower efficiency)
+Switching Frequency: 400KHz
+Output ripple: 50mV (the higher voltage, the higher the current, the bigger the ripple)
+Load regulation: ¡À 0.5%
+Voltage regulation: ¡À 0.5%
+Working temperature: -40 ¡æ ~ +85 ¡æ
+Dimensions: 43mm * 21mm * 14mm (L * W * H)
+

@@ -1,0 +1,27 @@
+Specifications feature:
+
+Operating voltage (V): DC5V
+
+Quiescent Current (mA): 4.5MA
+
+Modulation: AM (OOK)
+
+Operating Temperature: -10 бу C to +70 бу C
+
+Receiver sensitivity (dBm):-105DB
+
+Operating frequency (MHz): 315,433.92 MHz (266-433MHZ frequency segment can be optional)
+
+Encoding: the pad code (fixed code)
+
+Work: M4 (Jog: Press and hold let go on the output, let go to stop the output), L4 (interlock: four at the same time there can be only one output), T4 (self-locking: four independent outputs are not mutuallythe impact of click output and then click stop output)
+
+Dimensions (LWH): 41 x 23 x 7mm
+
+Package content:
+
+1 x 2272/2262 4 channel wireless remote control kits
+
+Product picture:
+
+1.

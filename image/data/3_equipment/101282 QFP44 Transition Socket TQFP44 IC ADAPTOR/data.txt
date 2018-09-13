@@ -1,0 +1,13 @@
+<div>
+	<strong>Specifications:</strong></div>
+<ul>
+ <li> Model:TQF44</li>
+ <li>Perfect for:LED</li>
+<li> Interface type:1394</li>
+<li>  Cards Supported:single</li>
+<li>  ReadCard type:CF</li>
+<li> Shape:bar</li>
+<li>Production process:cold compression</li>
+<li>Feature:moisture-proof</li>
+<li> Work frequency:low frequency (LF)</li>
+</ul>

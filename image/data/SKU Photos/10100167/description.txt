@@ -1,0 +1,9 @@
+This module is special designed for USB output project, such as power bank, input 0.9V-5V DC, and ouput 5V DC stable, even you can use a AA battery as the power supply, it can out put 200-300mA 5V as a charger. two AA batteries you can get 500-600mA, very suitable for mobile phone, camera and other digital products charger module.
+
+Specifications:
+
+Dimension: 25mm*18mm
+Convert efficiency: max 96%
+Working temperature: -40 - +85 degree
+Indicator light: Yes
+

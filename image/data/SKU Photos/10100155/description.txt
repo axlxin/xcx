@@ -1,0 +1,24 @@
+Product Descriptions:
+
+Maximum output current 3A, stable output 2.1A. No need care about heat when input 12V and output 2A.
+Low ripple wave, 12V to 5V only 10mV. 
+High converting ratio, 6.5V converts to 5V 0.7A the ratio is 97.5%. Keeps the heat in the very very low level.
+A 1.5A fuse is assembled on the input port, and 5V 300W TVS tube as overload protection.
+Small size, dimension 26.4x15x7.4mm.
+Very low no-load power, only 0.85mA.
+
+Specifications :
+
+Input: DC 6-24V
+Output: 5.1-5.2V
+Dimension: 26.4x15x7.4mm
+Switching frequency:500KHz
+Output ripple: 10mV, 20m bandwidth
+Output indication: Red LED
+Output overload protection: input 1.5A fuse, output 5V 300W TVS
+Full load temperature rise: 30 degree
+No-load Current: 0.85mA
+Output short protection: Yes
+Input negative connection protection: Yes
+Output Port: USB, support Android 0.7A/1A/1.5A, iphone 1A/2A
+

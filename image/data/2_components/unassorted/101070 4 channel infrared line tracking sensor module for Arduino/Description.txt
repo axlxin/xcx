@@ -1,0 +1,31 @@
+Specifications feature: 
+
+Operating voltage:DC 3.3-5V
+
+temperature range£∫-10°„C-50°„C
+
+Screw diameter£∫M3
+
+Detection distance: 1mm to 60 CM adjustable,the closer the more stable performance
+
+size£∫mian PCB 42mmX38mmX12mm
+
+        small 25mmX12mmX12mm
+
+Output Interface£∫4 outputs,VCC and GND
+
+Output signal: TTL level (which can be directly connected to the microcontroller,sensitive to infrared light reflected from the sensor, the red light is on, the output low; no infrared light, light is not on, the output high. 
+
+Packing content:
+
+20 x DuPont lines
+
+1x modules
+
+example code for Arduino
+
+Product pictures:
+
+1,2,3,4£¨01,02
+
+1,2,3,4,01,02

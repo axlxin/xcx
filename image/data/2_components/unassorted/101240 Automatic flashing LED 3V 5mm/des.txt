@@ -1,0 +1,4 @@
+1.Automatic flashing, no additional controller.
+2.Seven colors automatically change at intervals of approximately 270ms.
+3.Operating voltage:3V-3.4V
+4.diameter:5MM

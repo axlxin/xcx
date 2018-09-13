@@ -1,0 +1,13 @@
+Features:
+
+power supply:5V
+
+PCB board size: 40 (mm) x24.5 (mm)
+
+Package content:
+
+1pcs SJA1000 + TJA1050 CAN communication module 
+
+Product pictures:
+
+1,2

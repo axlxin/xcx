@@ -1,0 +1,15 @@
+The T-Pro MG90S is an upgrade of the T-Pro SG90. Better outputs with more torque and speed than the SG90 and also has metal gears, thus no stripping in crashes! Great reputation for reliability and inexpensive price. Can't beat it for the money. The MG90S is great for 200-450 size rc helicopter and light weight rc airplane.
+
+Light weight high strength nylon casing 
+Durable metal gear design
+Recommended for 200-450 size helicopters or light weight aircraft
+Different servo horn included for different application
+
+Specifications:
+
+Weight: 13.4g
+Dimension: 22.8*12.2*28.5mm
+Stall torque: 1.8kg/cm(4.8V )2.2kg/cm(6V)
+Operating speed: 0.1sec/60degree(4.8v), 0.08sec/60degree(6v)
+Operating voltage: 4.8-6.0V
+Dead band width: 5us 

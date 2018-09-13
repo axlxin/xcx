@@ -1,0 +1,17 @@
+Features:
+
+The Arduino MEGA Sensor Shield V1.0 is a type of dedicated sensor expansion board, which adopted ENIG process,it put various merits of all expasion board on the market together.
+
+The Arduino MEGA Sensor Shield V1.0 expands all digital and analog interfaces in steering engine linear structure.Besides,it has bluetooth module communication interface,SD card module communication interface,APC220 wireless RF communication interface,and RB URF v1.1 microwave sensor interface,which makes independent functionality expasibility more smooth.
+
+For a Arduino beginner,there is no need to worry about the complex cables,because our product simplifed the circuit and can help you easily conncet the sensor to the board.In other words,you don't need to distinguish digital cables from analog ones.
+
+After finishing the connection of the circuit,in order to get data from the sensor or receive data sent by wireless module,you need to download your program to the brick.you can finish your interactive work when completing the processing,enjoy it.
+
+Package Contents: 
+
+1 x Meag Sensor Shield V1.0
+
+Product pictures:
+
+1,2,3,4

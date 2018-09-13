@@ -1,0 +1,32 @@
+Product parameter:
+Model:               GDE06
+Dimension:         137.9x104.1x1.18mm
+Active area:          122.4 X 90.6mm
+Resolution:           800 x 600
+Dot spacing:           0.153(H) X 0.151(V) 
+Color:                black /white/gray scale
+Grayscale value:        16
+Contrast:              8:1
+Aspect ratio:          4:3
+Reflectance:           35%
+Refresh time:           960ms     
+Operative temperature:   0~50¡æ
+Storage temperature:     -20~60¡æ 
+Control IC:             HX8705-B
+Interface: 	      39PIN FPC, Pitch 0.3mm
+Apdative Connector 	 39FXL-RSM1-S-H-TB
+ 
+	 
+Properties
+Build-in IC driver 
+Special developed DEMO	 
+Wide viewing angle
+Ultra low power consumption
+Pure reflection mode
+Bi-stable display
+Commercial temperature range
+Landscape, portrait modes
+Anti-dazzling front surface with hard coating
+Low current deep sleep mode
+Use COG packaging, IC thickness is 250 um
+Service life (refreshing times under normal use condition) : over a million times

@@ -1,0 +1,58 @@
+Description: 
+MAX7219是一种集成化的串行输入/输出共阴极显示驱动器，它连接微处理器与8位数字的7段数字LED显示，也可以连接多条显示器或者64个独立的LED.其中包括一个片上的B型BCD编码器，多条扫描回路，段字驱动器，而且还有一个8*8的静态RAM用来存储没一个数据，只有一个外部寄存器用来设置各个LED的段电流。一个方便的四线串行接口可以连接所有的通用的微处理器。每个数据可以再更新时不需要改写所有的显示。MAX7219同样允许用户对每一个数据选择编码或者不编码。
+只需要3个IO口即可驱动1个点阵！点阵显示时无闪烁！支持级联！
+
+模块参数：
+1.单个模块可以驱动一个8*8共阴点阵
+2.模块工作电压：5V
+3.模块尺寸：长5厘米X宽3.2厘米X高1.5厘米
+4.带4个固定螺丝孔，孔径3mm，可使用本店M3铜柱固定
+5.模块带输入输出接口，支持多个模块级联
+
+接线说明：
+1.模块左边为输入端口，右边为输出端口。
+2.控制单个模块时，只需要将输入端口接到CPU
+3.多个模块级联时，第1个模块的输入端接CPU，输出端接第2个模块的输入端，第2个模块的输出端接第3个模块的输入端，以此类推...
+
+Description:
+
+100% band new and high quality
+
+A single module can drive an 8 * 8 common cathode lattice
+
+Module Operating voltage: 5V.
+
+Module size: 5 cm long X 3.2 cm wide X 1.5 cm high
+
+With four screws hole, aperture 3mm, by using our M3 Tongzhu fixed
+
+Module with input and output interfaces, supports multiple modules cascade
+
+Wiring instructions:
+
+ 1.The left of module as an input port and  the output port on the right.
+
+ 2.The control of a single module, simply input port to the CPU 
+
+ 3.Multiple modules cascade input termination CPU, 2 output termination module, a module of the input of the input terminal, the output terminal of the first two modules of the first three modules, and so on ...
+
+51 MCU, for example:
+
+VCC to 5V
+
+GND to GND
+
+DIN to P22
+
+CS to P21
+
+CLK to P20
+
+Package content:
+
+1 x Led Module
+
+Product pictures:
+
+1,2,3,4,01,02,03
+

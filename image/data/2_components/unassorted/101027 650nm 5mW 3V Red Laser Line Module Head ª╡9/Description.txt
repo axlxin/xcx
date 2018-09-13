@@ -1,0 +1,27 @@
+Features:
+
+Size: ¦µ9¡Á23.7mm
+
+Wavelength: 650 nm
+
+Output Optical Power: < 5mW
+
+Operating Voltage: 3V DC
+
+Operating Current: < 20 mA
+
+Operating Temperature: -36 ¡ãC ~ + 65 ¡ãC
+
+Laser Output Beam: Red Laser Line
+
+Line Width: about 1.5-2mm at 1m Distance
+
+Line Length: about 2m at 1m Distance
+
+Optical Lens: Plastic Lens
+
+Life Span: > 1000Hours
+
+Package content:
+
+1 x Laser Dot Diode Module Head

@@ -1,0 +1,21 @@
+Features:
+
+This wireless Transceiver module is an easy and suitable module if you want to setup your wireless communication system with low cost!! 
+
+It can achieve a good balance between wireless transition performance and cost!
+
+You can easily add it with your own MCU/ARM/PIC/AVR/STM32 system!
+
+What's more, this nRF24L01+ module is designed with Power amplifier and SMA antenna
+
+This allowed you to use the wireless communication up to 1000 meters! (No barrier)
+
+Package contents:
+
+1x NRF24L01+PA+LNA
+
+1x SMA Antenna
+
+Product pictures:
+
+1,2,3

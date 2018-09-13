@@ -1,0 +1,37 @@
+Specifications feature:
+
+Working voltage: 3-6V
+
+Reduction ration:1:48
+
+no load speed (6V): 200RPM ¡À10%
+
+no load current (6V): ¡Ü200mA
+
+no load speed (3V): 90RPM ¡À10%
+
+no load current (3V): ¡Ü150mA
+
+Package content:
+
+1 x car chassis
+
+2 x EMC testing deceleration motor 1:48
+
+2 x wheels
+
+2 x high precision 20 line speed encoder
+
+4 x fasteners
+
+1 x Universal wheel
+
+1 x battery box
+
+14 x screw
+
+10 x nut
+
+Product pictures:
+
+1,2,3,4

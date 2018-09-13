@@ -1,0 +1,41 @@
+Product Details:
+
+Signal Generator Module
+Condition: New
+Scope of this module:
+1 Used as a square wave signal generator generates a square wave signal used for experimental development.
+2 To drive a stepper motor for generating a square wave drive signal.
+3 Adjustable pulse generated for MCU.
+4 Adjustable pulse generation, control circuitry associated
+
+Descriptions:
+
+1 Size: approx.3.1CM * 2.2CM
+2 Main chip: NE555;
+3 Input voltage: 5V-15VDC. When 5V power supply, the output current can 15MA around; When 12V power supply, the output current can 35MA around;
+4 Input current: ¡Ý 100MA
+5 Output range: 4.2V V-PP to 11.4V V-PP. (Different input voltage cause different output)
+6 Maximum output current: ¡Ý 15MA (when 5V power supply, V-PP greater than 50%), 
+¡Ý 35MA (when 12V power supply, V-PP greater than 50%)
+
+Advantages:
+
+1 Output with LED indication, easy to see(low volume LED will light, high volume LED will off, LED flash when frequency is relatively low);
+2 Output level selectable frequency range, the output frequency is continuously adjustable;
+LF file: 1Hz ~ 50Hz
+IF file: 50Hz ~ 1kHz
+Medium-high frequency file: 1KHz ~ 10kHz
+HF file: 10kHz ~ 200kHz
+3 The output duty cycle can fine-tune, duty cycle and frequency can not separately adjustable, adjusting the duty cycle will change the frequency
+4 Output frequency is adjustable;
+Period T = 0.7 (RA +2 RB) C
+RA, RB is 0-10K adjustable;
+LF file C = 0.001UF;
+IF file C = 0.1UF;
+Medium-high frequency file C = 1UF;
+HF file C = 100UF, so you can count the frequency of the waveform 
+
+Package Included:
+
+4 x Signal Generator Module
+

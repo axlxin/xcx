@@ -1,0 +1,32 @@
+Description: 
+1.量程    ：DC0-33.000V
+2.显示    ：五位0.36LED数码管
+3.显示颜色：红色
+4.刷新速度：每秒>5次
+5.测量精度：±(0.3‰+2个字){意思就是最坏情况下表的最大误差在10mv以内正常误差2mv以内}
+6.供电电压:DC3.5-30V(独立供电)
+7.工作温度：-10℃~65℃
+8.外形尺寸：48mm*29mm*21mm
+9.温度系数：小于25PPM/℃
+
+
+Measurement range：DC 0-33.000V
+
+Display type:
+
+Display color: red
+
+The refresh speed:>5 times per second
+
+Temperature coefficient:<25PPM/℃
+
+Measurement accuracy:0.3%
+
+Operating temperature:-10℃~65℃
+
+Size:48mm x 29mm x 21mm
+
+Product pictures:
+
+1,2,3
+

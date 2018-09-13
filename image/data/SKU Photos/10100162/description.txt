@@ -1,0 +1,22 @@
+Descriptions:
+
+This DC-DC power module can be used on:
+- Lipo battery charger project
+- High power LED light driver, this module can keep the output power stable.
+- Other projects that need constant current and voltage power supply.
+
+Specifications:
+
+Rectifying way: synchronous rectifier
+Input voltage: 7 v - 35 v
+Output voltage: 1.25 V - 30 V
+Output current: Adjustable maximum 3A
+Conversion efficiency: 92% (highest)
+Switching frequency: 150 KHZ
+Output ripple: 50 mv (maximum) 20 m bandwidth
+Load regulation: 0.5%
+Voltage regulation: 2.5%
+Working temperature: - 40 ¡æ to + 85 ¡æ
+Size: 48 * 23 * 14 (length * width * height) (mm)
+There are three potentiometers on the module, output voltage adjust, target charge voltage adjust, output current adjust.
+

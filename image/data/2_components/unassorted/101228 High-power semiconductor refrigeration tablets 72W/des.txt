@@ -1,0 +1,18 @@
+温馨提示：冷端结霜需要环境温度低，不是什么环境都可以结霜，一般结霜环境温度在25度以下。
+
+注：1：此模组安装已组装好，不需亲们在动手。
+
+       2：此模组不含电源，不含温度计。
+
+       3：测试环境温度的26度。
+
+       4：制冷功率72W
+Tips: cold end frosting needs ambient temperature is low, is not what the environment can frost, usually frost ambient temperature below 25 degrees.
+
+Note: 1: This module installation is assembled, without pro in hands.
+
+        2: This module without power, without thermometer.
+
+        3: The test temperature is 26 degrees.
+
+        4: cooling power 72W

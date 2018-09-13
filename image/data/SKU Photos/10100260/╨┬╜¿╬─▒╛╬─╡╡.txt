@@ -1,0 +1,10 @@
+Description
+1.This is a Compatiable Emulator ST-Link V2 programmer.
+2.Support the full range of STM32 SWD interface debugging, simple interface (including power supply), 4 line speed, stable work; Interface definition shell directly address! Don't need to read instructions! 
+3.Support all series STM8 SWIM download debugging (common development environment such as IAR, STVD etc.) are supported. Support the software version is as follows: 
+ST-LINK Utility 2.0 and above 
+STVD 2 and above 
+STVP 3.2.3 and above 
+IAR EWARM V6.20 and above 
+IAR EWSTM8 V1.30 and above 
+KEIL RVMDK V4.21 and above 

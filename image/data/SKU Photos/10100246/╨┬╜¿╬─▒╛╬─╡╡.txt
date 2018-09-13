@@ -1,0 +1,28 @@
+Product Descriptions:
+
+Module Interface Description:
+
+VCC: positive power supply 3.3-5V
+GND: tied to power supply
+DO: digital output module has output low magnetic induction is
+AO: Hall real-time voltage output
+Hall sensor module
+For magnetic field detection
+
+Sensor uses 3144E Hall Switch Sensor:
+
+Module has two outputs:
+
+1. AO, Hall real-time output
+2. DO, the Hall signal after the comparator output adjustment
+
+Module features:
+
+1. small size, 32mm X 14mm
+2.there is a mounting screw hole 3mm
+3.you can use 3-5.5v DC power supply
+4.the real-time output signal with Hall
+5. there is sorting through the comparator output signal more stable after
+6.the comparator output capability 16mA
+7. a power indicator light
+8.the comparator output is light

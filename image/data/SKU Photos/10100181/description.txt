@@ -1,0 +1,16 @@
+Descriptions: 
+
+The TB6612FNG motor driver can control up to two DC motors at a constant current of 1.2A (3.2A peak). Two input signals (IN1 and IN2) can be used to control the motor in one of four function modes - CW, CCW, short-brake, and stop. The two motor outputs (A and B) can be separately controlled, the speed of each motor is controlled via a PWM input signal with a frequency up to 100kHz. The STBY pin should be pulled high to take the motor out of standby mode.CJMCU.
+Logic supply voltage (VCC) can be in the range of 2.7-5.5VDC, while the motor supply (VM) is limited to a maximum voltage of 15VDC. The output current is rated up to 1.2A per channel (or up to 3.2A for a short, single pulse).
+Board comes with all components installed as shown. Decoupling capacitors are included on both supply lines. All pins of the TB6612FNG are broken out to two 0.1" pitch headers; the pins are arranged such that input pins are on one side and output pins are on the other.
+
+Features:
+
+Power supply voltage: VM=15V max, VCC=2.7-5.5V
+Output current: Iout=1.2A(average) / 3.2A (peak) 
+Standby control to save power
+CW/CCW/short brake/stop motor control modes
+Built-in thermal shutdown circuit and low voltage detecting circuit
+All pins of the TB6612FNG broken out to 0.1" spaced pins
+Filtering capacitors on both supply lines
+

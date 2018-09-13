@@ -1,0 +1,31 @@
+<p>
+	<strong>Functional features:</strong></p>
+<p>
+	1. Eight digits IV-18 VFD tubes display. (1980-1990 made in USSR).<br />
+	2. Display hour, minute and second (12 or 24 hours format optional).<br />
+	3. Display year, month and day and Chinese lunar date (YY-MM-DD or MM-DD-YY.DD-MM-YY.YY-DD-MM format optional).<br />
+	4. Leader zero ON/OFF function.<br />
+	5. GPS adjust, automatic adjust date and time in real time. GPS status display (GPS is offered as an option).<br />
+	6. GMT time zone functions, the clock will calculate the local time base on satellite.<br />
+	7. Temperature display(? or ? temperature unit optional).<br />
+	8. Two alarm clock(set on or off different alarm respectively).<br />
+	9. Auto date and temperature circulating display. Also can set interval for circulation.<br />
+	10. Timer function which can supply longest 23 hours 59 minutes and 59 seconds.<br />
+	11. Power on/off timer, also can set the on/off time respectively. You can also check time and date easily after auto power off.<br />
+	12. 8 levels brightness adjustable, or auto brightness in different environment.<br />
+	13. Button sound on/off.<br />
+	14. IR remote controller operation supplied.<br />
+	<br />
+	<strong>Please check <a href="http://vonnieda.org/tc18">here</a> for more details.</strong></p>
+<p>
+	<strong>Listing includes:</strong><br />
+	<br />
+	1. 1set fully assembled clock;<br />
+	2. 1pcs IR remote controller;<br />
+	3. 1pcs MiniUSB power cable;<br />
+	4. 1pcs power adapter</p>
+<p>
+	<strong>Download:</strong><br />
+	<br />
+	<a href="http://smart-prototyping.com/image/data/SKU Photos/10600001/IV-18 VFD tube Clock Manual EN v1.2.0.pdf">IV-18 VFD tube Clock Manual EN v1.2.0</a><br />
+	<a href="http://smart-prototyping.com/image/data/SKU Photos/10600001/IV-18 VFD tube Clock Assembly Manual EN v1.0.0.pdf">IV-18 VFD tube Clock Assembly Manual EN v1.0.0.pdf</a></p>

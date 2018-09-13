@@ -1,0 +1,16 @@
+<p>
+	<strong>Specification:</strong><br />
+	<br />
+	1. 12 gold-plated pins, easy to plug.<br />
+	2. GRB led on board, independent color control.<br />
+	3. 5V DC / 250 mA power consumption for each section.<br />
+	4. Two-layer, gold-plated PCB with art tendencies.<br />
+	5. Laser-cut acrylic font and back cover, with stainless-steel hex screws.<br />
+	6. SMT Robot path soldering. Nice finishings.<br />
+	7. Size: 50x36x45mm.<br />
+	<br />
+	<strong>Download:</strong><br />
+	<br />
+	<a href="http://smart-prototyping.com/image/data/SKU Photos/10600002/data.rar">data</a></p>
+<p>
+	<strong>Please check <a href="http://aguegu.net/?p=1334">here</a> for application guide</strong></p>

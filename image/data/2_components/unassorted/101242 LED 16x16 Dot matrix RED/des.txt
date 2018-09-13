@@ -1,0 +1,10 @@
+Overview 
+     
+     
+Specifications:
+
+    LED diameter:3.75mm
+    SIZE:75MMx75MM(16x16)
+    Color:red,monochrome
+    other:Can be cascaded , 12864 -compatible interface
+

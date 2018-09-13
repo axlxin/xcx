@@ -1,0 +1,28 @@
+/* gy-32---------arduino   
+   x---------------A0
+   y---------------A1
+   z---------------A2
+   GND----------- GND
+   5V--------------5V
+If you want to use some of the advanced features, you can search on MMA7361 in Google.*/
+
+void setup() 
+{ 
+  Serial.begin(19200); // 19200 bps
+}
+void loop() 
+{
+  int x,y,z;
+  x=analogRead(0);
+  y=analogRead(1);
+  z=analogRead(2);
+  Serial.print("x= ");
+  Serial.print(x ,DEC);
+  Serial.print(',');
+  Serial.print("y= ");
+  Serial.print(y ,DEC);
+  Serial.print(',');
+  Serial.print("z= ");
+  Serial.println(z ,DEC);
+  delay(100);
+}

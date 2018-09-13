@@ -1,0 +1,25 @@
+Specifications feature:
+
+Model:35BYJ46-01
+
+Voltage:12V
+
+No. of phase:4
+
+Resistance:120 ¦¸
+
+Step angle: 7.5/85.25 Deg
+
+Starting frequency:>=450 P.P.S
+
+Pulling Torque(100P.P.S):>=800 gf.cm
+
+Detent Torque:>=350 gf.cm
+
+Wdg: a
+
+Fig:2.3
+
+Product pictures:
+
+1,2

@@ -1,0 +1,44 @@
+/*arduino      touch 8
+   VCC-----------5V
+   GND-----------GND
+   OUT1-----------2
+   OUT2-----------3
+   OUT3-----------4
+   OUT4-----------5
+   OUT5-----------6
+   OUT6-----------7
+   OUT7-----------8
+   OUT8-----------9
+  */
+
+void setup() 
+{
+  pinMode(2,INPUT);
+  pinMode(3,INPUT);
+  pinMode(4,INPUT);
+  pinMode(5,INPUT);
+  pinMode(6,INPUT);
+  pinMode(7,INPUT);
+  pinMode(8,INPUT);
+  Serial.begin(9600); 
+  // put your setup code here, to run once:
+}
+
+void loop() 
+{
+  unsigned char i,j;
+  for(i=2;i<10;i++)
+  {
+  if(digitalRead(i))
+  {
+    delay(80);
+    if(digitalRead(i))
+    {
+      Serial.print(i-1);
+    }
+    while(digitalRead(i));
+  }
+  }
+  
+  // put your main code here, to run repeatedly:
+}

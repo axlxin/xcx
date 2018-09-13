@@ -1,0 +1,30 @@
+Product parameter:
+Model:                GDE035A3
+Dimension(mm):            52.5£¨W£© x 89.11£¨H£© x0.98£¨T£©
+Active area(mm):           45.7£¨W£© x 76.16£¨H£©
+Resolution:           	 800£¨W£©x 480£¨H£©
+Dot spacing(mm):           0.0952£¨H£©X 0.0952£¨W 
+Color:                 black /white/gray scale
+Contrast:                   8:1
+Reflectance:                35%
+Refresh time:              960ms     
+Operative temperature:    0~50¡æ
+Storage temperature:      -20~70¡æ 
+Power supply voltage:      3.3V
+Control IC:              HX8705-B
+Interface:               24PIN FPC  pitch=0.5mm
+
+ 
+Properties
+Build-in IC driver 
+Special developed DEMO	 
+Wide viewing angle
+Ultra low power consumption
+Reflective mode
+Bi-stable display
+Commercial temperature range
+Landscape, portrait modes
+Anti-dazzling front surface with hard coating
+Low current deep sleep mode
+Use COG packaging, IC thickness is 250 um
+Service life (refreshing times under normal use condition) : over a million times

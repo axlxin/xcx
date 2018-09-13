@@ -1,0 +1,24 @@
+
+int key=8;
+int val=0;
+void setup() 
+{
+  pinMode(key,INPUT);
+  Serial.begin(9600); 
+  // put your setup code here, to run once:
+}
+
+void loop() 
+{
+  val=digitalRead(key);
+  if(val)
+  {
+    delay(80);
+    if(digitalRead(key))
+    {
+      Serial.println(val);
+    }
+    while(digitalRead(key));
+  }
+  // put your main code here, to run repeatedly:
+}

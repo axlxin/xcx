@@ -1,0 +1,9 @@
+    ATK-NEO-6M-V2.3 is a high performance GPS positioning module. The module uses U-BLOX NEO-6M module, the module comes with MAXIM's high gain (20.5dB) LNA chip and antenna combination of high-performance ceramics, composed receiving antenna, the equivalent of an integrated active antenna up (there is no need to buy expensive source antenna).Of course, In order to have better reception, IPX interface module also provides for all of you to connect an active antenna (you should bought an active antenna), and thus form a "double antenna" to receive.
+    Module comes with EEPROM, all configuration information can be stored in the EEPROM.A variety of configurations to meet your needs, the module also comes with a rechargeable backup battery (to support the warm start or hot start, back-up battery after the main power off, you can maintain half GPS hours of receiving data preservation), NEO-6M-V2.3 GPS module features are as follows:
+1,using the U-BLOX NEO-6M module,Smaller,excellent performance.
+2,Comes with ceramic antenna and MAXIM 20.5dB high gain LNA chip,Positioning faster.
+3,Various parameters can be set via the serial port, and can be stored in the EEPROM, easy to use.
+4, comes with IPX interface, you can connect a variety of active antenna, strong adaptability.
+5, It's compatible with 3.3V / 5V level, easy to connect a variety of single-chip systems.
+6, Comes with rechargeable backup battery that can power down to keep the ephemeris data.
+7.We will provide more information about the GPS moudle after you get it.

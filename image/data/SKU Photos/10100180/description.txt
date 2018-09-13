@@ -1,0 +1,28 @@
+Descriptions: 
+
+This product is a breakout board for Allegro¡¯s A4988 DMOS Microstepping Driver with Translator and Overcurrent Protection; please read the A4988 datasheet carefully before using this product.
+This stepper motor driver lets you to operate bipolar stepper motors in full-, half-, quarter-, eighth-,
+and sixteenth-step modes, with an output drive capacity of up to 35 V and 2 A.
+
+The translator is the key to the easy implementation of the A4988.
+Simply inputting one pulse on the STEP input drives the motor one microstep.
+There are no phase sequence tables, high frequency control lines, or complex interfaces to program.
+The A4988 interface is an ideal fit for applications where a complex microprocessor is unavailable or is overburdened.
+
+Features:
+
+Simple step and direction control interface
+Five different step resolutions: full-step, half-step, quarter-step, eighth-step, and sixteenth-step
+Adjustable current control lets you set the maximum current output with a potentiometer,
+which lets you use voltages above your stepper motor¡¯s rated voltage to achieve higher step rates
+Intelligent chopping control that automatically selects the correct current decay mode(fast decay or slow decay)
+Over-temperature thermal shutdown, under-voltage lockout, and crossover-current protection
+Short-to-ground and shorted-load protection
+
+Warning:Connecting or disconnecting a stepper motor while the driver is powered can destroy the driver.
+(More generally, rewiring anything while it is powered is asking for trouble.)
+
+Package Included:
+
+3x A4988 Stepper Motor Driver Module 
+

@@ -1,0 +1,29 @@
+ A big sister to our EL tape, the EL panel is a similar item that comes in a 10 cm square format.  You¡¯ll notice when working with it that it shares some of the same features as the EL tape:  flexibility, portability, and a beautiful soft glow.  It can be used as backlight for an illuminated device, or a platform for paper-cutting artwork.  Post it on a flat surface or wrap it around a curved surface.  Use it in a project as a lighting element or attach it to a shirt.  The options are amazing.
+ 
+You need an inverter to drive the EL light, to control it, please pick up an EL Shield.
+ 
+Features
+
+    No heat loss
+    Great backlight material
+    High efficiency (97%)
+    Does not emit UV light
+    Soft light that is not harsh on the eyes
+    Waterproof, except the connecter
+    The higher voltage EL USB inverter is recommended because it produces a stronger light
+    Able to be cut into other shape
+
+ 
+Specifications
+
+    Dimension:  10 cm x 10 cm
+    Thickness:  0.4 mm - 1.0 mm
+    Operating Voltage:  100 V~ 220 V  Optimum :  120 V 
+    Operating Frequency:  50 Hz~ 5000 Hz   Optimum:  1500 Hz - 2000 Hz 
+    Static Capacitance:  6 nf/m (20 ¡ã C, the RH <80%) 
+    Brightness:   30 cd/m2 ~ 126 cd/m2 (at 120 V, 200 Hz ~ 2000 Hz)
+    Power:  108 mw m ~ 1032 mw/m (at 120 V, 200 Hz ~ 2000 Hz)
+    Life:  approximately 8000 hours 
+    Operating Temperature/Humidity:  -10 ¡ãC ~ + 60 ¡ãC/RH < 90% 
+    Storage Temperature/Humidity:  -10 ¡ãC ~ + 60 ¡ãC/RH < 65%  
+

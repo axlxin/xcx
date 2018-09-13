@@ -1,0 +1,26 @@
+Description: 
+1.采用先进优质计时芯片控制，计时准确，性能远优于555芯片；
+2.触发端光耦隔离，抗干扰能力强；
+3.可以使用常开类型开关或传感器触发模块；
+4.具有8种时间范围选择，最短0.1s，最大长1小时；
+5.具有防电源接反二极管，更好保护模块；
+6.可接更大电流负载,接交流负载时，不要插跳线帽
+7.通过S1和S2的组合改变触发开关的时间
+
+Description：
+
+High quality delay chip design, With far better performance than 555 chip;
+
+Has power reversal protection diode, the effectively protecting the product;
+
+LED indicator light for power and time indication
+
+Octocoupler isolation for better circuit protection
+
+Can be accessed by high current loads (250V AC 10A or 30V DC 10A);
+
+for Household appliances, electronic equipment protection, industrial control, PLC control, electronic experiments, Arduino robot, has a wide range of applications
+
+Product pictures:
+
+1,2

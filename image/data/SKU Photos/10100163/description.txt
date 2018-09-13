@@ -1,0 +1,7 @@
+Product Descriptions:
+
+Input voltage range: 4.75 V - 35 V
+Output voltage: 1.25 V - 26 V
+Output maximum current: 3 A
+Continuous working current: 2 a (total power output within 20 w)
+Size: length * width * height 4.7 cm * 2.6 cm * 1.2 cm

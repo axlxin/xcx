@@ -1,0 +1,15 @@
+Features:
+
+Using two 595-driven digital control, 3-way needed microcontroller IO port, according to the digital display dynamic scanning principle£»
+
+Operating voltage 3.3V to 5V£»
+
+Size£º7.4cm x 2.6cm
+
+Package content:
+
+8-Digit LED Display Module
+
+Product pictures:
+
+1,2,3

@@ -1,0 +1,132 @@
+http://item.taobao.com/item.htm?spm=a1z10.5.w4002-4799217901.18.PgaAdi&id=10253401005
+Super 1 SD card recording module is a high-performance high-definition digital video recording module, the machine uses MPEG-4 video compression technology, single-channel high-definition D1 (704x576) pixels, up to 30fps @ D1, is a true full-time, high-definition, low power consumption, easy operation, ultra-compact professional digital video recorder. The machine supports the boot recording, motion detection recording, scheduled recording, manual recording / camera, external trigger video / camera and other video / camera mode. The aircraft maximum support original Kingston 32GB SD card, recorded video files stored directly in the SD card. The user can at any time in the TV monitor to view, but also SD card image file can be stored in the computer.   
+
+
+
+
+Features:
+
+MPEG-4 compression format
+D1 Video Resolution: 704X576 @ 30FPS
+
+Video compression: MPEG-4 / ASF; Audio Compression: MP3
+
+DVR recording time display selectable (display or not display optional)
+Manual recording, motion detection recording, scheduled recording, start recording, manual camera, external trigger recording
+DVR Audio Compression: 8KHZ / ADPCM
+Frame Rate: 5 15 30 Optional
+
+Optional DVR recording time: 5 minutes 10 minutes 15 minutes 20 minutes 30 minutes 60 minutes Optional
+DVR scheduled recording can be divided into four groups (or optional weekly day)
+
+Maximum support 32GB SD card storage
+Support all the way video and audio input connected DVR; support all the way video and audio output to TV monitor
+DVR supports remote control and key board while operating
+
+Support RS232 interface, external GPS
+Support wide voltage input 5-30V; while the output voltage of the power supply to the camera can 5-30V (less than 200MA)
+Support USB SD card connected to the computer to read the internal data
+DVR supports remote control switch machine
+DVR support power off to save
+
+Technical parameters:
+
+Product Type
+
+
+DVR 8380
+
+Operating Voltage
+
+
+DC5V-30V
+
+Current
+
+
+180mA (Host only)
+
+Operating Temperature
+
+
+0 бу C ~ + 50 бу C
+
+Power output (for camera)
+
+
+DC5-30V, less than 200MA
+
+Input Signal
+
+
+Video + Audio (1 input and 1 output)
+
+Maximum storage capacity
+
+
+Maximum support 32GB SD Card
+
+Recording Format
+
+
+ASF
+
+Compression
+
+
+MPEG-4
+
+Video Resolution
+
+
+D1 / VGA / QVGA
+
+Video frames rate
+
+
+5FPS 15FPS 30FPS optional
+
+Video length
+
+
+5 minutes 10 minutes 15 minutes 20 minutes 30 minutes 60 minutes Optional
+
+Quality
+
+
+High / medium / low selectable
+
+Video capture
+
+
+Manual recording; motion detection recording; scheduled recording; boot record; manual camera; external trigger recording
+
+File storage methods
+
+
+That record full stop or auto coverage
+
+Input impedance
+
+
+75ж╕ Typ-p
+
+Output Impedance
+
+
+75ж╕ Typ-p
+
+DVR operation
+
+
+The remote control or the keypad
+
+Language
+
+
+English, Japanese, Chinese
+
+Form Factor
+
+
+47 * 65 MM

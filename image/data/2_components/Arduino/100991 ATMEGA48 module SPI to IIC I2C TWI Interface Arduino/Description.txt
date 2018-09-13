@@ -1,0 +1,31 @@
+ATMEGA48 module SPI to IIC I2C TWI Interface Arduino
+
+For Robot control, remote control. Information collection.
+
+Using I2C (TWI) communication protocol, which greatly simplifies the communication process of NRF24L01.
+
+Users do not need to understand the complicated NRF24L01 communication process which greatly improves the development efficiency.
+
+Adopt NRF24L01 as Wireless communications chip,reliable communication protocol and reducing data loss.
+
+Specifications feature:
+
+Operating voltage: 5V
+
+Hold time of Module receives the data: More than 2S
+
+Hold time of Module sends data: More than 300s
+
+Transfer rate: 50Byte/S (theoretical value)
+
+I2C/TWI Address: 0x47 (decimal 35)
+
+NRF24L01 Address: 0x34, 0x43, 0x10, 0x10, 0x01 (from low to high)
+
+Size: 44mm x 23mm x 12mm(L x W x H)
+
+Net weight: 6g
+
+Package content:
+
+1 x ATMEGA48 module

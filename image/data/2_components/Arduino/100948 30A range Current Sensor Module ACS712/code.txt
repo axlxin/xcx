@@ -1,0 +1,36 @@
+
+/* ACS712           arduino
+   VCC----------------5v
+   out----------------A0
+   */
+int x;
+void setup ()
+{
+  Serial.begin(19200); // 19200 bps
+}
+void loop()
+{
+ int m;
+ m=analogRead(0);
+ if(m>500&&m<523)
+ {
+   Serial.print("no  Electric current");
+   Serial.print("\r\n");
+ }
+ else if(m<500)
+ {
+   m=512-m;
+   x=(int)(m*5000000/67518);//mA   67518=1023*66
+   Serial.print("I=- ");
+   Serial.print(m,DEC);
+   Serial.print("\r\n");
+ }
+ else if(m>523)
+ {
+   m-=523;
+   x=(int)(m*5000000/67518);//mA   67518=1023*66
+   Serial.print("I= ");
+   Serial.print(m,DEC);
+   Serial.print("\r\n");
+ }
+}

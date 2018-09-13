@@ -1,0 +1,36 @@
+Description: 
+1.供电电压3.2V-5.5V,如果供电电压超过4.5V时，串接一个IN4007二极管；
+2.默认开阔地通讯距离600m；
+3.默认空闲电流：16ma（模块在不同的工作模式下，工作电流不同）；
+4.模块尺寸:27.8mmX14.4mmX4mm
+5.工作频率范围（433.4-473MHZ,多打100个通信频道），最大100mW发射功率；
+6.默认出厂设置：工作模式FU3，波特率9600bps，通讯频道CH001（433.4MHZ）
+
+工作模式
+HC-12模块有三种串口透传模式，用FU1，FU2和FU3表示。使用时，各种模式都只管收发数据，系统默认工作在FU3全速模式下，此模式下可以根据串口波特率自动调整空中波特率，在低波特率下通讯距离最远，不同模式不能相互通讯。
+
+Specifications feature:
+
+supply voltage of 3.2 V to 5.5 V.
+
+communication distance: about 600 m 
+
+the default idle current: 16 mA 
+
+Size: 27.8mm x 14.4mm x 4mm.
+
+operating frequency range:433.4 -473.0 MHz
+
+module ssupporting software upgrades.
+
+the default factory Settings: working mode FU3, baud rate 9600 BPS, communication channel CH001 (433.4 M).
+
+Package content:
+
+2 x modules 
+
+2 x Spring antennas
+
+Product pictures:
+
+1,2,3

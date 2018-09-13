@@ -1,0 +1,23 @@
+Product description
+1.size 32mm*11mm*20mm
+2.chip:LM393,Correlation type infrared head
+3.Woking voltage:DC 5V
+4.With the signal output instructions
+5.Output level is low
+6.The sensitivity is not adjustable
+7.Can be used to workpiece count and motor speed detect
+8.Circuit board output switch quantity
+9.wight:2g
+
+illustration:
+
+1.The OUT pin is low leve when there is no object between the photoelectric sensor,and the red LED is lit.
+
+2. The OUT pin is high leve when there is a object between the photoelectric sensor,and the green LED is not bright.
+
+3.The OUT port can be connected to MCU directly,Than MCU can calculate how mang circle the smaller car have runned per unit time.
+
+
+Package content
+A module and a test code
+

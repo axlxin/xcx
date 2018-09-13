@@ -1,0 +1,31 @@
+Description: 
+
+Onboard ISD1820 chip
+
+Microphones on the module, you can record directly.
+
+recording time:10S
+
+High quality natural voice restored, used as a loudspeaker module
+
+With a loop, jog playback, single-pass play function
+
+The main chip pin has been drawn, you can operate with a single-chip control loop, jog playback, single-pass play function
+
+Supply voltage:3-5V
+
+size:54mm x 38mm
+
+Package content:
+
+1 x  module
+
+Datasheet:
+
+ISD1800.pdf
+
+Product pictures:
+
+1,2,3
+
+

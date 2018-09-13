@@ -1,0 +1,29 @@
+Product description:
+
+This item is a 5V 8-Channel Relay interface board,It can be controlled directly by microcontrollers such as Arduino, AVR, PIC, ARM and so on.
+
+Feature:
+
+Each relay needs 15-20mA driver current.
+
+Equiped with high-current relay : DC30V 10A AC250V 10A.
+
+Each relay has normally open and normally closed contact.
+
+The 8 channels are optically isolated, safe, reliable, anti-interference.
+
+Can be selected by jumper relay and TTL or ground.
+
+With power indicator,each channel has a status indicator.
+
+With a relay coil to absorb the diode protection
+
+Size: 140mm X 55mm
+
+Package content:
+
+1 x 8 channel relay module 
+
+Product pictures:
+
+1,2

@@ -1,0 +1,21 @@
+Specifications feature: 
+ 
+Stepper motor deceleration
+
+Diameter: 28mm
+
+Voltage: 12V
+
+Step angle: 5.625 x 1 / 64
+
+Reduction ratio: 1 / 64
+
+5 Line 4 phase can be driven by ordinary uln2003 chip can also be connected in phase 2 development board used for supporting the use of a direct plug and easy to use stepper motor used in the development board
+
+Package content:
+
+1 x 12V 4-phase 5-wire Stpper Motor
+
+Product pictures:
+
+1,2,3

@@ -1,0 +1,77 @@
+This kit includes 28BYJ-48 5V stepper motor and the ULN2003 driver board. 
+
+28BYJ-48 5V stepper motor:
+
+Rated voltage ： 5VDC
+Number of Phase ： 4
+Speed Variation Ratio ： 1/64
+Stride Angle ： 5.625° /64
+Frequency : 100Hz
+DC resistance ： 50Ω±7%(25℃)
+Idle In-traction Frequency : > 600Hz
+Idle Out-traction Frequency : > 1000Hz
+In-traction Torque >34.3mN.m(120Hz)
+Self-positioning Torque >34.3mN.m
+Friction torque : 600-1200 gf.cm
+Pull in torque : 300 gf.cm
+Insulated resistance >10MΩ(500V)
+Insulated electricity power ：600VAC/1mA/1s
+Insulation grade ：A
+Rise in Temperature <40K(120Hz)
+Noise <35dB(120Hz,No load,10cm)
+Model: 28BYJ-48
+图片：motor 1.jpg
+
+Wiring Diagram :
+图片：motor 2.jpg
+
+ULN2003 driver board:
+
+Size: 42mmx30mm
+ULN2003 driver chip, 500mA
+A. B. C. D LED indicating the four phase stepper motor working status.
+
+Package Content:
+3x 8BYJ-48 5V stepper motor
+3x ULN2003 driver board
+
+
+
+
+
+Html code
+
+<p><strong>This kit includes 28BYJ-48 5V stepper motor and the ULN2003 driver board. </strong></p>
+<p><strong>28BYJ-48 5V stepper motor:</strong><br>
+  <br>
+  Rated voltage ： 5VDC<br>
+  Number of Phase ： 4<br>
+  Speed Variation Ratio ： 1/64<br>
+  Stride Angle ： 5.625° /64<br>
+  Frequency : 100Hz<br>
+  DC resistance ： 50Ω±7%(25℃)<br>
+  Idle In-traction Frequency : &gt; 600Hz<br>
+  Idle Out-traction Frequency : &gt; 1000Hz<br>
+  In-traction Torque  &gt;34.3mN.m(120Hz)<br>
+  Self-positioning Torque &gt;34.3mN.m<br>
+  Friction torque : 600-1200 gf.cm<br>
+  Pull in torque : 300 gf.cm<br>
+  Insulated resistance &gt;10MΩ(500V)<br>
+  Insulated electricity power ：600VAC/1mA/1s<br>
+  Insulation grade ：A<br>
+  Rise in Temperature  &lt;40K(120Hz)<br>
+  Noise  &lt;35dB(120Hz,No load,10cm)<br>
+  Model: 28BYJ-48<br>
+  <br>
+  <img src="file://///webshop/webshop2/Yuki/Ebay-PCB 模块/01育松/以上/10100168/motor 1.jpg" width="550" height="332" alt="">g</p>
+<p><strong>Wiring Diagram :</strong><br>
+  <br>
+<img src="file://///webshop/webshop2/Yuki/Ebay-PCB 模块/01育松/以上/10100168/motor 2.jpg" width="313" height="591"></p>
+<p><strong>ULN2003 driver board:</strong><br>
+  <br>
+  Size: 42mmx30mm<br>
+  ULN2003 driver chip, 500mA<br>
+A. B. C. D LED indicating the four phase stepper motor working status.</p>
+<p>Package Content:<br>
+  3x 8BYJ-48 5V stepper motor<br>
+  3x ULN2003 driver board</p>

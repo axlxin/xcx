@@ -1,0 +1,11 @@
+Product Description:
+
+Input   3V  DC
+
+Output  110V AC
+
+The EL inverter can be driven by EL shield expansion board EL cold light input uses JST PH connector, inverter input terminal directly connected to the output terminal EL shield expansion board; inverter output using JST PH connector, connected to the input terminal EL shield extender board to interface EL shield 8 provides a cold light source. The inverter can also be directly driven cold light, the wiring head needs to be reconfigured
+
+Note:
+Inverter input end of the cable color is one red and one black, the output color to two black wires.
+The inverter can drive two 3 m long EL cold light; driving three lines, the light intensity relative weakness, it is recommended to use in the room all black condition; root of the drive four lines in black micro situation can only be issued light.

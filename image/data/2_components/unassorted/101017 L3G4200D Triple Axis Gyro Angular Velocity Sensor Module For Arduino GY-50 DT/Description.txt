@@ -1,0 +1,41 @@
+Description£º
+
+100% Brand new and high quality.
+
+This is a breakout board for the L3G4200D low-power three-axis angular rate sensor. The L3G4200D has a full scale of ¡À250/¡À500/¡À2000 dps and is capable of measuring rates with a user-selectable bandwidth. These work great in gaming and virtual reality input devices, GPS navigation systems and robotics.
+
+Three selectable full scales (250/500/2000 dps)
+
+I2C/SPI digital output interface
+
+16 bit-rate value data output
+
+8-bit temperature data output
+
+Two digital output lines (interrupt and data ready)
+
+Integrated low- and high-pass filters with user select-able bandwidth
+
+Ultra-stable over temperature and time
+
+Wide supply voltage: 3-5V
+
+Low voltage-compatible IOs (1.8V)
+
+Embedded power-down and sleep mode
+
+Embedded temperature sensor
+
+Embedded FIFO
+
+High shock suitability
+
+Extended operating temperature range (-40 ¡æ to +85 ¡æ)
+
+Package content:
+
+1 x L3G4200D module
+
+Product pictures:
+
+1,2,3

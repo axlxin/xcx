@@ -1,0 +1,6 @@
+Product Descriptions:
+
+ULN2003 driver board:
+Size: 42mmx30mm
+ULN2003 driver chip, 500mA
+A. B. C. D LED indicating the four phase stepper motor working status.

@@ -1,0 +1,25 @@
+Display sceen size: 45.5mm x 26.5mm
+
+Dimensions: 48mm x 29mm x 21mm
+
+Measurement range: DC 15-80V ,it support 36V/48V/60V electric cars
+
+Supply voltage: DC 15-80V 
+
+Weight: 23 g
+
+Display color: red
+
+Refresh rate:500ms
+
+Measurement accuracy: 1% 
+
+Operating Temperature: -10 ¡æ ~ 65 ¡æ
+ 
+Package content:
+
+1x LED 2 wires DC 15-80V voltmeter
+
+Product pictures:
+
+1,2,3

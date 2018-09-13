@@ -1,0 +1,35 @@
+High sensitivity for low-light operation.
+Low operating voltage for embedded application.
+Standard SCCB interface compatible with I2C interface.
+With AL422 3M-Bits FIFO.
+Raw RGB, RGB (GRB4:2:2, RGB565/555/444),YUV(4:2:2) and YCbCr(4:2:2)output format.
+Support VGA, CIF and from CIF to 40 x 30 format .
+Vario Pixel method for sub-sampling.
+Auto Image Control: AEC, AGC, AWB, ABF, ABLC.
+Image Quality Control: Color saturation, hue, gamma, sharpness and anti-blooming.
+ISP includes noise reduction and defect correction.
+Support image scaling.
+Lens shading correction.
+Flicker 50/60Hz auto detection.
+Color saturation level auto adjust.
+Edge enhancement level auto adjust.
+De-noise level auto adjust    
+Parameter:
+
+    Photosensitive Array: 640 x 480.
+    IO Voltage: 2.5V to 3.0V.
+    Operating Power: 60mW/15fpsVGAYUV.
+    Sleeping Mode: <20¦ÌA.
+    Operating Temperature: -30 to 70 deg C.
+    Output Format: YUV/YCbCr4:2:2 RGB565/555/444 GRB4:2:2 Raw RGB Data (8 digit).
+    Lens Size: 1/6".
+    Vision Angle: 25 degree.
+    Max. Frame Rate: 30fps VGA.
+    Sensitivity: 1.3V / (Lux-sec).
+    Signal to Noise Ratio: 46 dB.
+    Dynamic Range: 52 dB.
+    Browse Mode: By row.
+    Electronic Exposure: 1 to 510 row.
+    Pixel Coverage: 3.6¦Ìm x 3.6¦Ìm.
+    Duck Current:: 12 mV/s at 60¡æ.
+    PCB Size (L x W): Approx. 1.4 x 1.4 inch / 3.5 x 3.5 cm

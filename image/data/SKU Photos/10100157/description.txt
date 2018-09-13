@@ -1,0 +1,11 @@
+Specifications:
+
+Input voltage: 3 ~ 35V DC ( Note : The output voltage is less than 4V, onboard voltmeter will not work )
+Input Current : 9A (max)
+Output voltage : 3.5 ~ 35V DC ( This board is a step-up board , the output voltage to be > = input voltage )
+Output current : 6A (max)
+Output power : 65W, ( the output when the input voltage is greater than 20V can reach 100W)
+Conversion efficiency : 96% ( maximum )
+Output ripple : 40mV (TYP)
+Voltage meter range : 4 ~ 40V, error +-0.1V
+Size: Length x Width x Height = 6.75x4.15x1.4CM

@@ -1,0 +1,24 @@
+<div>
+	<strong>Overview:</strong></div>
+<ul>
+	<li>
+		MSP430F149 is 16-bit ultra-low power consumption micro controller,with 60KB flash memory,2KB RAM,12 bit ADC,2 USART and a hardware multiplier.</li>
+</ul>
+<div>
+	<strong>Features:</strong></div>
+<ul>
+	<li>
+		USB interface,support USB powered,USB download,marquee.</li>
+	<li>
+		You can do serial communication experiment through USB interface and PC.</li>
+	<li>
+		8 flash LED</li>
+	<li>
+		Standard pin pitch:2.54mm</li>
+	<li>
+		NRF905 wireless module interface.</li>
+	<li>
+		Copper cylinder on the board,improving the durability and reliability of the circuit board.</li>
+	<li>
+		Minimum system</li>
+</ul>

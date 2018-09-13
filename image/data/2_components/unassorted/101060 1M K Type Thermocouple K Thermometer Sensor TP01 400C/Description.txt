@@ -1,0 +1,27 @@
+Specifications feature:
+
+Product Name : Thermocouple;Transfer 
+
+Type : TP01;
+
+Plug Type : 2 Flat Pin
+
+Temperature Range : -50 to 400 centigrade;
+
+Probe Diameter : 0.8mm / 0.031";
+
+Pin Size : 11 x 3mm/ 0.4" x 0.11"(L*W)
+
+Pin Spacing : 7mm/ 0.275";
+
+Total Length : 1M / 39.4"
+
+Color : White, Yellow;
+
+Material : Insulated Shielding
+
+Weight : 11g;Package Content : 1 x Thermocouple
+
+Product picture:
+
+1

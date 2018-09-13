@@ -1,0 +1,31 @@
+Specification features:
+
+Working life: more than 2000 hours
+
+Spot mode: dot facula, continuous output
+
+Laser wavelength: 650nm (red)
+
+Copper head diameter: 6mm
+
+Light power: <5mW
+
+Supply voltage: 5V DC
+
+Operating current: <40mA
+
+Operating temperature: -36V ~ 65V
+
+Power lead length: 120mm
+
+Shell material: brass
+
+Single weight: 1g
+
+Package included:
+
+1 x Laser diode dot
+
+Product picture:
+
+1,2,3

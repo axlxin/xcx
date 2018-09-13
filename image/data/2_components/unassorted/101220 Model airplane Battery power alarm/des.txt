@@ -1,0 +1,41 @@
+
+
+产品简介:
+
+该电压显示器用于1S~8S的锂电池检测,自动检测锂电池每个电芯的电压和总电压.支持反向连接保护.
+它可以让你随时随地的了解你的电池的工作状态,使你的电池不会因为过放或过充造成的伤害.
+当电压低于设定值时，蜂鸣器会响起，红色LED灯会闪烁；出厂默认设定值为3.3V，按下按键可改变电压设定值，自动保存用户当前设定值。
+
+1.用于1S-8S锂电池检测
+2.电压检测精度：± 0.01V。
+3.组电压显示范围：0.5V~4.5V
+4.总电压显示范围：0.5V~36V
+5.1S测试模式电压范围：3.7V~30V的
+6.低电压蜂鸣器报警模式2S - 8S
+7.报警电压设定范围：OFF~2.7~3.8V
+8.尺寸：40毫米x 25毫米x 11毫米
+9.重量：9g
+
+使用方法:
+
+将电显正面向上（数显的一面），插针对着自己，将电池的白色平衡充电插头沿着电显最左边的针脚插入，电显会立即BB响两声，屏上显示跳变的数字，如果没有反应，将平衡充插头反过插上就可以了。电显的另一端有一个小按钮，用来设置电显的报警电压。
+
+Description:
+
+The voltage monitor is used to detect 1S-8S lithium batteries, and automatically detect the voltage of each cell lithium battery and total voltage. Supports reverse connection protection.
+It allows you to work anywhere, anytime understand the state of your battery, so your battery will not overcharge and over discharge or cause damage.
+When the voltage drops below the set value, the buzzer will sound, the red LED flashes; factory default setting is 3.3V, press the button to change the voltage setting, automatically save the user the current settings.
+
+1 for the 1S-8S lithium battery detection
+2 voltage detection accuracy: ± 0.01V.
+3 pack voltage display range: 0.5V-4.5V
+4 displays the total voltage range: 0.5V-36V
+5.1S test mode voltage range: 3.7V-30V of
+6 Low voltage buzzer alarm mode 2S - 8S
+7 alarm voltage setting range: OFF ~ 2.7 ~ 3.8V
+8 Dimensions: 40 mm x 25 mm x 11 mm
+9 Weight: 9g
+
+Usage:
+
+The electricity was face up (digital display side), pin against themselves, the white balance of the battery charging plug is inserted along the electricity was leftmost pins, electric BB was immediately rang twice, hopping on the digital display screen If there is no reaction, the equilibrium charge plug Conversely plug on it. Electric significant other end there is a small button to set the alarm voltage electrical significant.

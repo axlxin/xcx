@@ -1,0 +1,117 @@
+/*arduino      L298N
+   4-----------IN1
+   5-----------IN2
+   6-----------IN3
+   7-----------IN4
+   10----------ENA
+   11----------ENB*/
+int IN1=4;
+int IN2=5;
+int IN3=6;
+int IN4=7;
+ 
+int EN1=10;
+int EN2=11;
+
+void Motor1(boolean reverse)
+{
+  if (reverse) 
+  {
+    digitalWrite(IN1,HIGH);
+    digitalWrite(IN2,LOW);
+  }
+ 
+  else 
+  {
+    digitalWrite(IN1,LOW);
+    digitalWrite(IN2,HIGH);
+  }
+ 
+}
+ 
+void Motor2(boolean reverse)
+{
+  if (reverse) 
+  {
+    digitalWrite(IN3,HIGH);
+    digitalWrite(IN4,LOW);
+  }
+ 
+  else 
+  {
+    digitalWrite(IN3,LOW);
+    digitalWrite(IN4,HIGH);
+  }
+ 
+}
+ 
+void go()
+{
+ 
+ 
+
+  digitalWrite(IN3,LOW);
+  digitalWrite(IN4,HIGH);
+  digitalWrite(IN1,LOW);
+  digitalWrite(IN2,HIGH); 
+  delay(1000);
+ 
+
+  stopMotor(true);
+  delay(1000); 
+  stopMotor(false);
+ 
+ 
+
+  digitalWrite(IN3,HIGH);
+  digitalWrite(IN4,LOW);
+  digitalWrite(IN1,HIGH);
+  digitalWrite(IN2,LOW);
+ 
+ 
+  delay(1000);
+
+  stopMotor(true);
+  delay(1000); 
+  stopMotor(false);
+ 
+ 
+ 
+}
+ 
+void stopMotor(boolean r)
+{
+  if (r)
+  {
+    analogWrite(EN1,0);
+    analogWrite(EN2,0);
+  }
+  else
+  {
+    analogWrite(EN1,255); 
+    analogWrite(EN2,255);
+  }
+} 
+ 
+void setup()
+{
+  int i;
+ 
+ 
+  for (i=4;i<=7;i++) 
+    pinMode(i,OUTPUT); 
+ 
+  for (i=4;i<=7;i++) 
+    digitalWrite(i,OUTPUT); 
+ 
+ 
+  pinMode(10,OUTPUT);
+  pinMode(11,OUTPUT);
+  Serial.begin(9600);
+ 
+}
+ 
+void loop()
+{
+  go();
+}

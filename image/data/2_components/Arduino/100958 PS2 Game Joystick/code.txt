@@ -1,0 +1,37 @@
+/*Rocker            arduino
+   s-y--------------A0
+   s-x--------------A1
+   s-k--------------8
+   GND-------------GND
+   VCC--------------5V*/
+//Module on all of the VCC are connected together, only need to connect to one of these,also the GND
+int Rocker_x=0,Rocker_y=0;
+int key=8;
+int val=0;
+void setup() 
+{
+  pinMode(key,INPUT);
+  Serial.begin(4800); 
+}
+
+void loop() 
+{
+   Rocker_x=analogRead(1);
+   Rocker_y=analogRead(0);
+   Serial.print("Rocker_x = ");
+   Serial.print(Rocker_x,DEC);
+   Serial.print(" Rocker_y = ");
+   Serial.print( Rocker_y,DEC);
+   Serial.println(" ");
+   val=digitalRead(key);
+  if(!val)
+  {
+    delay(80);
+    if(!digitalRead(key))
+    {
+      Serial.println("Button has been pressed");
+    }
+    while(!digitalRead(key));
+  }
+ 
+}

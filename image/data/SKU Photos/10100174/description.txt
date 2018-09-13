@@ -1,0 +1,7 @@
+Product Descriptions:
+
+This is a low price and ordinary gear stepper motor
+28 mm diameter
+Voltage: 5 v
+The step Angle: 5.625 x 1/16
+The reduction ratio: 1/16

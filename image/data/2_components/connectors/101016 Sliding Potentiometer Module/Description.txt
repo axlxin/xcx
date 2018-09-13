@@ -1,0 +1,25 @@
+Feature:
+
+High quality slide appliances, stable and reliable performance 
+
+Two analog outputs, analog outputs 0-VCC voltage signals 
+
+Size: 90 x 20mm 
+
+Weight: 20g 
+
+Voltage: 3.3V, 5V 
+
+Port: Analog 
+
+Resistance: 10K 
+
+Platform: Arduino, MCU, ARM, ect.   
+ 
+Package content: 
+
+1 x Slide potentiometers module
+
+Product picture:
+
+1

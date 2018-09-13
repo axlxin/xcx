@@ -1,0 +1,55 @@
+Feature:
+
+Module device uses high-frequency specifications inductor-capacitor, crystal 10ppm high precision specifications ensure that the module wireless features are adequately represented.
+
+All modules have been professional equipment testing, consistency and stability of the modules are fully protected.
+
+SPI interface, small size dimensions, stamp holes convenient interface, embedded design, the full expansion of distance
+
+With a shield, better anti-interference performance
+
+Specification:
+
+frequency range :410-440M (antenna matching optimum range, the domestic is free ISM band)
+
+Sensitivity: up to-126dBm (0.5Kbps)
+
+the maximum output power of the wireless transmitter: 20dBm (1.2Kbps, 433M)
+
+transfer rate :0.1-1Mbps
+
+the modulation mode: FSK, GFSK, 4GFSK and OOK
+
+power :1.8-3 .6 V
+
+low consumption in power-down mode is 30nA (4.21ms), in the standby mode 50nA;
+
+Receive current 10/13mA, the maximum emission current 85mA.
+
+the digital received signal strength indicator (RSSI)
+
+timed wake-up function, wireless wake-up function (WUT)
+
+and antenna matching and bi-directional switch control
+
+it can be configured packet structure
+
+the former synchronization signal detection
+
+64-byte receive data register (FIFO)
+
+on-chip integration of low battery detection
+
+on-chip temperature sensor and 8 Analog to Digital Converter
+
+the working temperature range: -40 ~ 80 бу C (temperature characteristics and product consistency is much better!)
+
+integrated voltage regulator
+
+fast wake-up and frequency hopping function
+
+power-on reset function
+
+built-in crystal error adjustment function
+
+the chip automatically calculate and check CRC-16, and supports three 16-bit CRC polynomial

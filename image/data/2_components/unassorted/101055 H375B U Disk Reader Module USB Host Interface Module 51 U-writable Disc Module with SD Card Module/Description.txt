@@ -1,0 +1,19 @@
+Product Description£º
+
+CH375B is a USB bus the general interface chip, has the 8-bit data bus and read, write, and choose the line of control and interrupt output, can be easily hooked up to single/DSP/MCU/MPU controller of the system bus. In a USB host mode, CH375B also provides a way of serial communication, through a serial input, serial output and interrupt output with MCU/DSP/MCU/MPU, etc.
+
+2 x 8 connector, it can be convenient to hook up with MCU
+
+according to jump line, it can work in parallel or serial mode
+
+USB status indicators
+
+With 3.3 V LDO 1117, the biggest provide current 800 mA
+
+5 v power supply power supply by the target board
+
+12 MHZ crystal vibration
+
+Product pictures:
+
+1,2,3

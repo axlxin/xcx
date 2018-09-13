@@ -1,0 +1,23 @@
+Product description:
+
+This is another great IIC/I2C/TWI/SPI Serial Interface. As the pin resources of Arduino controller is limited, your project may be not able to use normal LCD shield after connected with a certain quantity of sensors or SD card. However, with this I2C interface module, you will be able to realize data display via only 2 wires. If you already has I2C devices in your project, this LCD module actually cost no more resources at all. It is fantastic for Arduino based project.
+
+Specifications feature£º
+
+Supply voltage: 5V 
+
+the backlight and contrast is adjusted by potentiometer Come with 2 IIC interface, which can be connected by Dupont Line or IIC dedicated cable Compatible for 1602 LCD
+
+I2C Address: 0X20~0X27 (the original address is 0X20,you can change it by yourself)
+
+Come with 2 IIC interface, which can be connected by Dupont Line or IIC dedicated cable
+
+Size: 55*19mm
+
+Package content:
+
+1 x Serial Interface IIC I2C TWI Adapter Module
+
+Product pictures:
+
+1,2,3,4

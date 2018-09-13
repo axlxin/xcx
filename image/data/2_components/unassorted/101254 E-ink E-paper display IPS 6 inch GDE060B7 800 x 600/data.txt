@@ -1,0 +1,34 @@
+Product parameter:
+Model:                GDE060B7
+Dimension:            101.8 x 138.4x 2.7mm
+Active area:          90.6 x 122.4mm
+Resolution:           800 x 600
+Dot spacing:           0.151(H) X 0.153(V) 
+Color:                black /white/gray scale
+Grayscale value:        16
+Contrast:              7:1
+Aspect ratio:          4:3
+Reflectance:           22%
+Refresh time:           960ms     
+Operative temperature:   0~50°Ê
+Storage temperature:     -20~60°Ê 
+Control IC:             HX8705-B
+Front backlit parameters of LED:
+Voltage VLED£∫20V
+Current ILED£∫10mA
+ 
+Properties
+Build-in IC driver 
+Special developed DEMO	
+Capacitive touch screen(¢ÚC interface) 
+LED front backlight(it help you see the content displaid in dark)
+Wide viewing angle
+Ultra low power consumption
+Pure reflection mode
+Bi-stable display
+Commercial temperature range
+Landscape, portrait modes
+Anti-dazzling front surface with hard coating
+Low current deep sleep mode
+Use COG packaging, IC thickness is 250 um
+Service life (refreshing times under normal use condition) : over a million times

@@ -1,0 +1,13 @@
+Features:
+
+An onboard PAM8610 audio amplifier chip, 10W * 2 filterless Class D stereo audio amplifier
+
+the chip has led major pin for easy control of external devices
+
+working voltage: 7V-15V
+
+Size: 22 (mm) x24.6 (mm)
+
+Product pictures:
+
+1,2

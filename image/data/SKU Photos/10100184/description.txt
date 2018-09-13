@@ -1,0 +1,23 @@
+Product Descriptions:
+
+This is a wifi solution based on IC ESP8266 from Espressif, very price competitive wifi module, and also great function. Bring your project to the internet of things easily!
+
+Update: new board turn to be color black, to support new firmware version 1.01, which require bigger flash size 1Mb, old one is 512Kb, also better signal anti interference capability.
+
+Features:
+
+Very competitive price
+AP, STA, AP+STA modes available.
+Very simple AT commands, easy to use.
+internal LWIP interface.
+Only four pins interface, VCC-3V3, GND, TXD and RXD.
+Current firmware V091 for all stock, new reserved reset and CH_PD (for updating) pins available, you can refresh the firmware now.
+All using new ESP8266ex new chip, old chip is not available anymore.
+
+Note:
+
+Datasheet of IC is not yet available in English, only limited info can provide for this item.
+This item is developing fast, but limited function for now, not listed function (changing baud rate, sleep mode, smart connection) is not supported now but maybe available soon.
+carefully avoid empty space in the at commands, otherwise return error, specially in the IP address, etc.
+Our documentation only support our module with the firmware version.
+

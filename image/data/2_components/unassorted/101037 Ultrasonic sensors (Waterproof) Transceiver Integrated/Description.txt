@@ -1,0 +1,15 @@
+Specifications feature:
+
+Model: EU1640BCH, (diameter 16mm)
+
+Nominal frequency (KHz): 40KHz
+
+emission sound pressure at10V (0dB = 0.02mPa): >=110dB
+
+the receiver sensitivity at40KHz (0dB = V / uBar): >=-75dB
+
+Capacitance at1KHz, <1V (PF): 1800 ¡À 30% 
+
+Product picture£º
+
+1

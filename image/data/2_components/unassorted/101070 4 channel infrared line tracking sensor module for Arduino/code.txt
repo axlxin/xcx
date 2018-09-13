@@ -1,0 +1,53 @@
+/*arduino       Module
+   5V-----------VCC
+   GND----------GND
+   4---------OUT1
+   5---------OUT2
+   6---------OUT3
+   7---------OUT4
+   
+*/
+typedef unsigned char uchar;
+uchar OUT1=4;
+uchar OUT2=5;
+uchar OUT3=6;
+uchar OUT4=7;
+void setup() 
+{
+  // put your setup code here, to run once:
+  pinMode(OUT1,INPUT);
+  pinMode(OUT2,INPUT);
+  pinMode(OUT3,INPUT);
+  pinMode(OUT4,INPUT);
+  Serial.begin(9600);
+}
+
+void loop() 
+{
+  if(!(digitalRead(OUT1)&&digitalRead(OUT2)&&digitalRead(OUT3)&&digitalRead(OUT4)))
+  {
+    //Serial.println("There are obstacles in front of the module");
+    if(!digitalRead(OUT1))
+    {
+     Serial.println("There are obstacles in front of the NO.1");
+     while(!digitalRead(OUT1)); 
+    }
+    else if(!digitalRead(OUT2))
+    {
+     Serial.println("There are obstacles in front of the NO.2");
+     while(!digitalRead(OUT2));  
+    }
+     else if(!digitalRead(OUT3))
+    {
+     Serial.println("There are obstacles in front of the NO.3");
+     while(!digitalRead(OUT3));  
+    }
+    else if(!digitalRead(OUT4))
+    {
+     Serial.println("There are obstacles in front of the NO.4");
+     while(!digitalRead(OUT4));  
+    }
+  }
+  // put your main code here, to run repeatedly:
+
+}

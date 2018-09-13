@@ -1,0 +1,13 @@
+Descriptions:
+
+This is a high quality, high power, high ratio stepper motor drive! It has Maximum current 4.5 A, Maximum voltage 45 v, output short circuit protection.
+
+Specifications:
+
+1) Working voltage: dc 10 v - 45 v, recommended 32V.
+2) Using 6n137 high speed optoCoupler..
+3) TB6600HG chip, high current, high voltage, short circuit protection.
+4) Maximum output: 4.5 A.
+5) suitable for 4.2A, 42 57 86, 2 and 4 phase, 4 and 6 wires stepper motor
+6) volume: 50 * 82 * 35 (MM)
+7) Cooling fin: Yes, big.

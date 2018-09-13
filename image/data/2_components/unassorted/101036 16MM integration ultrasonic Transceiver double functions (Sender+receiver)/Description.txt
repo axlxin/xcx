@@ -1,0 +1,30 @@
+Specifications feature:
+
+Nominal Frequency (KHz): 40KHz
+
+emission sound pressure at10V (0dB = 0.02mPa): ¡Ý 117dB
+
+receiver sensitivity at40KHz (0dB = V / ubar): ¡Ý-65dB
+
+Capacitance at1KHz, <1V (PF): 2000 ¡À 30%
+ 
+Center frequency 40.0¡À1.0KHz 
+
+Sound pressure level:112dB min. 
+
+Capacitance:2400Pf¡À20% 
+
+Maximum input voltage:60Vp-p 
+
+Directivity:60¡ã¡À15¡ã (-6dB) 
+
+Operating temperature:-20¡ãC~+70¡ãC 
+
+Storage Temperature:-40¡ãC~+85¡ãC 
+
+Weight 2.2g
+
+Product picture:
+
+1
+ 

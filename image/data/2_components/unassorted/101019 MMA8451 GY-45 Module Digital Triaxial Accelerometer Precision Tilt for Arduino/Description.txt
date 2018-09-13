@@ -1,0 +1,27 @@
+Description:
+
+MMA8451Q is a 14-bit resolution with a smart low-power , three-axis , capacitive micromachined accelerometer. The acceleration sensor embedded with rich functionality , user-programmable options with flexible and can be configured with up to two interrupt pins . Embedded interrupt function can save the overall power consumption , relieve the burden on the host processor constantly polling data . Along with low-pass filtering the data access functionality and high- pass filtering of data, data analysis may be required to minimize , in order to achieve shake detection and rapid response . The device can be configured to use any combination of configurable features embedded inertial wake-up interrupt signal is generated , which makes MMA8451Q monitoring events while at rest to maintain a low -power mode .
+
+Specifications feature:
+
+I2C digital output interface ( when the pull-up resistor of 4.7 k¦¸, the highest frequency up to 2.25 MHz)
+
+Power supply:3-5v
+
+Size:20.5mm x 14.5 mm(L x W)
+
+Hole size: 3mm
+
+Hole center distance:15mm
+
+Package content:
+
+1 x MMA8451 Digital 3-Axis Acceleration Module
+
+Datasheet:
+
+MMA8451.pdf
+
+Product pictures:
+
+1,2,3,4

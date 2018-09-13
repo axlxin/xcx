@@ -1,0 +1,26 @@
+<div>
+	<strong>Paramater:</strong></div>
+<ul>
+	<li>
+		Application:the article apply to 936 solderling station,constant temperature soldering iron.</li>
+	<li>
+		Head shape:tool bit,apply to large solder joint.</li>
+	<li>
+		Color:silver</li>
+	<li>
+		Diameter:6mm</li>
+</ul>
+<div>
+	<strong>Features:</strong></div>
+<ul>
+	<li>
+		Thermostat soldering iron is made from lead-free ,oxygen-free copper.</li>
+	<li>
+		Principium of heating:Internal heating.</li>
+	<li>
+		High heat conductivity</li>
+	<li>
+		Stable quality</li>
+	<li>
+		Long service life:no less then 15000-25000 Solder joint under normal temperature and application.</li>
+</ul>

@@ -1,0 +1,5 @@
+Product Details:
+
+Dimension: 2.8 cm * 1.3 cm
+Ouput: 2pin VCC, 2Pin GND
+Weight: 3.2 g

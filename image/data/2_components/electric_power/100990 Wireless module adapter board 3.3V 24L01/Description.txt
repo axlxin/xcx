@@ -1,0 +1,5 @@
+Product description:
+
+Wireless module for 10 feet, this link for the adapter plate, excluding wireless module.
+
+Design Background: The wireless module operating voltage is generally 3.3v, the ordinary 51 microcontroller 5v, this module is used in conjunction with the convenience of wireless module with 51 single-chip system board.

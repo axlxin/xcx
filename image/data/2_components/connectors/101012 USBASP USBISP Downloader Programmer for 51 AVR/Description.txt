@@ -1,0 +1,27 @@
+Description:
+
+Standard IDC10 interface
+
+With power and programming indicator light
+
+Supports System	Win7
+
+Supports USB 1.0 / USB 2.0 communication
+
+Supports S51 and AVR chip program, and the speed is faster and more stable than a parallel interface ISP. It is the best choice for a PC/Laptop which without parallel interface.
+
+Specifications feature:
+
+Supply voltage:3.3V to 5V
+
+Size:72 x 2cm(L x W)
+
+Net Weight:22g
+
+Package Content:
+
+1 x AVR Programmer Download Cable
+
+Product picture:
+
+1,2

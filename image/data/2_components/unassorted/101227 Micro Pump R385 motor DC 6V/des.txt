@@ -1,0 +1,48 @@
+R385电机水泵
+R385电机水泵
+
+水泵尺寸：90毫米*40毫米*35毫米
+
+出水口直径：内径6毫米，外径9毫米
+
+工作电压：DC6-12V（推荐9V1A 12V1A）
+
+工作电流：0.5-0.7A
+
+流量：1.5-2L/Min（左右）
+
+最大吸程：2米
+
+扬程：最大为3米
+
+寿命：最大可达2500H
+
+水温：可达80
+
+电压6V时：功率为6W/H
+
+注意：水泵后面固定硅胶套，不要套住了电机的散热孔，后移一点就可以了，以免影响散热和使用寿命！
+
+R385 motor pumps
+
+Pump Size: 90 mm * 40 mm * 35 mm
+
+Outlet diameter: diameter 6 mm, an outer diameter of 9 mm
+
+Operating voltage: DC6-12V (recommended 9V1A 12V1A)
+
+Current: 0.5-0.7A
+
+Flow: 1.5-2L / Min (left)
+
+The maximum suction lift: 2 m
+
+Head: up to 3 m
+
+Life: up to 2500H
+
+Water temperature: up to 80
+
+Voltage 6V when: power is 6W / H
+
+Note: The pump behind fixed sets of silicone, do not trap the cooling holes of the motor, moved back a little on it, so as not to affect the heat and life!

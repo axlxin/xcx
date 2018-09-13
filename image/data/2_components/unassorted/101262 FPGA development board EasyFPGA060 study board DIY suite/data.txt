@@ -1,0 +1,26 @@
+<div>
+	<strong>Product list:</strong></div>
+<ul>
+	<li>
+		EasyFPGA060 development board :1</li>
+	<li>
+		USB cable:1</li>
+</ul>
+<div>
+	<strong>Resource allocation:</strong></div>
+<ul>
+	<li>
+		Master chip:A3P060-VQG100</li>
+	<li>
+		Onboard downloader:yes</li>
+	<li>
+		Timer:48MHz</li>
+	<li>
+		Keypad:4</li>
+	<li>
+		LED:4</li>
+	<li>
+		Available IO:62</li>
+	<li>
+		Power supply: USB powered</li>
+</ul>

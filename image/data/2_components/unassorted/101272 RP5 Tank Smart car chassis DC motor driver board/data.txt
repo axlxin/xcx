@@ -1,0 +1,20 @@
+<div>
+	<strong>Performance parameter:</strong></div>
+<ul>
+<li>Dimension:180mm x 135mm x 58mm</li>
+<li>Working voltage:7.2V</li>
+<li>Working current:160-180mA</li>
+<li>Maximum speed:30cm/s(Its speed can up to 42cm/s,when voltage is12V ) </li>
+<li>Grade ability:>30бу</li>
+<li>Payload:60.4g</li>
+</ul>
+<div>
+	<strong>Product list:</strong></div>
+<ul>
+<li>Chassis</li>
+<li>Battery holder</li>
+<li>Gear cluster</li>
+<li>280 motor: a couple</li>
+<li>Form a complete set of motor inductor:a couple</li>
+</ul>
+

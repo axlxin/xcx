@@ -1,0 +1,71 @@
+Music Robot Kit
+£¤1,223.14
+SKU:
+90300
+Weight:
+1,600.00 Grams
+Current Stock:
+1
+
+
+video£ºhttp://www.youtube.com/v/HV-Ijkdk3p0
+
+Product Description
+
+Description:
+
+This kit can be used to build a Music Robot. It can play the Xylophone by an application via USB cable installed on computer. By this application you can use your keyboard of computer to play the Xylophone by the Number Key from 1 to 7 directly. And you can also type a music score in the application and then send it to the robot, the robot will play the music you have sent automatically.
+
+Features:
+
+    Strong aluminum extrusion parts, anodizing surface
+    High quality stepper motor with back shaft
+    Me-2H Microstep Driver with high performace
+    Easy to drive and can play Xylophone very well
+
+Power Supply: 12V
+
+Kit Includes:
+1 ¡Á Xylophone
+1 ¡Á Beam 0808-80
+1 ¡Á Beam 0808-128
+3 ¡Á Beam 0824-64
+5 ¡Á Beam 0824-80
+7 ¡Á Beam 0824-96
+1 ¡Á Beam 0824-128
+1 ¡Á Plate 7¡Á9
+1 ¡Á Bracket 3¡Á6
+4 ¡Á Bracket 3¡Á3        
+	1 ¡Á Stepper Motor Bracket
+2 ¡Á Timing Pully 90T
+4 ¡Á Timing Pully Slice 90T
+1 ¡Á Link Rod
+2 ¡Á Slider 496
+1 ¡Á Timing Belt 2m
+8 ¡Á V-slot Bearing
+4 ¡Á Flange Bearing 4¡Á8¡Á3mm
+1 ¡Á Shaft Connector 4mm
+2 ¡Á Threaded Shaft 4¡Á31mm 	2 ¡Á Shaft Collar 4mm
+5 ¡Á Headless Screw M3¡Á5
+15 ¡Á Plastic Rivet R4120
+4 ¡Á Plastic Rivet R3075
+20 ¡Á Plascic Ring
+6 ¡Á Countersunk Screw M3¡Á8
+15 ¡Á Screw M4¡Á8
+50 ¡Á Screw M4¡Á14
+10 ¡Á Screw M4¡Á22
+30 ¡Á Nut M4 	
+
+1 ¡Á Meduino
+1 ¡Á Acrylic Arduino Bracket
+1 ¡Á Me-Base Shield
+1 ¡Á Me-Limit Switch
+1 ¡Á Stepper Motor
+1 ¡Á Me-Stepper Motor Driver
+1 ¡Á Solenoid-12V
+1 ¡Á 6P6C cable 20cm
+
+
+Documents:
+
+You can see more details about how to build this robot here.

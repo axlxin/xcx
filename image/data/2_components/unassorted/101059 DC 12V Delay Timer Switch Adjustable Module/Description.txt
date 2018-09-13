@@ -1,0 +1,33 @@
+Specifications feature:
+
+Main chip: NE555 
+
+Size: 68 (L) * 22 (W) * 18 (H) mm (with potentiometer )
+
+Input voltage: DC12V
+
+Adjustable time: 0 to 10 seconds
+
+Control voltage: AC 0~250V / max. 10A, DC 0~30V / max. 10A
+
+Max. load: 2200W
+
+Vehicle equipment-delay to prevent car ignition, prevention of high sudden current to burn components and devices.
+
+Main Chip (NE555) feature:
+
+Timing from microseconds to long hours
+
+Simple circuit design
+
+Precision Pulse Generation / Timing
+
+Adjustable Duty Cycle
+
+Monostable or Astable Operation
+
+Countless Application and Information Sources
+
+Product pictures:
+
+1,2

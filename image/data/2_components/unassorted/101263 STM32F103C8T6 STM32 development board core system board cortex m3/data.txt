@@ -1,0 +1,56 @@
+<div>
+	<strong>Basic parameter:</strong></div>
+<ul>
+	<li>
+		ARM core:32-bit Cortex-M3</li>
+	<li>
+		Dvelopment board dimension:7.2cm*5.3cm</li>
+	<li>
+		Pogramming environment:EIL MDK or IAR</li>
+	<li>
+		SRAM memory:20KB</li>
+	<li>
+		Flash storage:64KB</li>
+</ul>
+<div>
+	<strong>Chip parameter:</strong></div>
+<ul>
+	<li>
+		Controller Family/Series:STM32F103C8T6</li>
+	<li>
+		RAM storage:20KB</li>
+	<li>
+		Timer:4</li>
+	<li>
+		Pckage style:LQFP48</li>
+	<li>
+		Operating tempreture range:-40°„C to 105°„C</li>
+	<li>
+		Pins:48</li>
+	<li>
+		Serial communication:2xSPI,2xI2C,3xUSART,USB,CAN</li>
+	<li>
+		Digit:32</li>
+	<li>
+		Dvice label:(ARM Cortex) STM32</li>
+	<li>
+		Storage type:FLASH</li>
+	<li>
+		Timer digits:16</li>
+	<li>
+		Interfacce type:CAN£¨I2C,SPI,UART,USB</li>
+	<li>
+		Clock frenquency:72Hz</li>
+	<li>
+		Analog-digital converter input number:10</li>
+	<li>
+		Supply voltage:2V-3.6V</li>
+	<li>
+		Chip label:32F103C8</li>
+	<li>
+		Input/output line:32</li>
+	<li>
+		Storage capacity:64KB</li>
+</ul>
+
+

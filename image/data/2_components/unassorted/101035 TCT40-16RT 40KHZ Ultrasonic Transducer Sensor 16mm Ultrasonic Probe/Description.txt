@@ -1,0 +1,15 @@
+Specifications feature:
+ 
+Model: TCT40-16R/T (16 mm in diameter) 
+
+Nominal frequency (KHz): 40KHz 
+
+Emission sound pressure at 10V (0dB = 0.02mPa): >= 117dB 
+
+Receiver sensitivity at40KHz (0dB = V / ubar): >=-65dB 
+
+Electrostatic capacity at 1KHz <1V (PF): 2000 ¡À 30% 
+
+Product pictures:
+
+1,2

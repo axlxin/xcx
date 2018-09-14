@@ -219,9 +219,9 @@
     $(document).delegate('.journal-checkout .confirm-button', 'click', function () {
         var data = { };
 
-        $('.journal-checkout input[type="text"], .journal-checkout input[type="password"], .journal-checkout select, .journal-checkout input:checked, .journal-checkout textarea[name="comment"]').each(function () {
-            data[$(this).attr('name')] = $(this).val();
-        });
+         $('.journal-checkout input[type="text"], .journal-checkout input[type="password"], .journal-checkout select, .journal-checkout input:checked, .journal-checkout textarea[name="comment"]').each(function () {
+             data[$(this).attr('name')] = $(this).val();
+         });
 
         $.ajax({
             url: 'index.php?route=journal2/checkout/confirm',
@@ -231,6 +231,7 @@
             beforeSend: function() {
                 triggerLoadingOn();
             },
+            //checkout警告提示
             success: function(json) {
                 $('.text-danger').remove();
                 $('.has-error').removeClass('has-error');
@@ -251,12 +252,45 @@
                         } else if (k.indexOf('shipping_custom_field') === 0) {
                             k = k.replace('shipping_custom_field', '');
                             k = 'shipping_custom_field[' + k + ']';
+                        }else if(v=='Warning: You must complete an address!') //判断v是否和字符串相等
+                        {
+
+                //加载layer插件
+            
+                     <?php foreach($addresses as $address)?>
+                
+                
+                     var address_id = "<?php echo $address['address_id'];?>"  //获取到$address_id,然后和控制器方法guestbook/entry方法拼接
+                     
+                     layer.open
+                     ({
+                                id: 'LAY_layuipro',  //加上id不让弹窗重复
+                                title:'Message',
+                                type:2,
+                                area:['400px','680px'],
+                                maxWidth:360,
+                                fixed:true,
+                                resize:false,
+                                shade:0.3,
+                                shadeClose:true,
+                                scrollbar:false,
+                                content:"index.php?route=guestbook/entry&address_id="+address_id,               
+                               
+                           });
+                
+               
                         }
+
+
+                        //checkout警告提示
                         var $element = $('.journal-checkout [name="' + k + '"]');
                         $element.closest('.form-group').addClass('has-error');
                         $element.after('<div class="text-danger">' + v + '</div>');
+                      
+
                     });
-                    triggerLoadingOff();
+
+                   triggerLoadingOff();
                 } else if (json['redirect']) {
                     location = json['redirect'];
                 } else {
@@ -648,6 +682,8 @@
             $('#journal-checkout-confirm-button, .checkout-register, .checkout-payment-form, .checkout-shipping-form').removeClass('checkout-loading');
         }
     }
+
+    
 
     <?php if ($is_logged_in): ?>
     $('.journal-checkout [value="existing"]').trigger('change');

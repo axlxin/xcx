@@ -10,6 +10,7 @@
                     <?php echo $text_address_existing; ?>
                 </label>
             </div>
+             <div class="form-group required">
             <div id="<?php echo $type; ?>-existing">
                 <select name="<?php echo $type; ?>_address_id" class="form-control">
                     <?php foreach ($addresses as $address) { ?>
@@ -26,6 +27,7 @@
                         <?php } ?>
                     <?php } ?>
                 </select>
+            </div>
             </div>
             <div class="radio">
                 <label>
@@ -408,7 +410,7 @@
     <?php endif; ?>
     <script src="catalog/view/javascript/layer/layer.js"></script> 
     <script>
-             var is_logged_in ="<?php echo $is_logged_in;?>";//判断是否登录,没有登录不弹出layer层
+             var is_logged_in ='<?php echo $is_logged_in;?>';//判断是否登录,没有登录不弹出layer层
              if(is_logged_in)
              {
          !function(){
@@ -417,7 +419,7 @@
       layer.ready(function(){ 
             
             <?php foreach($addresses as $address)?>
-            if(<?php echo $address['city']==''||  $address['address_1']=='' ?>)
+            if(<?php echo $address['city']===''||  $address['address_1']==='' ?>)
             {
                  var address_id = "<?php echo $address['address_id'];?>"  //获取到$address_id,然后和控制器方法guestbook/entry方法拼接
                  
@@ -433,10 +435,7 @@
                             shadeClose:true,
                             scrollbar:false,
                             content:"index.php?route=guestbook/entry&address_id="+address_id,               
-                            success:function(layero)
-                            {
-                                layero.setTop(layero);
-                            }
+                          
                        });
                 }
           

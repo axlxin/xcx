@@ -1,0 +1,246 @@
+a:10:{i:44355;a:46:{s:10:"product_id";s:5:"44355";s:4:"name";s:42:"Basic Robot Kit Scarab (5v robot platform)";s:11:"description";s:5801:"&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;This Robot Kit contains everything you need to set up a 2 wheeled robot! The electronic components included in this kit all feature Qwiic connectors so you can almost instantly hook up your robot, run the code, and watch it come alive! &lt;br&gt;&lt;br&gt;Pesky obstacles will be avoided with ease with this semi-smart robot. The electronics and code provided with this kit allow your robot to seamlessly - ok, movement can be jerky depending on the speed - navigate around objects and avoid situations where the imaginary air bags would deploy in.&lt;br&gt;&lt;br&gt;The chassis of this kit is sleek, black acrylic. A 3rd plastic wheel attaches on the underside of the chassis to provide balance.&lt;br&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;&lt;br&gt;What Modules are Included:&lt;/span&gt;&lt;br&gt;&lt;br&gt;The brain of this kit is based on the ATmega328P and is &lt;a href=&quot;https://www.smart-prototyping.com/Zuino-M-UNO.html&quot; target=&quot;_blank&quot;&gt;our spin&lt;/a&gt; on the Arduino Uno R3. We’ve added Qwiic connectors onboard to enable easy daisy-chaining, plus it’s fully compatible with Arduino IDE and already familiar to many makers - including with lots of online support and tutorials that are already in existence.&lt;br&gt;&lt;br&gt;To drive the motor, it uses the &lt;a href=&quot;https://www.smart-prototyping.com/Zio-4-DC-Motor-Controller.html&quot; target=&quot;_blank&quot;&gt;Zio Bidirectional 4 CH DC Motor Driver&lt;/a&gt;. You can change the direction and the speed of the motors in addition to stopping and braking.&lt;br&gt;&lt;br&gt;A &lt;a href=&quot;https://www.smart-prototyping.com/Zio-TOF-Distance-Sensor-RFD77402.html&quot; target=&quot;_blank&quot;&gt;Zio ToF Distance Sensor RFD77402&lt;/a&gt; handles distance computing and allows the robot to sense when objects are near or far. To get more accurate measurements and movements, you can add extra ToF sensors positioned either lower on the robot or on the sides and back.&lt;br&gt;&lt;br&gt;The &lt;a href=&quot;https://www.smart-prototyping.com/Zio-16-Servo-Controller.html&quot; target=&quot;_blank&quot;&gt;Zio 16 Servo Controller (Qwiic)&lt;/a&gt; will power the servo mounted on this robot. If you’d like to add in a pan-tilt mount for the range-finder, then you can connect both servos to this board - you can actually power up to 16 servos with one board, so don’t hold back on servos! &lt;br&gt;&lt;br&gt;We also include a &lt;a href=&quot;https://www.smart-prototyping.com/Zio-Qwiic-Hub.html&quot; target=&quot;_blank&quot;&gt;4-port Zio Qwiic Hub&lt;/a&gt; in case a single chain of modules isn’t the right approach for you.&lt;br&gt;&lt;br&gt;And last but not least, we throw in a bonus &lt;a href=&quot;https://www.smart-prototyping.com/Zio-Qwiic-Adapter.html&quot; target=&quot;_blank&quot;&gt;Zio Qwiic Adapter&lt;/a&gt;. If you have other modules unequipped with a Qwiic connector, this will hook it up to the Qwiic network in a jiff.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Upgrade the Functionality&lt;/span&gt;&lt;br&gt;&lt;br&gt;If you want to upgrade the functionality of this basic Robot Kit, using Qwiic-enabled modules are a cinch. Add whatever sensors, user interface devices, or actuators you’d like, there are already many in the ecosystem! Just insert the Qwiic connector and update the code. &lt;br&gt;&lt;br&gt;We recommend: &lt;br&gt;&lt;br&gt;The &lt;a href=&quot;https://www.smart-prototyping.com/Zio-OLED-Display-0-91-in-128-32-Qwiic.html&quot; target=&quot;_blank&quot;&gt;Zio OLED Display (0.91in, 128x32, Qwiic)&lt;/a&gt; for when you want to display data output or messages.&lt;br&gt;&lt;br&gt;One of our IMUs, the Zio 9DOF IMU BNO055 or &lt;a href=&quot;https://www.smart-prototyping.com/Zio-9DOF-IMU-LSM9DS1.html&quot; target=&quot;_blank&quot;&gt;Zio 9DOF IMU LSM9DS1&lt;/a&gt; (both Qwiic-enabled) for orientation solutions such as obtaining relative position - done by integrating acceleration over time - or measuring the direction the robot is going in. &lt;br&gt;&lt;br&gt;The &lt;a href=&quot;https://www.smart-prototyping.com/Zuino-XS-PsyFi32.html&quot; target=&quot;_blank&quot;&gt;PsyFi32&lt;/a&gt;, our ESP32 based board that adds wireless communication functions to a mini microcontroller, can be used to upgrade the microcontroller and add communication functionality to the robot.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&quot;font-weight: bold;&quot; id=&quot;tab-specification&quot;&gt;Chassis and Mechanical Parts Specifications:&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Robot height: 2.6 in (6.5 cm)&lt;/li&gt;
+&lt;li&gt;Weight: 0.73 lb. (330g)&lt;/li&gt;
+&lt;li&gt;Chassis length: 7.9 in (20 cm)&lt;/li&gt;
+&lt;li&gt;Chassis width: 5.5 in (14 cm)&lt;/li&gt;
+&lt;li&gt;Wheel height: 2.6 in (6.5 cm)&lt;/li&gt;
+&lt;li&gt;Wheel width: 1 in (2.6 cm)&lt;/li&gt;
+&lt;li&gt;Chassis distance from ground: 2 in (5 cm)&lt;/li&gt;
+&lt;li&gt;Gear ratio 1:48&lt;/li&gt;
+&lt;li&gt;No-load speed: 130rpm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Links:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/Zio-Introduction.html&quot; target=&quot;_blank&quot;&gt;Learn more about ZIO&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/qwiic.html&quot; target=&quot;_blank&quot;&gt;Learn more about Qwiic&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;iframe src=&quot;//www.youtube.com/embed/c-k38Jo1zZw&quot; frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;br&gt;";s:17:"short_description";s:0:"";s:10:"meta_title";s:38:"Robot Kit 1 Scarab (5v robot platform)";s:16:"meta_description";s:0:"";s:12:"meta_keyword";s:0:"";s:15:"custom_imgtitle";s:0:"";s:9:"custom_h2";s:0:"";s:9:"custom_h1";s:0:"";s:10:"custom_alt";s:0:"";s:3:"tag";s:0:"";s:5:"model";s:6:"101903";s:3:"sku";s:0:"";s:3:"upc";s:0:"";s:3:"ean";s:0:"";s:3:"jan";s:0:"";s:4:"isbn";s:0:"";s:3:"mpn";s:0:"";s:8:"location";s:0:"";s:8:"quantity";s:3:"100";s:12:"stock_status";s:10:"2 - 3 Days";s:5:"image";s:39:"data/NOA-RnD/101903 Robotic kit 1/1.jpg";s:15:"manufacturer_id";N;s:12:"manufacturer";N;s:5:"price";s:7:"69.9000";s:7:"special";N;s:6:"reward";N;s:6:"points";s:1:"0";s:12:"tax_class_id";s:1:"0";s:14:"date_available";s:10:"2018-03-15";s:6:"weight";s:10:"0.90000000";s:15:"weight_class_id";s:1:"1";s:6:"length";s:10:"0.00000000";s:5:"width";s:10:"0.00000000";s:6:"height";s:10:"0.00000000";s:15:"length_class_id";s:1:"2";s:8:"subtract";s:1:"1";s:6:"rating";d:0;s:7:"reviews";i:0;s:7:"minimum";s:1:"1";s:10:"sort_order";s:1:"0";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2018-03-15 08:21:02";s:13:"date_modified";s:19:"2018-03-29 09:03:08";s:6:"viewed";s:3:"242";}i:44354;a:46:{s:10:"product_id";s:5:"44354";s:4:"name";s:41:"Zio OLED Display (0.91 in, 128x32, Qwiic)";s:11:"description";s:2033:"&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+
+
+&lt;p&gt;This Zio OLED Display features a whopping 128x32 pixels in a small 0.91” (diagonal) frame. That’s 4,000 itsy-bitsy LEDs. [pause for effect]&lt;br&gt;&lt;br&gt;Speed isn’t compromised however, thanks to its I2C command structure. Your firmware only needs to send the changes that it wants to make, rather than transferring information for every single pixel during each screen update.&lt;br&gt;&lt;br&gt;As an OLED, it comes with all the perks of being able to emit light (unlike LCDs). No backlight layer here! Therefore, it’s thinner, consumes less power, and has higher contrast. With this size, it can display up to 3 lines of text.&lt;br&gt;&lt;br&gt;The breakout board also features 4 mounting holes that can be snapped off and 2 Qwiic connectors to allow for quick and easy daisy-chaining.&lt;br&gt;&lt;br&gt;&lt;span style=&quot;font-weight: bold;&quot; id=&quot;tab-specification&quot;&gt;Specifications:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+
+
+&lt;ul&gt;
+
+
+&lt;li&gt;Communication Protocols: I2C&lt;/li&gt;
+
+
+&lt;li&gt;Dimensions: 25.0x 50.0mm&lt;br&gt;&lt;/li&gt;
+
+
+&lt;li&gt;Weight: 5g&lt;br&gt;&lt;/li&gt;
+
+
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Links&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+
+
+&lt;ul&gt;
+
+
+&lt;li&gt;&lt;a href=&quot;https://github.com/adafruit/Adafruit-GFX-Library&quot; target=&quot;_blank&quot;&gt;Adafruit GFX Library&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+
+
+&lt;li&gt;&lt;a href=&quot;https://github.com/adafruit/Adafruit_SSD1306&quot; target=&quot;_blank&quot;&gt;Adafruit SSD1306&lt;/a&gt;&lt;span style=&quot;color: rgb(30, 145, 207);&quot;&gt; Library&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;/li&gt;
+
+
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;iframe src=&quot;//www.youtube.com/embed/DTF4o60LSwM&quot; frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;";s:17:"short_description";s:172:"This powerful little OLED is 0.91&quot; diagonally with 128x32 resolution. Plus, it's Qwiic enabled so you can quickly and easily daisy-chain to other Qwiic-enabled modules";s:10:"meta_title";s:41:"Zio OLED Display (0.91 in, 128x32, Qwiic)";s:16:"meta_description";s:172:"This powerful little OLED is 0.91&quot; diagonally with 128x32 resolution. Plus, it's Qwiic enabled so you can quickly and easily daisy-chain to other Qwiic-enabled modules";s:12:"meta_keyword";s:0:"";s:15:"custom_imgtitle";s:0:"";s:9:"custom_h2";s:0:"";s:9:"custom_h1";s:0:"";s:10:"custom_alt";s:0:"";s:3:"tag";s:16:"Zio, Qwiic, OLED";s:5:"model";s:6:"101902";s:3:"sku";s:0:"";s:3:"upc";s:0:"";s:3:"ean";s:0:"";s:3:"jan";s:0:"";s:4:"isbn";s:0:"";s:3:"mpn";s:0:"";s:8:"location";s:0:"";s:8:"quantity";s:3:"100";s:12:"stock_status";s:10:"2 - 3 Days";s:5:"image";s:30:"data/NOA-RnD/101902 OLED/1.jpg";s:15:"manufacturer_id";N;s:12:"manufacturer";N;s:5:"price";s:6:"7.9000";s:7:"special";N;s:6:"reward";N;s:6:"points";s:1:"0";s:12:"tax_class_id";s:1:"0";s:14:"date_available";s:10:"2018-03-13";s:6:"weight";s:10:"0.00200000";s:15:"weight_class_id";s:1:"1";s:6:"length";s:10:"0.00000000";s:5:"width";s:10:"0.00000000";s:6:"height";s:10:"0.00000000";s:15:"length_class_id";s:1:"2";s:8:"subtract";s:1:"1";s:6:"rating";d:0;s:7:"reviews";i:0;s:7:"minimum";s:1:"1";s:10:"sort_order";s:1:"0";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2018-03-13 07:15:00";s:13:"date_modified";s:19:"2018-03-22 09:06:25";s:6:"viewed";s:3:"114";}i:44353;a:46:{s:10:"product_id";s:5:"44353";s:4:"name";s:35:"Zio Qwiic IO Expander (16 Channels)";s:11:"description";s:3385:"&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Running out of GPIO pins on the MCU controlling your Qwiic-based project? Add 16 extra, fully programmable GPIO pins with the Zio Qwiic I/O Expander. &lt;br&gt;&lt;br&gt;Another useful feature of this board is its ability to produce PWM signals enabling control of LEDs or any other PWM controllable device with a maximum 15mA output sink current.&lt;br&gt;&lt;br&gt;The board is laid out so that it’s easy to solder components directly to it or for more flexible prototyping, solder on some header pins and drop in a breadboard. &lt;br&gt;&lt;br&gt;All I/O pins are 5.5V tolerant but we recommend voltages between 1.2-3.6V for optimal operation. The board has a 400kHz I2C compatible slave interface fast enough for most high-speed demanding projects and features an on-chip keypad scanning engine supporting up to 64 keys in an 8x8 matrix.&lt;br&gt;&lt;br&gt;The I/O Expander features two Qwiic connectors for quick and easy daisy-chaining with other Qwiic-compatible I2C boards. &lt;br&gt;&lt;br&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Features:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;Semtech SX1509&lt;/li&gt;
+
+&lt;li&gt;16 I/O Channels&lt;/li&gt;
+
+&lt;li&gt;1.2V to 3.6V low operating voltage.&lt;/li&gt;
+
+&lt;li&gt;5.5V Tolerant I/O up to 15mA output sink current on all I/Os.&lt;/li&gt;
+
+&lt;li&gt;2 Qwiic connectors&lt;/li&gt;
+
+&lt;li&gt;4 User selectable I2C compatible slave interface.&lt;/li&gt;
+
+&lt;li&gt;PWM Intensity control (256-step PWM)&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;span id=&quot;tab-specification&quot; style=&quot;font-weight: bold;&quot;&gt;Specifications:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;Ultra-low current consumption of typically 1uA.&lt;/li&gt;
+
+&lt;li&gt;-40°C to +85°C Operating Temperature Range&lt;/li&gt;
+
+&lt;li&gt;400kHz I2C compatible slave interface&lt;/li&gt;
+
+&lt;li&gt;Blink and breathing control (224 On/Off values for each)&lt;/li&gt;
+
+&lt;li&gt;Open drain active low interrupt output (NINT)&lt;/li&gt;
+
+&lt;li&gt;Direct level shifting between I/O banks and host controller.&lt;/li&gt;
+
+&lt;li&gt;Dimensions (LxWxH) 33x18mm&lt;/li&gt;
+
+&lt;li&gt;Weight: 1.5g (0.06oz)&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Links&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/image/data/NOA-RnD/101901 IO Expander/sx150x_89b.pdf&quot; target=&quot;_blank&quot;&gt;SX1509 Datasheet&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://github.com/sparkfun/SparkFun_SX1509_Arduino_Library&quot; target=&quot;_blank&quot;&gt;SparkFun SX1509 Arduino Library&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/Zio-Introduction.html&quot; target=&quot;_blank&quot;&gt;Learn more about ZIO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/qwiic.html&quot; target=&quot;_blank&quot;&gt;Learn more about Qwiic&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;iframe src=&quot;//www.youtube.com/embed/DTF4o60LSwM&quot; frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;";s:17:"short_description";s:150:"Running out of GPIO pins on the MCU controlling your Qwiic-based project? Add 16 extra, fully programmable GPIO pins with the Zio Qwiic I/O Expander. ";s:10:"meta_title";s:46:"Zio Qwiic IO Expander (16 Channels, each ##mA)";s:16:"meta_description";s:149:"Running out of GPIO pins on the MCU controlling your Qwiic-based project? Add 16 extra, fully programmable GPIO pins with the Zio Qwiic I/O Expander.";s:12:"meta_keyword";s:0:"";s:15:"custom_imgtitle";s:0:"";s:9:"custom_h2";s:0:"";s:9:"custom_h1";s:0:"";s:10:"custom_alt";s:0:"";s:3:"tag";s:10:"Zio, Qwiic";s:5:"model";s:6:"101901";s:3:"sku";s:0:"";s:3:"upc";s:0:"";s:3:"ean";s:0:"";s:3:"jan";s:0:"";s:4:"isbn";s:0:"";s:3:"mpn";s:0:"";s:8:"location";s:0:"";s:8:"quantity";s:3:"100";s:12:"stock_status";s:10:"2 - 3 Days";s:5:"image";s:37:"data/NOA-RnD/101901 IO Expander/1.jpg";s:15:"manufacturer_id";N;s:12:"manufacturer";N;s:5:"price";s:6:"3.9900";s:7:"special";N;s:6:"reward";N;s:6:"points";s:1:"0";s:12:"tax_class_id";s:1:"0";s:14:"date_available";s:10:"2018-03-13";s:6:"weight";s:10:"0.01000000";s:15:"weight_class_id";s:1:"1";s:6:"length";s:10:"0.00000000";s:5:"width";s:10:"0.00000000";s:6:"height";s:10:"0.00000000";s:15:"length_class_id";s:1:"2";s:8:"subtract";s:1:"1";s:6:"rating";d:0;s:7:"reviews";i:0;s:7:"minimum";s:1:"1";s:10:"sort_order";s:1:"0";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2018-03-13 07:13:41";s:13:"date_modified";s:19:"2018-03-29 08:57:58";s:6:"viewed";s:2:"84";}i:44352;a:46:{s:10:"product_id";s:5:"44352";s:4:"name";s:46:"Zio Qwiic Mux (8 multiplexed Qwiic I2C Busses)";s:11:"description";s:3196:"&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;One of the limitations of I2C, on which Qwiic is based, is that some sensors only have one or two changeable bits in their address. Some even have a single fixed address. That means that you can’t use more than one of them connected to the same I2C bus on your microcontroller. What if you want to use more than one? Thanks to the handy-dandy Zio Qwiic MUX, you can use up to EIGHT of that fixed-address TOF range-finder module that you want to stick on every side of your drone for automatic collision avoidance. Your shattered dreams of building an I2C-based motion capture suit using BNO080 breakouts? Shattered no more, my friend. We’ve got your sixteen sensors right here.&lt;br&gt;&lt;br&gt;What’s the trick? The TCA9548APWR is an eight-channel two-wire bus multiplexer. It is, in fact, an I2C device itself. By changing the value of one of the TCA9548APWR’s registers, you can route the connection from your MCU to any of eight pairs of pins, each with their own set of pullup resistors (optional, via solder jumpers), on the other side of this IC. It’s a lot like a railroad track switch. Want to know what else is cool about that? It overcomes the 4-foot wire-length limitation of Qwiic. Each one of those ports counts as a different bus.&lt;br&gt;&lt;br&gt;We don’t do any voltage level shifting on these ports. Each and every one is an unadulterated 3.3v Qwiic port. The TCA9548APWR also has three configurable address bits, so you can use up to eight of them on the same bus. Or you can get really crazy and connect eight other Zio Qwiic MUX boards, all with the same address, to each of the eight ports on your first Zio Qwiic MUX. And then… well, exponents being what they are, you could split your one I2C bus into over sixteen million of them using only these boards. That is, if you had the money and space and inclination. Frankly speaking, we don’t recommend it. But if you want to place an order for the two million or so boards necessary to do it, we could probably work out some kind of volume discount for you. Just don’t ask us to offer a power supply solution for that.&lt;br&gt;&lt;br&gt;Weight: 2.6g (0.09oz)&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id=&quot;tab-specification&quot; style=&quot;font-weight: bold;&quot;&gt;Links:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/image/data/NOA-RnD/101900 Mux/tca9548a.pdf&quot; target=&quot;_blank&quot;&gt;TCA9548A datasheet.pdf&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/Zio-Introduction.html&quot; target=&quot;_blank&quot;&gt;Learn more about ZIO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/qwiic.html&quot; target=&quot;_blank&quot;&gt;Learn more about Qwiic&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;iframe src=&quot;//www.youtube.com/embed/DTF4o60LSwM&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;";s:17:"short_description";s:156:"This Zio Qwiic Mux will allow you to use up to 8 fixed-address sensor modules AND overcome the 4ft wire-length limit on Qwiic. Each port is a different bus.";s:10:"meta_title";s:46:"Zio Qwiic Mux (8 multiplexed Qwiic I2C Busses)";s:16:"meta_description";s:156:"This Zio Qwiic Mux will allow you to use up to 8 fixed-address sensor modules AND overcome the 4ft wire-length limit on Qwiic. Each port is a different bus.";s:12:"meta_keyword";s:0:"";s:15:"custom_imgtitle";s:0:"";s:9:"custom_h2";s:0:"";s:9:"custom_h1";s:0:"";s:10:"custom_alt";s:0:"";s:3:"tag";s:10:"Zio, Qwiic";s:5:"model";s:6:"101900";s:3:"sku";s:0:"";s:3:"upc";s:0:"";s:3:"ean";s:0:"";s:3:"jan";s:0:"";s:4:"isbn";s:0:"";s:3:"mpn";s:0:"";s:8:"location";s:0:"";s:8:"quantity";s:3:"100";s:12:"stock_status";s:10:"2 - 3 Days";s:5:"image";s:29:"data/NOA-RnD/101900 Mux/1.jpg";s:15:"manufacturer_id";N;s:12:"manufacturer";N;s:5:"price";s:6:"4.9000";s:7:"special";N;s:6:"reward";N;s:6:"points";s:1:"0";s:12:"tax_class_id";s:1:"0";s:14:"date_available";s:10:"2018-03-13";s:6:"weight";s:10:"0.01000000";s:15:"weight_class_id";s:1:"1";s:6:"length";s:10:"0.00000000";s:5:"width";s:10:"0.00000000";s:6:"height";s:10:"0.00000000";s:15:"length_class_id";s:1:"2";s:8:"subtract";s:1:"1";s:6:"rating";d:0;s:7:"reviews";i:0;s:7:"minimum";s:1:"1";s:10:"sort_order";s:1:"0";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2018-03-13 07:11:28";s:13:"date_modified";s:19:"2018-03-29 08:58:17";s:6:"viewed";s:2:"91";}i:44351;a:46:{s:10:"product_id";s:5:"44351";s:4:"name";s:41:"Zio Qwiic Adapter (Qwiic to 4-Pin Header)";s:11:"description";s:1305:"&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p id=&quot;tab-specification&quot;&gt;This useful little board will help you connect non-Qwiic-enabled boards with Qwiic-enabled modules.&lt;br&gt;&lt;br&gt;Just solder your desired standard-pitch four-pin header to the board, and you’ve tapped into the Qwiic bus for breadboarding or connecting directly to modules without Qwiic connectors built in.&lt;br&gt;&lt;br&gt;Two Qwiic connectors are set up for direct daisy-chaining with the attached module.&lt;br&gt;&lt;br&gt;Weight: 5g&lt;/p&gt;&lt;p id=&quot;tab-specification&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Links:&lt;/span&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/Zio-Introduction.html&quot; target=&quot;_blank&quot;&gt;Learn more about ZIO&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/qwiic.html&quot; target=&quot;_blank&quot;&gt;Learn more about Qwiic&lt;/a&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;iframe src=&quot;//www.youtube.com/embed/DTF4o60LSwM&quot; frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;/iframe&gt;&lt;p id=&quot;tab-specification&quot;&gt;&lt;br&gt;&lt;/p&gt;";s:17:"short_description";s:89:"Connect non-Qwiic-enabled boards with Qwiic-enabled modules with this nifty little board.";s:10:"meta_title";s:41:"Zio Qwiic Adapter (Qwiic to 4-Pin Header)";s:16:"meta_description";s:174:"Connect non-Qwiic-enabled boards with Qwiic-enabled modules. Includes a standard-pitch four-pin header placement to solder cables to or header pins to allow for breadboarding";s:12:"meta_keyword";s:0:"";s:15:"custom_imgtitle";s:0:"";s:9:"custom_h2";s:0:"";s:9:"custom_h1";s:0:"";s:10:"custom_alt";s:0:"";s:3:"tag";s:10:"Zio, Qwiic";s:5:"model";s:6:"101899";s:3:"sku";s:0:"";s:3:"upc";s:0:"";s:3:"ean";s:0:"";s:3:"jan";s:0:"";s:4:"isbn";s:0:"";s:3:"mpn";s:0:"";s:8:"location";s:0:"";s:8:"quantity";s:3:"100";s:12:"stock_status";s:10:"2 - 3 Days";s:5:"image";s:33:"data/NOA-RnD/101899 Adaptor/1.jpg";s:15:"manufacturer_id";N;s:12:"manufacturer";N;s:5:"price";s:6:"1.9000";s:7:"special";N;s:6:"reward";N;s:6:"points";s:1:"0";s:12:"tax_class_id";s:1:"0";s:14:"date_available";s:10:"2018-03-13";s:6:"weight";s:10:"0.01000000";s:15:"weight_class_id";s:1:"1";s:6:"length";s:10:"0.00000000";s:5:"width";s:10:"0.00000000";s:6:"height";s:10:"0.00000000";s:15:"length_class_id";s:1:"2";s:8:"subtract";s:1:"1";s:6:"rating";d:0;s:7:"reviews";i:0;s:7:"minimum";s:1:"1";s:10:"sort_order";s:1:"0";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2018-03-13 07:10:17";s:13:"date_modified";s:19:"2018-03-29 08:58:55";s:6:"viewed";s:3:"118";}i:44350;a:46:{s:10:"product_id";s:5:"44350";s:4:"name";s:40:"Zio Qwiic Hub (3 extra Qwiic Connectors)";s:11:"description";s:1861:"&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Want to split your Qwiic &lt;a href=&quot;https://en.wikipedia.org/wiki/Bus_network&quot; target=&quot;_blank&quot;&gt;bus&lt;/a&gt; into a &lt;a href=&quot;https://en.wikipedia.org/wiki/Tree_network&quot; target=&quot;_blank&quot;&gt;tree&lt;/a&gt;? Grab a hub! &lt;br&gt;&lt;br&gt;The Zio Qwiic Hub is a simple board with 4 Qwiic connectors in parallel. Just connect your main Qwiic bus to one of those ports, and split it into as many as three chains of modules.&lt;br&gt;&lt;br&gt;Building a humanoid robotic torso and want to put a servo controller on each arm without creating unnecessary capacitance by running your bus down one arm and back to get to the other? Perfect! Just use the hub to split your bus, and you’re good to go.&lt;br&gt;&lt;br&gt;The board is easily mountable due to the inclusion of a 3mm mounting hole.&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span id=&quot;tab-specification&quot; style=&quot;font-weight: bold;&quot;&gt;Specifications:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;4 Qwiic Connectors&lt;/li&gt;&lt;li&gt;Weight: 5g&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Links:&lt;/span&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/Zio-Introduction.html&quot; target=&quot;_blank&quot;&gt;Learn more about ZIO&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/qwiic.html&quot; target=&quot;_blank&quot;&gt;Learn more about Qwiic&lt;/a&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;iframe src=&quot;//www.youtube.com/embed/DTF4o60LSwM&quot; frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;";s:17:"short_description";s:182:"The Zio Qwiic Hub is a simple board with 4 Qwiic connectors in parallel. Just connect your main Qwiic bus to one of those ports, and split it into as many as three chains of modules.";s:10:"meta_title";s:40:"Zio Qwiic Hub (3 extra Qwiic Connectors)";s:16:"meta_description";s:182:"The Zio Qwiic Hub is a simple board with 4 Qwiic connectors in parallel. Just connect your main Qwiic bus to one of those ports, and split it into as many as three chains of modules.";s:12:"meta_keyword";s:0:"";s:15:"custom_imgtitle";s:0:"";s:9:"custom_h2";s:0:"";s:9:"custom_h1";s:0:"";s:10:"custom_alt";s:0:"";s:3:"tag";s:10:"Zio, Qwiic";s:5:"model";s:6:"101898";s:3:"sku";s:0:"";s:3:"upc";s:0:"";s:3:"ean";s:0:"";s:3:"jan";s:0:"";s:4:"isbn";s:0:"";s:3:"mpn";s:0:"";s:8:"location";s:0:"";s:8:"quantity";s:3:"100";s:12:"stock_status";s:10:"2 - 3 Days";s:5:"image";s:29:"data/NOA-RnD/101898 Hub/1.jpg";s:15:"manufacturer_id";N;s:12:"manufacturer";N;s:5:"price";s:6:"2.9900";s:7:"special";N;s:6:"reward";N;s:6:"points";s:1:"0";s:12:"tax_class_id";s:1:"0";s:14:"date_available";s:10:"2018-03-13";s:6:"weight";s:10:"0.01000000";s:15:"weight_class_id";s:1:"1";s:6:"length";s:10:"0.00000000";s:5:"width";s:10:"0.00000000";s:6:"height";s:10:"0.00000000";s:15:"length_class_id";s:1:"2";s:8:"subtract";s:1:"1";s:6:"rating";d:0;s:7:"reviews";i:0;s:7:"minimum";s:1:"1";s:10:"sort_order";s:1:"0";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2018-03-13 06:24:57";s:13:"date_modified";s:19:"2018-03-29 08:59:18";s:6:"viewed";s:3:"106";}i:44349;a:46:{s:10:"product_id";s:5:"44349";s:4:"name";s:75:"Zio 4 DC Motor Controller (Qwiic, 2.5 to 13.5V, 1.2A Continuous, 3.2A Peak)";s:11:"description";s:2908:"&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Drive two motors at up to 1.2A of constant current with the Zio Bidirectional 4-Channel DC Motor Controller. Dual H-bridges will allow you to also brake and stop in addition to controlling the direction and speed of the motors. Two input signals (IN1 and IN2) can be used to control the motors with the following functions: CW, CCW, short-brake, and stop. &lt;br&gt;&lt;br&gt;You can independently control the two bidirectional DC motors at once. The PWM input allows you to spin the wheels in either direction and at whatever speed you like.&lt;br&gt;&lt;br&gt;This board also comes equipped with Qwiic connectors so you can quickly and easily daisy-chain to other modules in the Qwiic ecosystem.&lt;br&gt;&lt;br&gt;&lt;span id=&quot;tab-specification&quot; style=&quot;font-weight: bold;&quot;&gt;Features:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Recommended motor voltage is 2.7 - 5.5V with a max of 15V (For full-current operation at higher voltages, add an appropriate heatsink to prevent triggering the thermal shutdown circuit and to keep the magic smoke inside those precious H-bridges)&lt;/li&gt;
+&lt;li&gt;Output current continuous: 1A per channel &lt;/li&gt;
+&lt;li&gt;Max. PWM Frequency: 100kHz&lt;/li&gt;
+&lt;li&gt;Built-in Power Saving System&lt;/li&gt;
+&lt;li&gt;Built-in Thermal Shutdown Circuit and Low Voltage Detecting Circuit&lt;/li&gt;
+&lt;li&gt;Weight: 12.9g (0.45oz)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Links:&lt;br&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/image/data/NOA-RnD/101897 4 DC Motor Driver/PCA9685PW_datasheet.pdf&quot; target=&quot;_blank&quot;&gt;PCA9685PW_datasheet.pdf&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/image/data/NOA-RnD/101897 4 DC Motor Driver/TB6612FNG_datasheet.pdf&quot; target=&quot;_blank&quot;&gt;TB6612FNG_datasheet.pdf&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library&quot; target=&quot;_blank&quot;&gt;Adafruit PWM Servo Driver Library&lt;/a&gt;&lt;span style=&quot;color: rgb(30, 145, 207);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/Zio-Introduction.html&quot; target=&quot;_blank&quot;&gt;Learn more about ZIO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/qwiic.html&quot; target=&quot;_blank&quot;&gt;Learn more about Qwiic&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;iframe src=&quot;//www.youtube.com/embed/DTF4o60LSwM&quot; frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;";s:17:"short_description";s:233:"Independently control the two bidirectional DC motors at once. The PWM input allows you to spin the wheels in either direction and at whatever speed you like. PLUS, it's Qwiic-enabled so it's a cinch to daisy chain to a Qwiic system.";s:10:"meta_title";s:75:"Zio 4 DC Motor Controller (Qwiic, 2.5 to 13.5V, 1.2A Continuous, 3.2A Peak)";s:16:"meta_description";s:233:"Independently control the two bidirectional DC motors at once. The PWM input allows you to spin the wheels in either direction and at whatever speed you like. PLUS, it's Qwiic-enabled so it's a cinch to daisy chain to a Qwiic system.";s:12:"meta_keyword";s:0:"";s:15:"custom_imgtitle";s:0:"";s:9:"custom_h2";s:0:"";s:9:"custom_h1";s:0:"";s:10:"custom_alt";s:0:"";s:3:"tag";s:10:"Zio, Qwiic";s:5:"model";s:6:"101897";s:3:"sku";s:0:"";s:3:"upc";s:0:"";s:3:"ean";s:0:"";s:3:"jan";s:0:"";s:4:"isbn";s:0:"";s:3:"mpn";s:0:"";s:8:"location";s:0:"";s:8:"quantity";s:3:"100";s:12:"stock_status";s:10:"2 - 3 Days";s:5:"image";s:43:"data/NOA-RnD/101897 4 DC Motor Driver/1.jpg";s:15:"manufacturer_id";N;s:12:"manufacturer";N;s:5:"price";s:6:"9.9000";s:7:"special";N;s:6:"reward";N;s:6:"points";s:1:"0";s:12:"tax_class_id";s:1:"0";s:14:"date_available";s:10:"2018-03-13";s:6:"weight";s:10:"0.01000000";s:15:"weight_class_id";s:1:"1";s:6:"length";s:10:"0.00000000";s:5:"width";s:10:"0.00000000";s:6:"height";s:10:"0.00000000";s:15:"length_class_id";s:1:"2";s:8:"subtract";s:1:"1";s:6:"rating";d:0;s:7:"reviews";i:0;s:7:"minimum";s:1:"1";s:10:"sort_order";s:1:"0";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2018-03-13 06:23:18";s:13:"date_modified";s:19:"2018-03-29 08:59:32";s:6:"viewed";s:3:"200";}i:44348;a:46:{s:10:"product_id";s:5:"44348";s:4:"name";s:31:"Zio 16 Servo Controller (Qwiic)";s:11:"description";s:2853:"&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;With the Zio 16-Channel 12 bit PWM controller, using the PCA9685 from NXP Semiconductors, you can control up to 16 servos or other PWM-controllable components using I2C.&lt;br&gt;&lt;br&gt;Each output can be off or on (no PWM control), or set any channel to its own PWM frequency and duty cycle. The PCA9685 operates with a supply voltage range of 2.3v to 5.5v and both the inputs and outputs are 5.5v tolerant. Servos can be connected directly to output pins (up to 25 mA, 5.5v) or controlled with external drivers for more power-hungry applications. &lt;br&gt;&lt;br&gt;The board comes equipped with two Qwiic connectors to enable easy daisy-chaining. Need even more channels to control something like a hexapod robot? Quickly and easily connect another servo controller with the additional Qwiic connector and 6 solder-jumper configurable address bits. That means you can have up to 62 of these boards operating on the same I2C bus. You can also configure the boards to recognize group addresses, so that multiple boards can be controlled in parallel with a single command.&lt;br&gt;&lt;br&gt;This is a derivative of Adafruit’s 16-Channel 12-bit PWM/Servo Driver - I2C interface - PCA9685, with the main difference being the addition of the Qwiic connectors. If you want to make Qwiic a regular part of your hardware hacking/making toolkit (we can’t image why you wouldn’t), this is the Servo Driver for you.&lt;br&gt;&lt;br&gt;&lt;span id=&quot;tab-specification&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;br&gt;Specifications:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;62 possible I2C addresses&lt;/li&gt;
+
+&lt;li&gt;Weight: 8.0g (0.278oz)&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Links&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/image/data/NOA-RnD/101896 16 Servo Controller/PCA9685.pdf&quot; target=&quot;_blank&quot;&gt;PCA9685 datasheet&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library&quot; target=&quot;_blank&quot;&gt;Adafruit PWM Servo Driver Library&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/Zio-Introduction.html&quot; target=&quot;_blank&quot;&gt;Learn more about ZIO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/qwiic.html&quot; target=&quot;_blank&quot;&gt;Learn more about Qwiic&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;iframe src=&quot;//www.youtube.com/embed/DTF4o60LSwM&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;";s:17:"short_description";s:209:"Control up to 16 servos with one board, or daisy chain up to 62 of these boards (we don't supply power for that!) with Qwiic connectors to use a countless number of servos or other PWM controlled peripherals. ";s:10:"meta_title";s:31:"Zio 16 Servo Controller (Qwiic)";s:16:"meta_description";s:209:"Control up to 16 servos with one board, or daisy chain up to 62 of these boards (we don't supply power for that!) with Qwiic connectors to use a countless number of servos or other PWM controlled peripherals. ";s:12:"meta_keyword";s:0:"";s:15:"custom_imgtitle";s:0:"";s:9:"custom_h2";s:0:"";s:9:"custom_h1";s:0:"";s:10:"custom_alt";s:0:"";s:3:"tag";s:10:"Zio, Qwiic";s:5:"model";s:6:"101896";s:3:"sku";s:0:"";s:3:"upc";s:0:"";s:3:"ean";s:0:"";s:3:"jan";s:0:"";s:4:"isbn";s:0:"";s:3:"mpn";s:0:"";s:8:"location";s:0:"";s:8:"quantity";s:3:"100";s:12:"stock_status";s:10:"2 - 3 Days";s:5:"image";s:45:"data/NOA-RnD/101896 16 Servo Controller/1.jpg";s:15:"manufacturer_id";N;s:12:"manufacturer";N;s:5:"price";s:6:"7.9000";s:7:"special";N;s:6:"reward";N;s:6:"points";s:1:"0";s:12:"tax_class_id";s:1:"0";s:14:"date_available";s:10:"2018-03-13";s:6:"weight";s:10:"0.01000000";s:15:"weight_class_id";s:1:"1";s:6:"length";s:10:"0.00000000";s:5:"width";s:10:"0.00000000";s:6:"height";s:10:"0.00000000";s:15:"length_class_id";s:1:"2";s:8:"subtract";s:1:"1";s:6:"rating";d:0;s:7:"reviews";i:0;s:7:"minimum";s:1:"1";s:10:"sort_order";s:1:"0";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2018-03-13 06:11:42";s:13:"date_modified";s:19:"2018-03-29 08:59:41";s:6:"viewed";s:3:"249";}i:44346;a:46:{s:10:"product_id";s:5:"44346";s:4:"name";s:28:"Zio 9DOF IMU LSM9DS1 (Qwiic)";s:11:"description";s:3725:"&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Descriptions&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;The Zio 9DOF IMU LSM9DS1 is an all-around good pick for any orientation needs that don’t require on-sensor fusion. Like other 9-Degree-of-Freedom (9DOF) Inertial Measurement Units (IMU), it combines a 3-axis accelerometer, 3-axis gyroscope, 3-axis magnetometer in one tiny IC. Those sensors measure linear acceleration, angular velocity, and magnetic field strength, respectively. Additionally, there is an on-die temperature sensor that can be used to offset the effects of temperature on the other three sensor types.&lt;br&gt;&lt;br&gt;With the right code to interpret all of this data, you can get a an excellent idea of the sensor package’s orientation in space, and the amplitude of the forces affecting it, even as it moves. You can use this to knowledge to stabilize a drone, a camera gimbal, or an electric unicycle. Or you can use it to capture and analyze the movements of a human or, for that matter, anything else that moves.&lt;br&gt;&lt;br&gt;The sensor will output 10 different pieces of raw data: acceleration in x/y/z, angular rotation speed in x/y/z, magnetic force in x/y/z, and temperature. Combined, this information can be used to produce a clear image of an object’s movement and orientation. &lt;br&gt;&lt;br&gt;We’ve brought this solid little chip into the Qwiic ecosystem by mounting it on a breakout board equipped with two Qwiic connectors. It can easily and quickly be daisy-chained to any other I2C boards in the system. We’ve opted to break out all of the pins for this sensor, making this a good general-purpose IMU breakout, and be used with SPI if you need a faster interface to your MCU.&lt;br&gt;&lt;br&gt;There is a wide-variety of applications that this board can be used in such as AR, VR, robotic SLAM navigation, gaming, fitness tracking, context awareness (identification of the scenario in which a user is currently engaged), model rocket telemetry and more.&lt;br&gt;&lt;span id=&quot;tab-specification&quot; style=&quot;font-weight: bold;&quot;&gt;&lt;br&gt;Specifications:&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linear Acceleration Range: ±2/±4/±8/±16 g&lt;/li&gt;
+&lt;li&gt;Magnetic Range: ±4/±8/±12/±16 gauss&lt;/li&gt;
+&lt;li&gt;Angular Rate Range: ±245/±500/±2000 dps&lt;/li&gt;
+&lt;li&gt;Data Output Resolution: 16-bit&lt;/li&gt;
+&lt;li&gt;Communication Protocols: I2C, SPI&lt;/li&gt;
+&lt;li&gt;Dimensions:20.8x 36.6mm&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Weight: 1.8g (0.067oz)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Links:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/image/data/NOA-RnD/101893 9DOF IMU LSM9DS1/LSM9DS1_datasheet.pdf&quot; target=&quot;_blank&quot;&gt;LSM9DS1 Datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sparkfun/SparkFun_LSM9DS1_Arduino_Library&quot; target=&quot;_blank&quot;&gt;SparkFun LSM9DS1 Arduino Library&lt;/a&gt;&lt;span style=&quot;color: rgb(30, 145, 207);&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/Zio-Introduction.html&quot; target=&quot;_blank&quot;&gt;Learn more about ZIO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/qwiic.html&quot; target=&quot;_blank&quot;&gt;Learn more about Qwiic&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;iframe src=&quot;//www.youtube.com/embed/DTF4o60LSwM&quot; frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;";s:17:"short_description";s:0:"";s:10:"meta_title";s:28:"Zio 9DOF IMU LSM9DS1 (Qwiic)";s:16:"meta_description";s:0:"";s:12:"meta_keyword";s:0:"";s:15:"custom_imgtitle";s:0:"";s:9:"custom_h2";s:0:"";s:9:"custom_h1";s:0:"";s:10:"custom_alt";s:0:"";s:3:"tag";s:0:"";s:5:"model";s:6:"101893";s:3:"sku";s:0:"";s:3:"upc";s:0:"";s:3:"ean";s:0:"";s:3:"jan";s:0:"";s:4:"isbn";s:0:"";s:3:"mpn";s:0:"";s:8:"location";s:0:"";s:8:"quantity";s:3:"100";s:12:"stock_status";s:10:"2 - 3 Days";s:5:"image";s:42:"data/NOA-RnD/101893 9DOF IMU LSM9DS1/1.jpg";s:15:"manufacturer_id";N;s:12:"manufacturer";N;s:5:"price";s:7:"12.9000";s:7:"special";N;s:6:"reward";N;s:6:"points";s:1:"0";s:12:"tax_class_id";s:1:"0";s:14:"date_available";s:10:"2018-03-13";s:6:"weight";s:10:"0.01000000";s:15:"weight_class_id";s:1:"1";s:6:"length";s:10:"0.00000000";s:5:"width";s:10:"0.00000000";s:6:"height";s:10:"0.00000000";s:15:"length_class_id";s:1:"2";s:8:"subtract";s:1:"1";s:6:"rating";d:0;s:7:"reviews";i:0;s:7:"minimum";s:1:"1";s:10:"sort_order";s:1:"0";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2018-03-13 06:08:09";s:13:"date_modified";s:19:"2018-03-29 09:00:01";s:6:"viewed";s:2:"96";}i:44345;a:46:{s:10:"product_id";s:5:"44345";s:4:"name";s:27:"Zio 9DOF IMU BNO055 (Qwiic)";s:11:"description";s:4311:"&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Description&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The BNO055 is the ideal orientation solution with low overhead. What that means is that the computational cost is incredibly low for such a high-powered sensor. So, if you have a project consisting of peripherals that demand more computational power, the BNO055 is a great IMU to incorporate.&lt;br&gt;&lt;br&gt;It provides Absolute Orientation by integrating 3 different sensors: a 3-axis 14-bit accelerometer,&amp;nbsp; 3-axis 16-bit gyroscope, and a 3-axis magnetometer; and outputting the fused data in usable values. &lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;The following data can be collected by this sensor:&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Quaternion Absolute Orientation&lt;/span&gt; (4-point quaternion output that is as fast as it is sexy… that’s right, quaternions are sexy.)&lt;/li&gt;
+
+&lt;li&gt;Euler Vector Absolute Orientation ( 3-axis orientation data based on a 360 sphere)&lt;/li&gt;
+
+&lt;li&gt;Linear Acceleration in m/s^2&lt;/li&gt;
+
+&lt;li&gt;Acceleration Vector&amp;nbsp; in m/s^2&lt;/li&gt;
+
+&lt;li&gt;Magnetic Field Strength Vector&lt;/li&gt;
+
+&lt;li&gt;Gravity Vector&lt;/li&gt;
+
+&lt;li&gt;Angular Velocity Vector&lt;/li&gt;
+
+&lt;li&gt;Temperature&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;We’ve made this board small enough to be suitable for use in advanced wearables and other space-sensitive projects. It’s been specifically designed for use in projects incorporating Qwiic, and so breaks out only the interrupt pin. However, if you’d like to use it in a non-Qwiic project, just use one of our Qwiic adapters, or you can just take a Qwiic cable, cut off one end, and solder the wire ends to the I2C pins of whatever you want.&lt;br&gt;&lt;br&gt;Bosch’s smart 9DOF IMU will take raw sensor data and stream out meaningful results at up to 100Hz; you are saved the headache of sifting through algorithms with different levels of accuracy and complexity (and believe you me, they get pretty durned complex). And with the available libraries and example code, you can get it working with your project in a matter of minutes. There is a wide variety of applications in which this board can be used, such as AR, navigation, gaming, fitness, context awareness (think: robotics and mobile devices), and more.&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span id=&quot;tab-specification&quot; style=&quot;font-weight: bold;&quot;&gt;Specifications:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;Accelerometer range: ±2g/±4g/±8g/±16g&lt;/li&gt;
+
+&lt;li&gt;Magnetometer range: ±1300µT (x-, y-axis); ±2500µT (z-axis)&lt;/li&gt;
+
+&lt;li&gt;Gyroscope range:&amp;nbsp; ±125°/s to ±2000°/s&lt;/li&gt;
+
+&lt;li&gt;Voltage range: 1.7V - 3.6V&lt;/li&gt;
+
+&lt;li&gt;Dimensions: &lt;/li&gt;
+
+&lt;li&gt;Weight: 1.2g (0.042oz)&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;&lt;br&gt;Links:&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/image/data/NOA-RnD/101892 BNO 055/BST_BNO055_DS000_12.pdf&quot; target=&quot;_blank&quot;&gt;Bosch’s BNO055 Datasheet&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://github.com/adafruit/Adafruit_BNO055&quot; target=&quot;_blank&quot;&gt;Adafruit BNO055 Arduino Library and Unified Sensor Library&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://github.com/adafruit/Adafruit_Sensor&quot; target=&quot;_blank&quot;&gt;Adafruit Sensor Library&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/Zio-Introduction.html&quot; target=&quot;_blank&quot;&gt;Learn more about ZIO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smart-prototyping.com/qwiic.html&quot; target=&quot;_blank&quot;&gt;Learn more about Qwiic&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;iframe src=&quot;//www.youtube.com/embed/DTF4o60LSwM&quot; frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;";s:17:"short_description";s:284:"The IDEAL orientation solution. Measure Absolute Orientation in seconds, even with peripherals that are also demanding high computational power. Qwiic-enabled, it features 2 Qwiic connectors for fast hook-ups and small enough for advanced wearables and other space-sensitive projects.";s:10:"meta_title";s:27:"Zio 9DOF IMU BNO055 (Qwiic)";s:16:"meta_description";s:252:"Measure Absolute Orientation in seconds, even with peripherals that are also demanding high computational power. Qwiic-enabled, it features 2 Qwiic connectors for fast hook-ups and small enough for advanced wearables and other space-sensitive projects.";s:12:"meta_keyword";s:0:"";s:15:"custom_imgtitle";s:0:"";s:9:"custom_h2";s:0:"";s:9:"custom_h1";s:0:"";s:10:"custom_alt";s:0:"";s:3:"tag";s:10:"Qwiic, Zio";s:5:"model";s:6:"101892";s:3:"sku";s:0:"";s:3:"upc";s:0:"";s:3:"ean";s:0:"";s:3:"jan";s:0:"";s:4:"isbn";s:0:"";s:3:"mpn";s:0:"";s:8:"location";s:0:"";s:8:"quantity";s:3:"100";s:12:"stock_status";s:10:"2 - 3 Days";s:5:"image";s:33:"data/NOA-RnD/101892 BNO 055/1.jpg";s:15:"manufacturer_id";N;s:12:"manufacturer";N;s:5:"price";s:7:"19.9000";s:7:"special";N;s:6:"reward";N;s:6:"points";s:1:"0";s:12:"tax_class_id";s:1:"0";s:14:"date_available";s:10:"2018-03-13";s:6:"weight";s:10:"0.01000000";s:15:"weight_class_id";s:1:"1";s:6:"length";s:10:"0.00000000";s:5:"width";s:10:"0.00000000";s:6:"height";s:10:"0.00000000";s:15:"length_class_id";s:1:"2";s:8:"subtract";s:1:"1";s:6:"rating";d:0;s:7:"reviews";i:0;s:7:"minimum";s:1:"1";s:10:"sort_order";s:1:"0";s:6:"status";s:1:"1";s:10:"date_added";s:19:"2018-03-13 06:07:05";s:13:"date_modified";s:19:"2018-03-29 09:00:09";s:6:"viewed";s:3:"196";}}

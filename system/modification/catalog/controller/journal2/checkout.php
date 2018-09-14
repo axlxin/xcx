@@ -248,7 +248,7 @@ class ControllerJournal2Checkout extends Controller {
         if ($this->isLoggedIn()) {
             // payment data
             if (Journal2Utils::getProperty($this->request->post, 'payment_address') === 'existing') {
-                $address_info = $this->model_account_address->getAddress(Journal2Utils::getProperty($this->request->post, 'payment_address_id'));
+               
                 $order_data = array_replace($order_data, $this->getAddressData($address_info, '', 'payment_'));
             } else {
                 $new_payment_address = $this->getAddressData($this->request->post, 'payment_', 'payment_');
@@ -463,7 +463,6 @@ class ControllerJournal2Checkout extends Controller {
             $this->load->model('catalog/information');
 
             $information_info = $this->model_catalog_information->getInformation($this->config->get('config_account_id'));
-
             if ($information_info && !isset($this->request->post['privacy'])) {
                 $errors['privacy'] = sprintf($this->language->get('error_agree'), $information_info['title']);
             }
@@ -473,10 +472,21 @@ class ControllerJournal2Checkout extends Controller {
             $this->load->model('catalog/information');
 
             $information_info = $this->model_catalog_information->getInformation($this->config->get('config_checkout_id'));
-
             if ($information_info && !isset($this->request->post['agree'])) {
                 $errors['agree'] = sprintf($this->language->get('error_agree'), $information_info['title']);
             }
+
+             $address_info = $this->model_account_address->getAddress(Journal2Utils::getProperty($this->request->post, 'payment_address_id'));
+             
+                if($address_info['address_1']=='')
+                {
+
+                   $errors['payment_address_id'] = $this->language->get('error_address1');  //payment_address增加提醒警告
+                  // var_dump($errors['address1']);
+                   $errors['shipping_address_id'] =$this->language->get('error_address1');  //shipping_address增加提醒警告
+                  // echo "<script>alert('脚本学堂，www.jbxue.com')</script>";
+                }
+
         }
 
         if ($this->config->get('config_account_id') == $this->config->get('config_checkout_id')) {

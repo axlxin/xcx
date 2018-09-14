@@ -18,3 +18,15 @@ MAILCHIMP_INTEGRATION ERROR: CURL ERROR #6 - Could not resolve host: us9.api.mai
 
 MAILCHIMP_INTEGRATION CART ERROR: CURL ERROR #6 - Could not resolve host: us9.api.mailchimp.com
 
+MAILCHIMP_INTEGRATION ERROR: CURL ERROR #28 - Resolving timed out after 10531 milliseconds
+
+MAILCHIMP_INTEGRATION CART ERROR: CURL ERROR #28 - Resolving timed out after 10531 milliseconds
+
+MAILCHIMP_INTEGRATION ERROR: CURL ERROR #28 - Connection timed out after 10000 milliseconds
+
+MAILCHIMP_INTEGRATION CART ERROR: CURL ERROR #28 - Connection timed out after 10000 milliseconds
+
+MAILCHIMP_INTEGRATION ERROR: CURL ERROR #28 - Connection timed out after 10000 milliseconds
+
+MAILCHIMP_INTEGRATION CART ERROR: CURL ERROR #28 - Connection timed out after 10000 milliseconds
+

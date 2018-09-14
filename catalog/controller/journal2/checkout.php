@@ -457,7 +457,6 @@ class ControllerJournal2Checkout extends Controller {
             if ($information_info && !isset($this->request->post['agree'])) {
                 $errors['agree'] = sprintf($this->language->get('error_agree'), $information_info['title']);
             }
-        }
 
         if ($this->config->get('config_account_id') == $this->config->get('config_checkout_id')) {
             unset($errors['privacy']);
